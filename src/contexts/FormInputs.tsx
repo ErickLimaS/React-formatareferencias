@@ -1,0 +1,3152 @@
+import { FormActions, useForm } from './FormContext';
+import * as C from './styles'
+import { TextInput, Tooltip, RadioGroup, Radio, Grid } from '@mantine/core';
+import { InfoCircledIcon } from '@modulz/radix-icons';
+import { ChangeEvent } from 'react';
+import { AuxAuthor } from './auxAuthor';
+
+
+// show the inputs depending on the type of refer
+
+export const RefInputs = () => {
+    const { state, dispatch } = useForm();
+
+    let auxRef = state.refType1;
+
+    if (state.refType1 !== '11') {
+        auxRef = state.refType2;
+    }
+
+    let inputHtml: any;
+
+    // REF 11
+    if (auxRef === '11') {
+
+        //Handles
+        const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setTitle,
+                payload: e.target.value
+            });
+        }
+        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setSubtitle,
+                payload: e.target.value
+            });
+        }
+        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUrl,
+                payload: e.target.value
+            });
+        }
+
+        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayAcess,
+                payload: e.target.value
+            });
+        }
+        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthAcess,
+                payload: e.target.value
+            });
+        }
+        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearAcess,
+                payload: e.target.value
+            });
+        }
+        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayPublic,
+                payload: e.target.value
+            });
+        }
+        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthPublic,
+                payload: e.target.value
+            });
+        }
+        const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearPublic,
+                payload: e.target.value
+            });
+        }
+
+        const handleAuthorRadioGroup1 = (e: ChangeEvent<HTMLInputElement>) => {
+            console.log(state)
+            dispatch({
+                type: FormActions.setRadioCheck,
+                payload: e.target.value
+            })
+            console.log(state)
+        }
+
+        const handleAuthorRadioGroup2 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setRadioCheck,
+                payload: e.target.value
+            })
+        }
+        const handleLocal = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setLocal,
+                payload: e.target.value
+            })
+        }
+
+        inputHtml = (
+            <C.Container>
+
+                <div className='radioCheck'>
+                    <h2>Quem Escreveu essa Referência?</h2>
+                    <div>
+                        <label htmlFor="autor">
+                            Autor(a) / Editor(a)
+                            <input type="radio" name="autor" id="autor" onChange={handleAuthorRadioGroup1} value='1' />
+                        </label>
+                        <label htmlFor="organizacao">
+                            Organização
+                            <input type="radio" name="autor" id="organizacao" onChange={handleAuthorRadioGroup2} value='2' />
+                        </label>
+                    </div>
+                </div>
+
+                <hr />
+
+                <AuxAuthor />
+
+                <hr />
+
+                <TextInput label="Título da Matéria" description="Titulo da Matéria. Geralmente o nome com grande destaque na página." type='text' placeholder='Exemplo do Título: Clarice Lispector: Vida e Obra da Escritora'
+                    onChange={handleTitle} />
+
+                <hr />
+
+                <TextInput label="Subtítulo da Matéria" description="Geralmente a segunda frase em destaques, logo abaixo ao título." type='text' placeholder='Ex: Saiba a história da autora enigmática que completaria 100 anos em 2020'
+                    onChange={handleSubtitle} />
+
+                <hr />
+
+                <TextInput label="URL da Página da Matéria" description="URL é o link da página da matéria. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} />
+
+                <hr />
+
+                <TextInput label="Local da de Publicação da Matéria" description="Escreva a cidade onde a matéria foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' onChange={handleLocal} />
+
+                <hr />
+
+                <Grid className='dateVisualization'>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Visualização da Matéria" description="O dia que você encontrou a matéria." type='text' placeholder='25' onChange={handleDayVisualization} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Visualização da Matéria
+                            <small>O mês que você encontrou a matéria.</small>
+                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano da Visualização da Matéria" description="O ano que você encontrou a matéria." type='text' placeholder='2022' onChange={handleYearVisualization} />
+                    </Grid.Col>
+                </Grid>
+
+                <Grid className='datePublic'>
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Matéria Publicada" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Publicação da Matéria
+                            <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
+                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+
+    // REF 12 - blog
+    if (auxRef === '12') {
+
+        // INFO
+        const AuthorFirstInfoCircle = (
+            <Tooltip label='Escreva o primeiro nome nessa seção. Se for uma organização quem escreveu, bote o nome aqui.' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const AuthorSurInfoCircle = (
+            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa. Se for uma organização quem escreveu, deixe  esse espaço em branco.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+
+        //Handles
+        const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor1,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor1,
+                payload: e.target.value
+            });
+        };
+        const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setTitle,
+                payload: e.target.value
+            });
+        }
+        const handleResponsableBlog = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setResponsableBlog,
+                payload: e.target.value
+            });
+        }
+        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUrl,
+                payload: e.target.value
+            });
+        }
+
+        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayAcess,
+                payload: e.target.value
+            });
+        }
+        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthAcess,
+                payload: e.target.value
+            });
+        }
+        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearAcess,
+                payload: e.target.value
+            });
+        }
+        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayPublic,
+                payload: e.target.value
+            });
+        }
+        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthPublic,
+                payload: e.target.value
+            });
+        }
+        const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearPublic,
+                payload: e.target.value
+            });
+        }
+        const handleEtalCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setEtAlCheckbox,
+                payload: 'et al.'
+            })
+        }
+        const handleBlogTitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setBlogTitle,
+                payload: e.target.value
+            })
+        }
+        const handleLocal = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setLocal,
+                payload: e.target.value
+            })
+        }
+
+        inputHtml = (
+            <C.Container>
+
+                <TextInput label="Nome do Autor(a) da Matéria" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorFirstInfoCircle} placeholder='Ex: Clara' onChange={handleNameAuthor1} />
+
+                <hr />
+
+                <TextInput label="Sobrenome do Autor(a) da Matéria" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorSurInfoCircle} placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
+
+                <hr />
+
+                <div className='checkboxEtAl'>
+                    <h1>Usar "Et al.?</h1>
+                    <small>"Et al." serve para indicar a existéncia de mais autores além do indicado nessa referência.</small>
+                    <div>
+                        <input type="checkbox" id="etal" name="etal" onChange={handleEtalCheckbox}></input>
+                        <label htmlFor="etal">Marque a caixa ao lado para usar "Et al."</label>
+                    </div>
+                </div>
+
+                <hr />
+
+                <TextInput label="Título da Matéria" description="Titulo da Matéria. Geralmente o nome com grande destaque na página." type='text' placeholder='Exemplo do Título: Clarice Lispector: Vida e Obra da Escritora'
+                    onChange={handleTitle} />
+
+                <hr />
+
+                <TextInput label="Responsavel pelo Blog" description="Geralmente é quem cuida de manter o blog ativo. Ex: Responsavel do site do Enem é a Secretaria da Educação." type='text' placeholder='Ex: Secretaria da Educação.'
+                    onChange={handleResponsableBlog} />
+
+                <hr />
+
+                <TextInput label="Título da Blog" description="Titulo do Blog. Costuma ser o nome do própio site. " type='text' placeholder='Ex: Wikipedia'
+                    onChange={handleBlogTitle} />
+
+                <hr />
+
+                <TextInput label="URL da Página da Matéria" description="URL é o link da página da matéria. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} />
+
+                <hr />
+
+                <TextInput label="Local da Publicação da Matéria" description="Qual a cidade e o estado de onde essa matéria foi publicada? Se não souber, deixe em branco." type='text' placeholder='Ex: Brasília - DF' onChange={handleLocal} />
+
+                <hr />
+
+                <Grid className='dateVisualization'>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Visualização da Matéria" description="O dia que você encontrou a matéria." type='text' placeholder='25' onChange={handleDayVisualization} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Visualização da Matéria
+                            <small>O mês que você encontrou a matéria.</small>
+                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano da Visualização da Matéria" description="O ano que você encontrou a matéria." type='text' placeholder='2022' onChange={handleYearVisualization} />
+                    </Grid.Col>
+                </Grid>
+
+                <Grid className='datePublic'>
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Matéria Publicada" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Publicação da Matéria
+                            <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
+                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+
+    //REF 13 - PODCAST
+    if (auxRef === '13') {
+
+        // INFO
+        const AuthorFirstInfoCircle = (
+            <Tooltip label='Escreva o primeiro nome nessa seção. Se for uma organização quem escreveu, bote o nome aqui.' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const AuthorSurInfoCircle = (
+            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa. Se for uma organização quem escreveu, deixe  esse espaço em branco.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+
+        //Handles
+        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUrl,
+                payload: e.target.value
+            });
+        }
+
+        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayAcess,
+                payload: e.target.value
+            });
+        }
+        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthAcess,
+                payload: e.target.value
+            });
+        }
+        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearAcess,
+                payload: e.target.value
+            });
+        }
+        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayPublic,
+                payload: e.target.value
+            });
+        }
+        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthPublic,
+                payload: e.target.value
+            });
+        }
+        const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearPublic,
+                payload: e.target.value
+            });
+        }
+        const handleEtalCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setEtAlCheckbox,
+                payload: 'et al.'
+            })
+        }
+
+        const handleNamePodcastEpisode = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNamePodcastEpisode,
+                payload: e.target.value
+            })
+        }
+        const handleNamePodcast = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNamePodcast,
+                payload: e.target.value
+            })
+        }
+        const handlePodcastAnnouncer = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setPodcastAnnouncer,
+                payload: e.target.value
+            })
+        }
+        inputHtml = (
+            <C.Container>
+
+                <TextInput label="Nome do Podcast" description="O nome principal do podcast." type='text' placeholder='Ex: NerdCast, Inteligência ltda. ou Flow' onChange={handleNamePodcast} />
+
+                <hr />
+
+                <TextInput label="Nome do Podcast e do Episódio" description="Nome do Podcast junto com o nome e identificação do Episódio." type='text' placeholder='Ex: NerdCast #689: O jogo mental do Futebol Americano' onChange={handleNamePodcastEpisode} />
+
+                <hr />
+
+                <TextInput label="Nome dos(as) Apresentadores(as)" description="Nome do apresentador ou participantes do podcast" type='text' placeholder='Ex: Rogério Vilela' onChange={handlePodcastAnnouncer} />
+
+                <hr />
+
+                <div className='checkboxEtAl'>
+                    <h1>Usar "Et al.?</h1>
+                    <small>"Et al." serve para indicar a existéncia de mais autores além do indicado nessa referência.</small>
+                    <div>
+                        <input type="checkbox" id="etal" name="etal" onChange={handleEtalCheckbox}></input>
+                        <label htmlFor="etal">Marque a caixa ao lado para usar "Et al."</label>
+                    </div>
+                </div>
+
+                <hr />
+
+                <TextInput label="URL da Página da Matéria" description="URL é o link da página da matéria. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} />
+
+                <hr />
+
+                <Grid className='dateVisualization'>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Visualização da Matéria" description="O dia que você encontrou a matéria." type='text' placeholder='25' onChange={handleDayVisualization} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Visualização da Matéria
+                            <small>O mês que você encontrou a matéria.</small>
+                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano da Visualização da Matéria" description="O ano que você encontrou a matéria." type='text' placeholder='2022' onChange={handleYearVisualization} />
+                    </Grid.Col>
+                </Grid>
+
+                <Grid className='datePublic'>
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Matéria Publicada" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Publicação da Matéria
+                            <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
+                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+
+    //REF 14 - Redes Sociais
+    if (auxRef === '14') {
+
+        // INFO
+        const AuthorFirstInfoCircle = (
+            <Tooltip label='Escreva o primeiro nome nessa seção. Se for uma organização quem escreveu, bote o nome aqui.' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const AuthorSurInfoCircle = (
+            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa. Se for uma organização quem escreveu, deixe  esse espaço em branco.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+
+        //Handles
+        const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor1,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor1,
+                payload: e.target.value
+            });
+        };
+        const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setTitle,
+                payload: e.target.value
+            });
+        }
+        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setSubtitle,
+                payload: e.target.value
+            });
+        }
+        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUrl,
+                payload: e.target.value
+            });
+        }
+
+        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayAcess,
+                payload: e.target.value
+            });
+        }
+        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthAcess,
+                payload: e.target.value
+            });
+        }
+        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearAcess,
+                payload: e.target.value
+            });
+        }
+        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayPublic,
+                payload: e.target.value
+            });
+        }
+        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthPublic,
+                payload: e.target.value
+            });
+        }
+        const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearPublic,
+                payload: e.target.value
+            });
+        }
+        const handleEtalCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setEtAlCheckbox,
+                payload: 'et al.'
+            })
+        }
+        const handleUserSocialMedia = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUserSocialMedia,
+                payload: e.target.value
+            })
+        }
+        const handleDisplayNameUser = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDisplayNameUser,
+                payload: e.target.value
+            })
+        }
+        const handleSocialMediaMensage = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setSocialMediaMensage,
+                payload: e.target.value
+            })
+        }
+        const handleUserSocial = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUserSocialMedia,
+                payload: e.target.value
+            })
+        }
+
+        const handleLocal = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setLocal,
+                payload: e.target.value
+            })
+        }
+
+        inputHtml = (
+            <C.Container>
+
+                <TextInput label="Nome do Perfil do Usuário" description="Nome Principal mostrado pelo perfil de quem escreveu a mensagem." type='text' placeholder='Ex: USP - Universidade de São Paulo' onChange={handleDisplayNameUser} />
+
+                <hr />
+
+                <TextInput label="Identificação do Usuário" description="Identificação do perfil em si. Ex no Twitter: @usponline" type='text' placeholder='Ex: @usponline'
+                    onChange={handleUserSocial} />
+
+                <hr />
+
+                <TextInput label="Mensagem sendo Referênciada" description="O texto usado como base para a sua referência. Atenção! Não precisa botar o texto/mensagem inteira. " type='text' placeholder='Ex: Um grupo de pacientes com HIV foi acompanhado em estudo no Hospital das Clínicas da USP para identificar o quão vulneráveis'
+                    onChange={handleSocialMediaMensage} />
+
+                <hr />
+
+                <TextInput label="Local da Publicação da Matéria" description="Qual a cidade e o estado de onde essa matéria foi publicada? Se não souber, deixe em branco." type='text' placeholder='Ex: Brasília - DF' onChange={handleLocal} />
+
+                <hr />
+
+                <TextInput label="URL da Página da Matéria" description="URL é o link da página da matéria. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} />
+
+                <hr />
+
+                <Grid className='dateVisualization'>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Visualização da Matéria" description="O dia que você encontrou a matéria." type='text' placeholder='25' onChange={handleDayVisualization} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Visualização da Matéria
+                            <small>O mês que você encontrou a matéria.</small>
+                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano da Visualização da Matéria" description="O ano que você encontrou a matéria." type='text' placeholder='2022' onChange={handleYearVisualization} />
+                    </Grid.Col>
+                </Grid>
+
+                <Grid className='datePublic'>
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Matéria Publicada" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Publicação da Matéria
+                            <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
+                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+
+    //REF 15 - email
+    if (auxRef === '15') {
+
+        // INFO
+        const AuthorFirstInfoCircle = (
+            <Tooltip label='Escreva o primeiro nome nessa seção. Se for uma organização quem escreveu, bote o nome aqui.' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const AuthorSurInfoCircle = (
+            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa. Se for uma organização quem escreveu, deixe  esse espaço em branco.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+
+        //Handles
+        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayPublic,
+                payload: e.target.value
+            });
+        }
+        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthPublic,
+                payload: e.target.value
+            });
+        }
+        const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearPublic,
+                payload: e.target.value
+            });
+        }
+        const handleLocal = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setLocal,
+                payload: e.target.value
+            });
+        }
+        const handleRemetenteName = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setRemetenteName,
+                payload: e.target.value
+            });
+        }
+        const handleEmailSubject = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setEmailSubject,
+                payload: e.target.value
+            });
+        }
+        const handleDestinatario = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDestinatario,
+                payload: e.target.value
+            });
+        }
+
+        inputHtml = (
+            <C.Container>
+
+                <TextInput label="Nome do Remetente" description="Nome de quem enviou o email. Geralmente, o remente nesse caso é quem está fazendo a referência." type='text' placeholder='Ex: Jõao Tavares da Silva' onChange={handleRemetenteName} />
+
+                <hr />
+
+                <TextInput label="Quem é o Destinatário" description="Nome de quem deveria receber o Email" type='text' placeholder='Ex: Banco Nacional de Espanha'
+                    onChange={handleDestinatario} />
+
+                <hr />
+
+                <TextInput label="Assunto do Email" description="Assunto sobre o que se espera ser falado no Email enviado." type='text' placeholder='Ex: Falha no Sistema de Verificação de Usuário do Site.' onChange={handleEmailSubject} />
+
+                <hr />
+
+                <TextInput label="Local do Envio do Email" description="Escreva a cidade de onde o email deve ter vindo. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não souber, deixe em branco.)' onChange={handleLocal} />
+
+                <hr />
+
+                <Grid className='datePublic'>
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia do Envio do Email" description="Dia do Envio do Email" type='text' placeholder='12' onChange={handleDayPubli} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês do Envio do Email
+                            <small>O mês que o email foi feito e enviado.</small>
+                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano do Envio do Email" description="Ano em que o email foi escrito e enviado." type='text' placeholder='2020' onChange={handleYearPubli} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+
+    //REF 16 - wikipedia
+    if (auxRef === '16') {
+
+        // INFO
+        const AuthorFirstInfoCircle = (
+            <Tooltip label='Escreva o primeiro nome nessa seção. Se for uma organização quem escreveu, bote o nome aqui.' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const AuthorSurInfoCircle = (
+            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa. Se for uma organização quem escreveu, deixe  esse espaço em branco.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+
+        //Handles
+        const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setTitle,
+                payload: e.target.value
+            });
+        }
+        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUrl,
+                payload: e.target.value
+            });
+        }
+
+        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayAcess,
+                payload: e.target.value
+            });
+        }
+        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthAcess,
+                payload: e.target.value
+            });
+        }
+        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearAcess,
+                payload: e.target.value
+            });
+        }
+
+        inputHtml = (
+            <C.Container>
+
+                <TextInput label="Título do Assunto" description="Título do assunto pesquisado na Wikipédia." type='text' rightSection={AuthorFirstInfoCircle} placeholder='Ex: Planeta Terra' onChange={handleTitle} />
+
+                <hr />
+
+                <TextInput label="URL da Página da Matéria" description="URL é o link da página da matéria. Fica no topo do seu navegador, começando com https://www e terminando com .com.br" type='text' placeholder='Ex: https://pt.wikipedia.org/wiki/Terra' onChange={handleUrl} />
+
+                <hr />
+
+                <Grid className='dateVisualization'>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Visualização da Matéria" description="O dia que você encontrou a matéria." type='text' placeholder='25' onChange={handleDayVisualization} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Visualização da Matéria
+                            <small>O mês que você encontrou a matéria.</small>
+                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano da Visualização da Matéria" description="O ano que você encontrou a matéria." type='text' placeholder='2022' onChange={handleYearVisualization} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+
+    //REF 21 - livro
+    else if (auxRef === '21') {
+
+        // INFO
+        const AuthorFirstInfoCircle = (
+            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const AuthorSurInfoCircle = (
+            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+
+        //Handles
+        const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor1,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor1,
+                payload: e.target.value
+            });
+        };
+        const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setTitle,
+                payload: e.target.value
+            });
+        }
+        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setSubtitle,
+                payload: e.target.value
+            });
+        }
+        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUrl,
+                payload: e.target.value
+            });
+        }
+
+        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayAcess,
+                payload: e.target.value
+            });
+        }
+        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthAcess,
+                payload: e.target.value
+            });
+        }
+        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearAcess,
+                payload: e.target.value
+            });
+        }
+        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayPublic,
+                payload: e.target.value
+            });
+        }
+        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthPublic,
+                payload: e.target.value
+            });
+        }
+        const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearPublic,
+                payload: e.target.value
+            });
+        }
+        const handleLocal = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setLocal,
+                payload: e.target.value
+            });
+        }
+        const handlePublishingComp = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setPublishingComp,
+                payload: e.target.value
+            });
+        }
+        const handlePaginationBook = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setPaginationBook,
+                payload: e.target.value
+            });
+        }
+        const handleEditionBook = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setEditionBook,
+                payload: e.target.value
+            });
+        }
+        const handleEtalCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setEtAlCheckbox,
+                payload: 'et al.'
+            })
+        }
+
+        inputHtml = (
+            <C.Container>
+
+                <TextInput label="Nome do Autor(a) do Livro" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorFirstInfoCircle} placeholder='Ex: Clara' onChange={handleNameAuthor1} />
+
+                <hr />
+                <TextInput label="Sobrenome do Autor(a) do Livro" description="O sobrenome do autor(a) vai nessa seção" type='text' rightSection={AuthorSurInfoCircle} placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
+
+                <hr />
+
+                <div className='checkboxEtAl'>
+                    <h1>Usar "Et al.?</h1>
+                    <small>"Et al." serve para indicar a existéncia de mais autores além do indicado nessa referência.</small>
+                    <div>
+                        <input type="checkbox" id="etal" name="etal" onChange={handleEtalCheckbox}></input>
+                        <label htmlFor="etal">Marque a caixa ao lado para usar "Et al."</label>
+                    </div>
+                </div>
+
+                <hr />
+
+                <TextInput label="Título do Livro" description="Titulo do Livro. Geralmente é o nome com grande destaque na capa." type='text' placeholder='Exemplo: A Origem das Espécies' onChange={handleTitle} />
+
+                <hr />
+
+                <TextInput label="Edição do Livro" description="Edição do livro da referência. Se encontra na capa ou na contracapa do livro. Atenção: Use só números!" type='text' placeholder='Escreva apenas o Número. Ex: 3'
+                    onChange={handleEditionBook} />
+
+                <hr />
+
+                <TextInput label="Local da Publicação do Livro" description="Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' onChange={handleLocal} />
+
+                <hr />
+
+                <TextInput label="Editora do Livro" description="Escreva a cidade onde a matéria foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' onChange={handlePublishingComp} />
+
+                <hr />
+
+                <TextInput label="Paginação" description="Qual a página que você está referenciando. Atenção: Use só números!" type='text' placeholder='Escreva somente Números. Ex: 67' onChange={handlePaginationBook} />
+
+                <hr />
+
+                <Grid className='datePublic'>
+
+
+                    <Grid.Col span={12}>
+                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+
+    //REF 22
+    else if (auxRef === '22') {
+
+        // INFO
+        const AuthorFirstInfoCircle = (
+            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const AuthorSurInfoCircle = (
+            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+
+        //Handles
+        const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor1,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor1,
+                payload: e.target.value
+            });
+        };
+        const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setTitle,
+                payload: e.target.value
+            });
+        }
+        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setSubtitle,
+                payload: e.target.value
+            });
+        }
+        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUrl,
+                payload: e.target.value
+            });
+        }
+
+        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayAcess,
+                payload: e.target.value
+            });
+        }
+        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthAcess,
+                payload: e.target.value
+            });
+        }
+        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearAcess,
+                payload: e.target.value
+            });
+        }
+        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayPublic,
+                payload: e.target.value
+            });
+        }
+        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthPublic,
+                payload: e.target.value
+            });
+        }
+        const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearPublic,
+                payload: e.target.value
+            });
+        }
+        const handleLocal = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setLocal,
+                payload: e.target.value
+            });
+        }
+        const handlePublishingComp = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setPublishingComp,
+                payload: e.target.value
+            });
+        }
+        const handlePaginationBook = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setPaginationBook,
+                payload: e.target.value
+            });
+        }
+        const handleEditionBook = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setEditionBook,
+                payload: e.target.value
+            });
+        }
+        const handleEtalCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setEtAlCheckbox,
+                payload: 'et al.'
+            })
+        }
+
+        const handleDoiCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDoiCheckbox,
+                payload: e.target.value
+            })
+        }
+
+        inputHtml = (
+            <C.Container>
+
+                <TextInput label="Nome do Autor(a) do Livro" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorFirstInfoCircle} placeholder='Ex: Clara' onChange={handleNameAuthor1} />
+
+                <hr />
+
+                <TextInput label="Sobrenome do Autor(a) do Livro" description="O sobrenome do autor(a) vai nessa seção" type='text' rightSection={AuthorSurInfoCircle} placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
+
+                <hr />
+
+                <div className='checkboxEtAl'>
+                    <h1>Usar "Et al.?</h1>
+                    <small>"Et al." serve para indicar a existéncia de mais autores além do indicado nessa referência.</small>
+                    <div>
+                        <input type="checkbox" id="etal" name="etal" onChange={handleEtalCheckbox}></input>
+                        <label htmlFor="etal">Marque a caixa ao lado para usar "Et al."</label>
+                    </div>
+                </div>
+
+                <hr />
+
+                <TextInput label="Título do Livro" description="Titulo do Livro. Geralmente é o nome com grande destaque na capa." type='text' placeholder='Exemplo: A Origem das Espécies' onChange={handleTitle} />
+
+                <hr />
+
+                <TextInput label="subtítulo do Livro" description="Subtítulo do Livro. Geralmente é uma frase logo após o título com grande destaque na capa." type='text' placeholder='Caso não tenha, deixe aqui em branco.' onChange={handleSubtitle} />
+
+                <hr />
+
+                <TextInput label="Edição do Livro" description="Edição do livro da referência. Se encontra na capa ou na contracapa do livro. Atenção: Use só números!" type='text' placeholder='Escreva apenas o Número. Ex: 3'
+                    onChange={handleEditionBook} />
+
+                <hr />
+
+                <TextInput label="Local da Publicação do Livro" description="Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' onChange={handleLocal} />
+
+                <hr />
+
+                <TextInput label="Editora do Livro" description="Escreva a cidade onde a matéria foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' onChange={handlePublishingComp} />
+
+                <hr />
+
+                <TextInput label="DOI do Ebook" description="DOI é um código único para a identificação de ebooks e outras obras digitais. (Caso não saiba, deixe em branco." type='text' placeholder='Escreva: "DOI (identificacao DOI aqui)."' onChange={handleDoiCheckbox} />
+
+                <hr />
+
+                <TextInput label="URL do Local do Ebook" description="URL é o link da página da matéria. Fica no topo do seu navegador. Caso não tenha ou não saiba, deixe em branco." type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} />
+
+                <hr />
+
+                <TextInput label="Paginação" description="Qual a página que você está referenciando. Atenção: Use só números!" type='text' placeholder='Escreva somente Números. Ex: 67' onChange={handlePaginationBook} />
+
+                <hr />
+
+                <Grid className='datePublic'>
+
+
+                    <Grid.Col span={12}>
+                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+
+    //REF 31 - video
+    else if (auxRef === '31') {
+
+        // INFO
+        const AuthorFirstInfoCircle = (
+            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const AuthorSurInfoCircle = (
+            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+
+        //Handles
+        const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor1,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor1,
+                payload: e.target.value
+            });
+        };
+        const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setTitle,
+                payload: e.target.value
+            });
+        }
+        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setSubtitle,
+                payload: e.target.value
+            });
+        }
+        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUrl,
+                payload: e.target.value
+            });
+        }
+
+        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayAcess,
+                payload: e.target.value
+            });
+        }
+        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthAcess,
+                payload: e.target.value
+            });
+        }
+        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearAcess,
+                payload: e.target.value
+            });
+        }
+        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayPublic,
+                payload: e.target.value
+            });
+        }
+        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthPublic,
+                payload: e.target.value
+            });
+        }
+        const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearPublic,
+                payload: e.target.value
+            });
+        }
+        const handleDurationVideo = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDurationVideo,
+                payload: e.target.value
+            });
+        }
+
+        const handleLocal = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setLocal,
+                payload: e.target.value
+            })
+        }
+
+        inputHtml = (
+            <C.Container>
+
+                <TextInput label="Nome do Canal ou Site de onde o Vídeo Vem" description="O nome de destaque do site ou nome do canal do YouTube" type='text' placeholder='Ex: Manual do Mundo' onChange={handleNameAuthor1} />
+
+                <hr />
+
+                <TextInput label="Título do Vídeo" description="Título que dá nome ao vídeo." type='text' placeholder='Ex: COMO O VIDRO É FEITO? Manual do Mundo' onChange={handleTitle} />
+
+                <hr />
+
+                <TextInput label="Duração do Vídeo" description="Quantos minutos de duração tem o vídeo. Atenção: Escreva Apenas Números!" type='text' placeholder='Apenas Números. Ex: 11'
+                    onChange={handleDurationVideo} />
+
+                <hr />
+
+                <TextInput label="Local de onde o Vídeo foi Feito" description="Caso não souber, deixe em branco." type='text' placeholder='Ex: Campinas - SP'
+                    onChange={handleLocal} />
+
+                <hr />
+
+                <TextInput label="URL da Página do Vídeo" description="URL é o link da página do vídeo. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://www.youtube.com/watch?v=CCuR_KWjgUk' onChange={handleUrl} />
+
+                <hr />
+
+                <Grid className='dateVisualization'>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Visualização da Matéria" description="O dia que você encontrou a matéria." type='text' placeholder='25' onChange={handleDayVisualization} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Visualização da Matéria
+                            <small>O mês que você encontrou a matéria.</small>
+                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano da Visualização da Matéria" description="O ano que você encontrou a matéria." type='text' placeholder='2022' onChange={handleYearVisualization} />
+                    </Grid.Col>
+                </Grid>
+
+                <Grid className='datePublic'>
+
+                    <Grid.Col span={12}>
+                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+
+    /*
+    //REF 32 - filme
+    else if (auxRef === '32') {
+
+        // INFO
+        const AuthorFirstInfoCircle = (
+            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const AuthorSurInfoCircle = (
+            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+
+        //Handles
+        const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor1,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor1,
+                payload: e.target.value
+            });
+        };
+        const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setTitle,
+                payload: e.target.value
+            });
+        }
+        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setSubtitle,
+                payload: e.target.value
+            });
+        }
+        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUrl,
+                payload: e.target.value
+            });
+        }
+
+        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayAcess,
+                payload: e.target.value
+            });
+        }
+        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthAcess,
+                payload: e.target.value
+            });
+        }
+        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearAcess,
+                payload: e.target.value
+            });
+        }
+        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayPublic,
+                payload: e.target.value
+            });
+        }
+        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthPublic,
+                payload: e.target.value
+            });
+        }
+        const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearPublic,
+                payload: e.target.value
+            });
+        }
+        inputHtml = (
+            <C.Container>
+
+                <TextInput label="Nome do Autor(a) da Matéria" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorFirstInfoCircle} placeholder='Ex: Clara' onChange={handleNameAuthor1} />
+
+                <hr />
+                <TextInput label="Sobrenome do Autor(a) da Matéria" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorSurInfoCircle} placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
+
+                <hr />
+
+                <TextInput label="Título da Matéria" description="Titulo da Matéria. Geralmente o nome com grande destaque na página." type='text' placeholder='Exemplo do Título: Clarice Lispector: Vida e Obra da Escritora'
+                    onChange={handleTitle} />
+
+                <hr />
+
+                <TextInput label="Subtítulo da Matéria" description="Geralmente a segunda frase em destaques, logo abaixo ao título." type='text' placeholder='Ex: Saiba a história da autora enigmática que completaria 100 anos em 2020'
+                    onChange={handleSubtitle} />
+
+                <hr />
+
+                <TextInput label="URL da Página da Matéria" description="URL é o link da página da matéria. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} />
+
+                <hr />
+
+                <Grid className='dateVisualization'>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Visualização da Matéria" description="O dia que você encontrou a matéria." type='text' placeholder='25' onChange={handleDayVisualization} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Visualização da Matéria
+                            <small>O mês que você encontrou a matéria.</small>
+                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano da Visualização da Matéria" description="O ano que você encontrou a matéria." type='text' placeholder='2022' onChange={handleYearVisualization} />
+                    </Grid.Col>
+                </Grid>
+
+                <Grid className='datePublic'>
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Matéria Publicada" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Publicação da Matéria
+                            <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
+                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+    */
+
+    /*
+    //REF 33 - musica
+    else if (auxRef === '33') {
+
+        // INFO
+        const AuthorFirstInfoCircle = (
+            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const AuthorSurInfoCircle = (
+            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+
+        //Handles
+        const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor1,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor1,
+                payload: e.target.value
+            });
+        };
+        const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setTitle,
+                payload: e.target.value
+            });
+        }
+        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setSubtitle,
+                payload: e.target.value
+            });
+        }
+        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUrl,
+                payload: e.target.value
+            });
+        }
+
+        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayAcess,
+                payload: e.target.value
+            });
+        }
+        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthAcess,
+                payload: e.target.value
+            });
+        }
+        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearAcess,
+                payload: e.target.value
+            });
+        }
+        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayPublic,
+                payload: e.target.value
+            });
+        }
+        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthPublic,
+                payload: e.target.value
+            });
+        }
+        const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearPublic,
+                payload: e.target.value
+            });
+        }
+        inputHtml = (
+            <C.Container>
+
+                <TextInput label="Nome do Autor(a) da Matéria" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorFirstInfoCircle} placeholder='Ex: Clara' onChange={handleNameAuthor1} />
+
+                <hr />
+                <TextInput label="Sobrenome do Autor(a) da Matéria" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorSurInfoCircle} placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
+
+                <hr />
+
+                <TextInput label="Título da Matéria" description="Titulo da Matéria. Geralmente o nome com grande destaque na página." type='text' placeholder='Exemplo do Título: Clarice Lispector: Vida e Obra da Escritora'
+                    onChange={handleTitle} />
+
+                <hr />
+
+                <TextInput label="Subtítulo da Matéria" description="Geralmente a segunda frase em destaques, logo abaixo ao título." type='text' placeholder='Ex: Saiba a história da autora enigmática que completaria 100 anos em 2020'
+                    onChange={handleSubtitle} />
+
+                <hr />
+
+                <TextInput label="URL da Página da Matéria" description="URL é o link da página da matéria. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} />
+
+                <hr />
+
+                <Grid className='dateVisualization'>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Visualização da Matéria" description="O dia que você encontrou a matéria." type='text' placeholder='25' onChange={handleDayVisualization} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Visualização da Matéria
+                            <small>O mês que você encontrou a matéria.</small>
+                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano da Visualização da Matéria" description="O ano que você encontrou a matéria." type='text' placeholder='2022' onChange={handleYearVisualization} />
+                    </Grid.Col>
+                </Grid>
+
+                <Grid className='datePublic'>
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Matéria Publicada" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Publicação da Matéria
+                            <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
+                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+    */
+
+    //REF 41 - entrevista
+    else if (auxRef === '41') {
+
+        // INFO
+        const AuthorFirstInfoCircle = (
+            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const AuthorSurInfoCircle = (
+            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+
+        //Handles
+        const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor1,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor1,
+                payload: e.target.value
+            });
+        };
+        const handleNameAuthor2 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor2,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor2 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor2,
+                payload: e.target.value
+            });
+        };
+        const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setTitle,
+                payload: e.target.value
+            });
+        }
+        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setSubtitle,
+                payload: e.target.value
+            });
+        }
+        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUrl,
+                payload: e.target.value
+            });
+        }
+
+        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayAcess,
+                payload: e.target.value
+            });
+        }
+        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthAcess,
+                payload: e.target.value
+            });
+        }
+        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearAcess,
+                payload: e.target.value
+            });
+        }
+        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayPublic,
+                payload: e.target.value
+            });
+        }
+        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthPublic,
+                payload: e.target.value
+            });
+        }
+        const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearPublic,
+                payload: e.target.value
+            });
+        }
+        const handleLocal = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setLocal,
+                payload: e.target.value
+            })
+        }
+        const handlePaginationBook = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setPaginationBook,
+                payload: e.target.value
+            })
+        }
+        const handleNumberMagaz = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNumberMagaz,
+                payload: e.target.value
+            })
+        }
+        const handleMagazine = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setMagazine,
+                payload: e.target.value
+            })
+        }
+
+        inputHtml = (
+            <C.Container>
+
+                <TextInput label="Nome do(a) autor(a) da reportagem" description="O primeiro nome do(a) autor(a) da reportagem vai nessa seção" type='text' placeholder='Ex: Clara' onChange={handleNameAuthor1} />
+
+                <hr />
+
+                <TextInput label="Sobrenome do(a) autor(a) da reportagem" description="O sobrenome do(a) autor(a) da reportagem vai nessa seção" type='text' placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
+
+                <hr />
+
+                <TextInput label="Título da Reportagem" description="Titulo da Reportagem. Geralmente o nome que aborda o assunto da reportagem." type='text' placeholder='Ex: Sem cura e com tratamento caro, autismo é desafio para pais e instituições sociais'
+                    onChange={handleTitle} />
+
+                <hr />
+
+                <TextInput label="Nome do Veiculo onde passou a Reportagem" description="Nome da Empresa ou Canal onde a reportagem foi publicada." type='text' placeholder='Ex: Globo, GloboPlay, SBT, etc.'
+                    onChange={handleMagazine} />
+
+                <hr />
+
+                <TextInput label="Cidade onde a Entrevista foi feita" description="Escreva a cidade onde a entrevista foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não souber, deixe em branco.)' onChange={handleLocal} />
+
+                <hr />
+
+                <Grid className='datePublic'>
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Reportagem Publicada" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco." type='text' placeholder='12' onChange={handleDayPubli} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Publicação da Reportagem
+                            <small>O mês que a reportagem foi feita, editada ou criada.</small>
+                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano de Publicação da Reportagem" description="Ano em que a reportagem foi escrita, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+
+
+    //REF 42 - entrevista revista
+    else if (auxRef === '42') {
+
+        // INFO
+        const AuthorFirstInfoCircle = (
+            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const AuthorSurInfoCircle = (
+            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+
+        //Handles
+        const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor1,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor1,
+                payload: e.target.value
+            });
+        };
+        const handleNameAuthor2 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor2,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor2 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor2,
+                payload: e.target.value
+            });
+        };
+        const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setTitle,
+                payload: e.target.value
+            });
+        }
+        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setSubtitle,
+                payload: e.target.value
+            });
+        }
+        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUrl,
+                payload: e.target.value
+            });
+        }
+
+        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayAcess,
+                payload: e.target.value
+            });
+        }
+        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthAcess,
+                payload: e.target.value
+            });
+        }
+        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearAcess,
+                payload: e.target.value
+            });
+        }
+        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayPublic,
+                payload: e.target.value
+            });
+        }
+        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthPublic,
+                payload: e.target.value
+            });
+        }
+        const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearPublic,
+                payload: e.target.value
+            });
+        }
+        const handleLocal = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setLocal,
+                payload: e.target.value
+            })
+        }
+        const handlePaginationBook = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setPaginationBook,
+                payload: e.target.value
+            })
+        }
+        const handleNumberMagaz = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNumberMagaz,
+                payload: e.target.value
+            })
+        }
+        inputHtml = (
+            <C.Container>
+
+                <TextInput label="Nome de quem foi Entrevistado(a)" description="O primeiro nome do Entrevistado(a) vai nessa seção" type='text' placeholder='Ex: Clara' onChange={handleNameAuthor1} />
+
+                <hr />
+
+                <TextInput label="Sobrenome de quem foi Entrevistado(a)" description="O sobrenome do Entrevistado(a) vai nessa seção" type='text' placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
+
+                <hr />
+
+                <TextInput label="Título da Entrevista" description="Titulo da Entrevista. Geralmente o nome que aborda o assunto da entrevista." type='text' placeholder='Exemplo do Título: Vida e Obra da Clarice Lispector'
+                    onChange={handleTitle} />
+
+                <hr />
+
+                <TextInput label="Nome do Entrevistador(a)" description="O primeiro nome do Entrevistado(a) vai nessa seção" type='text' placeholder='Ex: João' onChange={handleNameAuthor2} />
+
+                <hr />
+
+                <TextInput label="Sobrenome do Entrevistador(a)" description="O sobrenome do Entrevistado(a) vai nessa seção" type='text' placeholder='Ex: Ferraz Silveira' onChange={handleSurAuthor2} />
+
+                <hr />
+
+                <TextInput label="Nome da Revista" description="Nome da Revista onde a entrevista foi publicada." type='text' placeholder='Ex: Veja'
+                    onChange={handleTitle} />
+
+                <hr />
+
+                <TextInput label="Lugar onde a Entrevista foi publicada" description="Escreva a cidade onde a entrevista foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' onChange={handleLocal} />
+
+                <hr />
+
+                <TextInput label="Número do Exemplar da Revista" description="Número do Exemplar da Revista onde a entrevista foi publicada. Atenção: Apenas Números." type='text' placeholder='Atenção: Apenas Números! Ex: 1721' onChange={handleNumberMagaz} />
+
+                <hr />
+
+                <TextInput label="Intervalo entre Páginas da Entrevista" description="Escreva de qual página começa e qual termina a entrevista. Atenção: Apenas Números." type='text' placeholder='Atenção: Apenas Números! Ex: 31 - 34' onChange={handlePaginationBook} />
+
+                <hr />
+
+                <Grid className='datePublic'>
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Matéria Publicada" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Publicação da Matéria
+                            <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
+                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+
+    //REF 43 - artigo de revista
+    else if (auxRef === '43') {
+
+        // INFO
+        const AuthorFirstInfoCircle = (
+            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const AuthorSurInfoCircle = (
+            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+
+        //Handles
+        const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor1,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor1,
+                payload: e.target.value
+            });
+        };
+        const handleNameAuthor2 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor2,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor2 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor2,
+                payload: e.target.value
+            });
+        };
+        const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setTitle,
+                payload: e.target.value
+            });
+        }
+        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setSubtitle,
+                payload: e.target.value
+            });
+        }
+        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUrl,
+                payload: e.target.value
+            });
+        }
+
+        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayAcess,
+                payload: e.target.value
+            });
+        }
+        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthAcess,
+                payload: e.target.value
+            });
+        }
+        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearAcess,
+                payload: e.target.value
+            });
+        }
+        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayPublic,
+                payload: e.target.value
+            });
+        }
+        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthPublic,
+                payload: e.target.value
+            });
+        }
+        const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearPublic,
+                payload: e.target.value
+            });
+        }
+        const handleLocal = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setLocal,
+                payload: e.target.value
+            })
+        }
+        const handlePaginationBook = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setPaginationBook,
+                payload: e.target.value
+            })
+        }
+        const handleNumberMagaz = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNumberMagaz,
+                payload: e.target.value
+            })
+        }
+        const handleMagazine = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setMagazine,
+                payload: e.target.value
+            })
+        }
+
+        inputHtml = (
+            <C.Container>
+
+                <TextInput label="Nome de quem fez o Artigo" description="O primeiro nome de quem fez o artigo vai nessa seção" type='text' placeholder='Ex: Clara' onChange={handleNameAuthor1} />
+
+                <hr />
+
+                <TextInput label="Sobrenome de quem fez o Artigo" description="O sobrenome de quem fez o artigo vai nessa seção" type='text' placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
+
+                <hr />
+
+                <TextInput label="Título do Artigo" description="Titulo do Artigo. Geralmente o nome que aborda o assunto do artigo." type='text' placeholder='Ex: A reinvenção de Hollywood: cinema americano e produção de subjetividade nas sociedades de controle' onChange={handleTitle} />
+
+                <hr />
+
+                <TextInput label="Nome do Meio Veiculador" description="Nome de onde o artigo foi publicada." type='text' placeholder='Ex: Veja, Estadão, etc.'
+                    onChange={handleMagazine} />
+
+                <hr />
+
+                <TextInput label="Lugar de onde o artigo foi publicada" description="Escreva a cidade onde a entrevista foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' onChange={handleLocal} />
+
+                <hr />
+
+                <TextInput label="Número do Exemplar da Revista/jornal" description="Número do Exemplar da Revista ou Jornal onde o artigo foi publicado. Atenção: Apenas Números." type='text' placeholder='Atenção: Apenas Números! Ex: 1721' onChange={handleNumberMagaz} />
+
+                <hr />
+
+                <TextInput label="Intervalo entre Páginas do Artigo" description="Escreva de qual página começa e qual termina o artigo. Atenção: Apenas Números." type='text' placeholder='Atenção: Apenas Números! Ex: 31 - 34' onChange={handlePaginationBook} />
+
+                <hr />
+
+                <Grid className='datePublic'>
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Matéria Publicada" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Publicação da Matéria
+                            <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
+                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+
+    //REF 44 - artigo de internet
+    else if (auxRef === '44') {
+
+        // INFO
+        const AuthorFirstInfoCircle = (
+            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const AuthorSurInfoCircle = (
+            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+
+        //Handles
+        const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor1,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor1,
+                payload: e.target.value
+            });
+        };
+        const handleNameAuthor2 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor2,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor2 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor2,
+                payload: e.target.value
+            });
+        };
+        const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setTitle,
+                payload: e.target.value
+            });
+        }
+        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setSubtitle,
+                payload: e.target.value
+            });
+        }
+        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUrl,
+                payload: e.target.value
+            });
+        }
+
+        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayAcess,
+                payload: e.target.value
+            });
+        }
+        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthAcess,
+                payload: e.target.value
+            });
+        }
+        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearAcess,
+                payload: e.target.value
+            });
+        }
+        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayPublic,
+                payload: e.target.value
+            });
+        }
+        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthPublic,
+                payload: e.target.value
+            });
+        }
+        const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearPublic,
+                payload: e.target.value
+            });
+        }
+        const handleLocal = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setLocal,
+                payload: e.target.value
+            })
+        }
+        const handlePaginationBook = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setPaginationBook,
+                payload: e.target.value
+            })
+        }
+        const handleNumberMagaz = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNumberMagaz,
+                payload: e.target.value
+            })
+        }
+        const handleMagazine= (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setMagazine,
+                payload: e.target.value
+            })
+        }
+
+        inputHtml = (
+            <C.Container>
+
+                <TextInput label="Nome de quem fez o Artigo" description="O primeiro nome de quem fez o artigo vai nessa seção" type='text' placeholder='Ex: Clara' onChange={handleNameAuthor1} />
+
+                <hr />
+
+                <TextInput label="Sobrenome de quem fez o Artigo" description="O sobrenome de quem fez o artigo vai nessa seção" type='text' placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
+
+                <hr />
+
+                <TextInput label="Título do Artigo" description="Titulo do Artigo. Geralmente o nome que aborda o assunto do artigo." type='text' placeholder='Ex: A reinvenção de Hollywood: cinema americano e produção de subjetividade nas sociedades de controle' onChange={handleTitle} />
+
+                <hr />
+
+                <TextInput label="Nome do Meio Veiculador" description="Nome de onde o artigo foi publicada." type='text' placeholder='Ex: G1, R7, etc.'
+                    onChange={handleMagazine} />
+
+                <hr />
+
+                <TextInput label="Lugar de onde o artigo foi publicada" description="Escreva a cidade onde a entrevista foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' onChange={handleLocal} />
+
+                <hr />
+
+                <TextInput label="URL do Site do Artigo" description="URL é o link da página da tese. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder= 'http://www.contemporanea.uerj.br/pdf/ed_03/contemporanea_n03_02_butcher.pdf' onChange={handleUrl} />
+
+                <hr />
+
+                <Grid className='dateVisualization'>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Visualização da Matéria" description="O dia que você encontrou a matéria." type='text' placeholder='25' onChange={handleDayVisualization} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Visualização da Matéria
+                            <small>O mês que você encontrou a matéria.</small>
+                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano da Visualização da Matéria" description="O ano que você encontrou a matéria." type='text' placeholder='2022' onChange={handleYearVisualization} />
+                    </Grid.Col>
+                </Grid>
+
+                <Grid className='datePublic'>
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Matéria Publicada" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Publicação da Matéria
+                            <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
+                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                                <option value="" disabled>Mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+
+    //REF 51
+    else if (auxRef === '51') {
+
+        // INFO
+        const AuthorFirstInfoCircle = (
+            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const AuthorSurInfoCircle = (
+            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+
+        //Handles
+        const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor1,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor1,
+                payload: e.target.value
+            });
+        };
+        const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setTitle,
+                payload: e.target.value
+            });
+        }
+        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setSubtitle,
+                payload: e.target.value
+            });
+        }
+        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUrl,
+                payload: e.target.value
+            });
+        }
+
+        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayAcess,
+                payload: e.target.value
+            });
+        }
+        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthAcess,
+                payload: e.target.value
+            });
+        }
+        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearAcess,
+                payload: e.target.value
+            });
+        }
+        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayPublic,
+                payload: e.target.value
+            });
+        }
+        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthPublic,
+                payload: e.target.value
+            });
+        }
+        const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearPublic,
+                payload: e.target.value
+            });
+        }
+        const handlePaginationBook = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setPaginationBook,
+                payload: e.target.value
+            });
+        }
+        const handleUniDegreed = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUniDegreed,
+                payload: e.target.value
+            });
+        }
+        const handleUniversity = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUniversity,
+                payload: e.target.value
+            });
+        }
+
+        inputHtml = (
+            <C.Container>
+
+                <TextInput label="Nome do Autor(a) da Tese" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorFirstInfoCircle} placeholder='Ex: Clara' onChange={handleNameAuthor1} />
+
+                <hr />
+
+                <TextInput label="Sobrenome do Autor(a) da Tese" description="O sobrenome do autor(a) vai nessa seção" type='text' rightSection={AuthorSurInfoCircle} placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
+
+                <hr />
+
+                <TextInput label="Título da Tese" description="Titulo da Tese. O assunto principal da tese." type='text' placeholder='Ex: Possibilidades de Automação com IoT'
+                    onChange={handleTitle} />
+
+                <hr />
+
+                <TextInput label="Total de Páginas da Tese" description="Número do total de páginas da tese. Atenção: Apenas Números!" type='text' placeholder='Atenção: Apenas Números. Ex: 83' onChange={handlePaginationBook} />
+
+                <hr />
+
+                <TextInput label="Grau de quem fez a Tese" description="Grau em que a pessoa que fez a tese estavá." type='text' placeholder='Ex: Mestrado em Engenharia de Análise de Dados' onChange={handleUniDegreed} />
+
+                <hr />
+
+                <TextInput label="Instituição a que a Tese foi Apresentada" description="Nome da instituição que recebeu a tese." type='text' placeholder='Ex: Possibilidades de Automação com IoT' onChange={handleUniversity} />
+
+                <hr />
+
+                <Grid className='datePublic'>
+
+                    <Grid.Col span={12}>
+                        <TextInput label="Ano de Entrega da Tese" description="Ano em que a tese foi entregue." type='text' placeholder='2020' onChange={handleYearPubli} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+
+    //REF 52
+    else if (auxRef === '52') {
+
+        // INFO
+        const AuthorFirstInfoCircle = (
+            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const AuthorSurInfoCircle = (
+            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+
+        //Handles
+        const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor1,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor1,
+                payload: e.target.value
+            });
+        };
+        const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setTitle,
+                payload: e.target.value
+            });
+        }
+        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setSubtitle,
+                payload: e.target.value
+            });
+        }
+        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUrl,
+                payload: e.target.value
+            });
+        }
+
+        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayAcess,
+                payload: e.target.value
+            });
+        }
+        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthAcess,
+                payload: e.target.value
+            });
+        }
+        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearAcess,
+                payload: e.target.value
+            });
+        }
+        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayPublic,
+                payload: e.target.value
+            });
+        }
+        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthPublic,
+                payload: e.target.value
+            });
+        }
+        const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearPublic,
+                payload: e.target.value
+            });
+        }
+        const handlePaginationBook = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setPaginationBook,
+                payload: e.target.value
+            });
+        }
+        const handleUniDegreed = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUniDegreed,
+                payload: e.target.value
+            });
+        }
+        const handleUniversity = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUniversity,
+                payload: e.target.value
+            });
+        }
+
+        inputHtml = (
+            <C.Container>
+
+                <TextInput label="Nome do Autor(a) da Tese" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorFirstInfoCircle} placeholder='Ex: Clara' onChange={handleNameAuthor1} />
+
+                <hr />
+
+                <TextInput label="Sobrenome do Autor(a) da Tese" description="O sobrenome do autor(a) vai nessa seção" type='text' rightSection={AuthorSurInfoCircle} placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
+
+                <hr />
+
+                <TextInput label="Título da Tese" description="Titulo da Tese. O assunto principal da tese." type='text' placeholder='Ex: Possibilidades de Automação com IoT'
+                    onChange={handleTitle} />
+
+                <hr />
+
+                <TextInput label="Total de Páginas da Tese" description="Número do total de páginas da tese. Atenção: Apenas Números!" type='text' placeholder='Atenção: Apenas Números. Ex: 83' onChange={handlePaginationBook} />
+
+                <hr />
+
+                <TextInput label="Grau de quem fez a Tese" description="Grau em que a pessoa que fez a tese estavá." type='text' placeholder='Ex: Mestrado em Engenharia de Análise de Dados' onChange={handleUniDegreed} />
+
+                <hr />
+
+                <TextInput label="Instituição a que a Tese foi Apresentada" description="Nome da instituição que recebeu a tese." type='text' placeholder='Ex: Possibilidades de Automação com IoT' onChange={handleUniversity} />
+
+                <hr />
+
+                <Grid className='datePublic'>
+
+                    <Grid.Col span={12}>
+                        <TextInput label="Ano de Entrega da Tese" description="Ano em que a tese foi entregue." type='text' placeholder='2020' onChange={handleYearPubli} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+
+    //REF 53 - tese internet
+    else if (auxRef === '53') {
+
+        // INFO
+        const AuthorFirstInfoCircle = (
+            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const AuthorSurInfoCircle = (
+            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+
+        //Handles
+        const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setNameAuthor1,
+                payload: e.target.value
+            });
+        }
+        const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+
+                type: FormActions.setSurAuthor1,
+                payload: e.target.value
+            });
+        };
+        const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setTitle,
+                payload: e.target.value
+            });
+        }
+        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setSubtitle,
+                payload: e.target.value
+            });
+        }
+        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUrl,
+                payload: e.target.value
+            });
+        }
+
+        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayAcess,
+                payload: e.target.value
+            });
+        }
+        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthAcess,
+                payload: e.target.value
+            });
+        }
+        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearAcess,
+                payload: e.target.value
+            });
+        }
+        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setDayPublic,
+                payload: e.target.value
+            });
+        }
+        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
+            dispatch({
+                type: FormActions.setMonthPublic,
+                payload: e.target.value
+            });
+        }
+        const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setYearPublic,
+                payload: e.target.value
+            });
+        }
+        const handlePaginationBook = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setPaginationBook,
+                payload: e.target.value
+            });
+        }
+        const handleUniDegreed = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUniDegreed,
+                payload: e.target.value
+            });
+        }
+        const handleUniversity = (e: ChangeEvent<HTMLInputElement>) => {
+            dispatch({
+                type: FormActions.setUniversity,
+                payload: e.target.value
+            });
+        }
+
+        inputHtml = (
+            <C.Container>
+
+                <TextInput label="Nome do Autor(a) da Tese" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorFirstInfoCircle} placeholder='Ex: Clara' onChange={handleNameAuthor1} />
+
+                <hr />
+
+                <TextInput label="Sobrenome do Autor(a) da Tese" description="O sobrenome do autor(a) vai nessa seção" type='text' rightSection={AuthorSurInfoCircle} placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
+
+                <hr />
+
+                <TextInput label="Título da Tese" description="Titulo da Tese. O assunto principal da tese." type='text' placeholder='Ex: Possibilidades de Automação com IoT'
+                    onChange={handleTitle} />
+
+                <hr />
+
+                <TextInput label="Total de Páginas da Tese" description="Número do total de páginas da tese. Atenção: Apenas Números!" type='text' placeholder='Atenção: Apenas Números. Ex: 83' onChange={handlePaginationBook} />
+
+                <hr />
+
+                <TextInput label="Grau de quem fez a Tese" description="Grau em que a pessoa que fez a tese estavá." type='text' placeholder='Ex: Mestrado em Engenharia de Análise de Dados' onChange={handleUniDegreed} />
+
+                <hr />
+
+                <TextInput label="Instituição a que a Tese foi Apresentada" description="Nome da instituição que recebeu a tese." type='text' placeholder='Ex: Possibilidades de Automação com IoT' onChange={handleUniversity} />
+
+                <hr />
+
+                <TextInput label="URL do Site da Tese" description="URL é o link da página da tese. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} />
+
+                <hr />
+
+                <Grid className='dateVisualization'>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Dia da Visualização da Tese" description="O dia que você encontrou a tese." type='text' placeholder='25' onChange={handleDayVisualization} />
+                    </Grid.Col>
+
+                    <Grid.Col span={4} className="mainDivSelect">
+                        <label className="divSelect">Mês da Visualização da Tese
+                            <small>O mês que você encontrou a tese.</small>
+                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
+                            </select>
+                        </label>
+                    </Grid.Col>
+
+                    <Grid.Col span={4}>
+                        <TextInput label="Ano da Visualização da Tese" description="O ano que você encontrou a tese." type='text' placeholder='2022' onChange={handleYearVisualization} />
+                    </Grid.Col>
+                </Grid>
+
+                <Grid className='datePublic'>
+
+                    <Grid.Col span={12}>
+                        <TextInput label="Ano de Entrega da Tese" description="Ano em que a tese foi entregue." type='text' placeholder='2020' onChange={handleYearPubli} />
+                    </Grid.Col>
+                </Grid>
+
+            </C.Container >
+        );
+    }
+
+    return inputHtml;
+}

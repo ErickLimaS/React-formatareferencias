@@ -1,0 +1,89 @@
+import * as C from './styles'
+import { FormActions, useForm } from './FormContext'
+import { TextInput, Tooltip } from '@mantine/core';
+import { InfoCircledIcon } from '@modulz/radix-icons';
+import { ChangeEvent } from 'react';
+
+
+export const AuxAuthor = () => {
+    const { state, dispatch } = useForm();
+
+    const AuthorFirstInfoCircle = (
+        <Tooltip label='Escreva o primeiro nome nessa seção. Se for uma organização que escreveu, bote o nome aqui.' position='top' placement="center" withArrow>
+            <InfoCircledIcon color='black' />
+        </Tooltip>
+    );
+    const AuthorSurInfoCircle = (
+        <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa. Se for uma organização quem escreveu, deixe  esse espaço em branco.' position='top' placement="center" withArrow arrowSize={3}>
+            <InfoCircledIcon color='black' />
+        </Tooltip>
+    );
+
+    //Handles
+    // Author
+    const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+        dispatch({
+            type: FormActions.setNameAuthor1,
+            payload: e.target.value
+        });
+    }
+    const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
+        dispatch({
+
+            type: FormActions.setSurAuthor1,
+            payload: e.target.value
+        });
+    };
+    const handleEtalCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
+        dispatch({
+            type: FormActions.setEtAlCheckbox,
+            payload: 'et al.'
+        })
+    }
+
+    // Company
+    const handleCompanyName = (e: ChangeEvent<HTMLInputElement>) => {
+        dispatch({
+
+            type: FormActions.setCompanyName,
+            payload: e.target.value
+        });
+    };
+
+    let authorCheck: any;
+    
+        if (state.radioCheck === '1') {
+            authorCheck = (
+            <div>
+                <TextInput label="Nome do Autor(a) ou Editor(a) que escreveu a Matéria" description="O primeiro nome do autor(a) vai nessa seção" type='text'
+                onChange={handleNameAuthor1} placeholder='Ex: Clara'
+                rightSection={AuthorFirstInfoCircle}/>
+
+                <hr />
+
+                <TextInput label="Sobrenome do Autor(a) da Matéria" description="Apenas o sobrenome do autor(a) vai nessa seção" type='text' onChange={handleSurAuthor1} placeholder='Ex: Paiva' rightSection={AuthorSurInfoCircle}/>
+
+                <hr />
+
+                <div className='checkboxEtAl'>
+                    <h1>Usar "Et al.?</h1>
+                    <small>"Et al." serve para indicar a existéncia de mais autores além do indicado nessa referência.</small>
+                    <div>
+                        <input type="checkbox" id="etal" name="etal" onChange={handleEtalCheckbox}></input>
+                        <label htmlFor="etal">Marque a caixa ao lado para usar "Et al."</label>
+                    </div>
+                </div>
+            </div>)
+            return authorCheck
+        }
+
+        else if (state.radioCheck === '2') {
+            authorCheck = (
+                <div>
+                <TextInput label="Nome da Organização que escreveu a Matéria" description="O  nome completo. Começando sempre com suas siglas. Veja exemplo abaixo." type='text'
+                onChange={handleCompanyName}  placeholder='Ex:SABESP - Companhia de Saneamento Básico do Estado de São Paulo' rightSection={AuthorFirstInfoCircle}/>
+            </div>)
+            return authorCheck
+        }
+    return authorCheck
+}
