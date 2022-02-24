@@ -34,7 +34,7 @@ export const SelectOptions = () => {
                         <option value='13'>Podcast</option>
                         <option value='14'>Redes Sociais</option>
                         <option value='15'>Email</option>
-                        <option value='16'>Wikipedia</option>
+                        <option value='16'>Wikipédia</option>
                     </select>
                 </label>
             </div>
