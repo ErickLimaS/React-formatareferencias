@@ -3,18 +3,21 @@ import * as C from './styles';
 import { useForm, FormActions } from '../../contexts/FormContext'
 import { SelectOptions } from '../../contexts/selectOptionStep1'
 import { Theme } from '../../components/theme';
-import { ChangeEvent, useEffect } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 
 export const Step1 = () => {
     const navigate = useNavigate();
     const { state, dispatch } = useForm();
+    const [title, setTitle] = useState("Carregando...");
 
     useEffect(() => {
+        document.title = title;
+        setTitle('Referência em ABNT - Faça Agora!')
         dispatch({
             type: FormActions.setCurrentStep,
             payload: 1
         })
-    }, [])
+    }, [title])
 
     const handleNextStep = () => {
         if (state.refType2 === '') {

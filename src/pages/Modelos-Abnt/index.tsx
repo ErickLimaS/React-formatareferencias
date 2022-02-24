@@ -1,7 +1,15 @@
 import * as C from './styled'
 import { Theme } from '../../components/theme2'
+import { useEffect, useState } from 'react';
 
 export const ModelosAbnt = () => {
+    const [title, setTitle] = useState("Carregando...");
+
+    useEffect(() => {
+        document.title = title;
+        setTitle('Modelos de Trabalho em ABNT - Referência em ABNT')
+    }, [title])
+
     return (
         <Theme>
             <C.Container>

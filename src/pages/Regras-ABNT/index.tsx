@@ -1,11 +1,19 @@
 import * as C from './styled'
 import { Theme } from '../../components/theme2'
+import { useEffect, useState } from 'react';
 
 export const RegrasAbnt = () => {
+    const [title, setTitle] = useState("Carregando...");
+
+    useEffect(() => {
+        document.title = title;
+        setTitle('Regras para o seu Trabalho ABNT - Referência em ABNT')
+    }, [title])
+
     return (
         <Theme>
             <C.Container>
-                <h1>Como Usar o Formatar Referências.</h1>
+                <h1>Regras para Fazer o seu Trabalho ABNT.</h1>
                 <h2>É facil e simples.</h2>
 
                 <p>

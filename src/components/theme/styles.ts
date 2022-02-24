@@ -68,10 +68,13 @@ export const Steps = styled.div`
 
 export const Sidebar = styled.div`
     width: 250px;
-    border-right: 1px solid #16195C;
+    position: sticky; 
+    top: 10px;
+    height: 300px;
 `;
 
 export const Page = styled.div`
+    border-left: 1px solid #16195C;
     flex: 1;
     padding-left: 40px;
     padding-top: 40px;

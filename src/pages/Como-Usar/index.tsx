@@ -1,7 +1,15 @@
 import * as C from './styled'
 import { Theme } from '../../components/theme2'
+import { useEffect, useState } from 'react';
 
 export const ComoUsar = () => {
+    const [title, setTitle] = useState("Carregando...");
+
+    useEffect(() => {
+        document.title = title;
+        setTitle('Como Usar o Formatar Referências - Referência em ABNT')
+    }, [title])
+
     return (
         <Theme>
             <C.Container>

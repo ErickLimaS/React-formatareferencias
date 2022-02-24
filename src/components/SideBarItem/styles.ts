@@ -24,6 +24,7 @@ export const IconArea = styled.div<{ active: boolean; }>`
     filter:  ${props => props.active ? 'blur(0px)' : 'blur(1px)'};
     display: flex;
     justify-content: center;
+    
 `;
 
 export const Title = styled.div <{ active: boolean; }>`

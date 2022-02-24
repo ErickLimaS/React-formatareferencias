@@ -2,15 +2,18 @@ import { useNavigate, Link } from 'react-router-dom'; //history didnt work
 import * as C from './styles';
 import { useForm, FormActions } from '../../contexts/FormContext'
 import { Theme } from '../../components/theme';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { RefInputs } from '../../contexts/FormInputs' //test
 import { Button } from '@mantine/core';
 
 export const Step2 = () => {
     const navigate = useNavigate();
     const { state, dispatch } = useForm();
+    const [title, setTitle] = useState("Carregando...");
 
     useEffect(() => {
+        document.title = title;
+        setTitle('Passo 2 - Referência em ABNT')
         if (state.refType1 === '') {
             navigate('/');
         }
@@ -18,7 +21,7 @@ export const Step2 = () => {
             type: FormActions.setCurrentStep,
             payload: 2
         })
-    }, [])
+    }, [title])
 
     const handleNextStep = () => {
         console.log(state);

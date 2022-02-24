@@ -1,7 +1,14 @@
+import { useEffect, useState } from 'react';
 import { Theme } from '../../components/theme2'
 import * as C from './styles'
 
 export const Creditos = () => {
+    const [title, setTitle] = useState("Carregando...");
+
+    useEffect(() => {
+        document.title = title;
+        setTitle('Créditos - Referência em ABNT')
+    }, [title])
 
     return (
         <Theme>
