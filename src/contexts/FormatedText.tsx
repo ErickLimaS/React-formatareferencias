@@ -10,45 +10,87 @@ export const FormatedText = () => {
 
     let formated: any; //stores formated text 
 
+    let etalAux: any;
+
+    etalAux = state.etAlCheckbox
+    
     //REF 11
     if (state.refType2 === '11') {
 
         if (state.radioCheck === '1') {
-            formated = (
+            if (state.etAlCheckbox === 'on') {
+                formated = (
 
-                <C.Container>
-                    <h1>Pronto! Sua Referência está Formatada!</h1>
-                    <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
 
-                    <hr />
+                        <hr />
 
-                    <div className='copyArea'>
-                        <p className='test'>{upperSurName}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponivel em: {state.url}. Publicado em: {state.dayPublic} de {state.monthPublic} de {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
-                    </div>
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        </div>
 
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
 
+                        <hr />
 
-                    <div className='buttons'>
-                        <button >
-                            Copiar Referência
-                        </button>
-                        <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                    </div>
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
 
-                    <hr />
-
-                    <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023:
-                        <ul>
-                            <li>Alinhamento de texto: à esquerda</li>
-                            <li>Fonte: Times new roman ou Arial</li>
-                            <li>Tamanho de fonte: 12</li>
-                            <li>Espaçamento: simples</li>
-                        </ul>
-
-                    </p>
-                </C.Container>
-            )
+                        </p>
+                    </C.Container>
+                )
+            }
+            else {
+                
+                    formated = (
+    
+                        <C.Container>
+                            <h1>Pronto! Sua Referência está Formatada!</h1>
+                            <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+    
+                            <hr />
+    
+                            <div className='copyArea'>
+                                <p className='test'>{upperSurName}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                            </div>
+    
+    
+    
+                            <div className='buttons'>
+                                <button >
+                                    Copiar Referência
+                                </button>
+                                <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                            </div>
+    
+                            <hr />
+    
+                            <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                            <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                                <ul>
+                                    <li>Espaçamento: simples</li>
+                                    <li>Fonte: Times new roman ou Arial</li>
+                                    <li>Tamanho de fonte: 12</li>
+                                    <li>Alinhamento de texto: à esquerda</li>
+                                </ul>
+    
+                            </p>
+                        </C.Container>
+                    )
+            }
         }
         else if (state.radioCheck === '2') {
             formated = (
@@ -60,7 +102,7 @@ export const FormatedText = () => {
                     <hr />
 
                     <div className='copyArea'>
-                        <p className='test'>{state.companyName}. <b className='bold'>{state.title}</b>. {state.local}. {state.noDate}. Disponivel em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        <p className='test'>{state.companyName}. <b className='bold'>{state.title}</b>. {state.local}. {state.noDate}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                     </div>
 
                     <div className='buttons'>
@@ -73,12 +115,12 @@ export const FormatedText = () => {
                     <hr />
 
                     <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023:
+                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
                         <ul>
-                            <li>Alinhamento de texto: à esquerda</li>
+                            <li>Espaçamento: simples</li>
                             <li>Fonte: Times new roman ou Arial</li>
                             <li>Tamanho de fonte: 12</li>
-                            <li>Espaçamento: simples</li>
+                            <li>Alinhamento de texto: à esquerda</li>
                         </ul>
 
                     </p>
@@ -115,12 +157,12 @@ export const FormatedText = () => {
                     <hr />
 
                     <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023:
+                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
                         <ul>
-                            <li>Alinhamento de texto: à esquerda</li>
+                            <li>Espaçamento: simples</li>
                             <li>Fonte: Times new roman ou Arial</li>
                             <li>Tamanho de fonte: 12</li>
-                            <li>Espaçamento: simples</li>
+                            <li>Alinhamento de texto: à esquerda</li>
                         </ul>
 
                     </p>
@@ -157,12 +199,12 @@ export const FormatedText = () => {
                     <hr />
 
                     <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023:
+                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
                         <ul>
-                            <li>Alinhamento de texto: à esquerda</li>
+                            <li>Espaçamento: simples</li>
                             <li>Fonte: Times new roman ou Arial</li>
                             <li>Tamanho de fonte: 12</li>
-                            <li>Espaçamento: simples</li>
+                            <li>Alinhamento de texto: à esquerda</li>
                         </ul>
 
                     </p>
@@ -184,7 +226,7 @@ export const FormatedText = () => {
                     <hr />
 
                     <div className='copyArea'>
-                        <p className='test'>{state.displayNameUser}. <b className='bold'>{state.socialMediaMensage}</b> [...]. {state.local}. {state.dayPublic} {state.monthPublic}. {state.yearPublic}. {state.userSocialMedia}. Disponivel em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        <p className='test'>{state.displayNameUser}. <b className='bold'>{state.socialMediaMensage}</b> [...]. {state.local}. {state.dayPublic} {state.monthPublic}. {state.yearPublic}. {state.userSocialMedia}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                     </div>
 
                     <div className='buttons'>
@@ -197,12 +239,12 @@ export const FormatedText = () => {
                     <hr />
 
                     <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023:
+                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
                         <ul>
-                            <li>Alinhamento de texto: à esquerda</li>
+                            <li>Espaçamento: simples</li>
                             <li>Fonte: Times new roman ou Arial</li>
                             <li>Tamanho de fonte: 12</li>
-                            <li>Espaçamento: simples</li>
+                            <li>Alinhamento de texto: à esquerda</li>
                         </ul>
 
                     </p>
@@ -237,12 +279,12 @@ export const FormatedText = () => {
                     <hr />
 
                     <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023:
+                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
                         <ul>
-                            <li>Alinhamento de texto: à esquerda</li>
+                            <li>Espaçamento: simples</li>
                             <li>Fonte: Times new roman ou Arial</li>
                             <li>Tamanho de fonte: 12</li>
-                            <li>Espaçamento: simples</li>
+                            <li>Alinhamento de texto: à esquerda</li>
                         </ul>
 
                     </p>
@@ -277,12 +319,12 @@ export const FormatedText = () => {
                     <hr />
 
                     <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023:
+                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
                         <ul>
-                            <li>Alinhamento de texto: à esquerda</li>
+                            <li>Espaçamento: simples</li>
                             <li>Fonte: Times new roman ou Arial</li>
                             <li>Tamanho de fonte: 12</li>
-                            <li>Espaçamento: simples</li>
+                            <li>Alinhamento de texto: à esquerda</li>
                         </ul>
 
                     </p>
@@ -317,12 +359,12 @@ export const FormatedText = () => {
                     <hr />
 
                     <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023:
+                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
                         <ul>
-                            <li>Alinhamento de texto: à esquerda</li>
+                            <li>Espaçamento: simples</li>
                             <li>Fonte: Times new roman ou Arial</li>
                             <li>Tamanho de fonte: 12</li>
-                            <li>Espaçamento: simples</li>
+                            <li>Alinhamento de texto: à esquerda</li>
                         </ul>
 
                     </p>
@@ -357,12 +399,12 @@ export const FormatedText = () => {
                     <hr />
 
                     <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023:
+                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
                         <ul>
-                            <li>Alinhamento de texto: à esquerda</li>
+                            <li>Espaçamento: simples</li>
                             <li>Fonte: Times new roman ou Arial</li>
                             <li>Tamanho de fonte: 12</li>
-                            <li>Espaçamento: simples</li>
+                            <li>Alinhamento de texto: à esquerda</li>
                         </ul>
 
                     </p>
@@ -399,12 +441,12 @@ export const FormatedText = () => {
                     <hr />
 
                     <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023:
+                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
                         <ul>
-                            <li>Alinhamento de texto: à esquerda</li>
+                            <li>Espaçamento: simples</li>
                             <li>Fonte: Times new roman ou Arial</li>
                             <li>Tamanho de fonte: 12</li>
-                            <li>Espaçamento: simples</li>
+                            <li>Alinhamento de texto: à esquerda</li>
                         </ul>
 
                     </p>
@@ -439,12 +481,12 @@ export const FormatedText = () => {
                     <hr />
 
                     <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023:
+                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
                         <ul>
-                            <li>Alinhamento de texto: à esquerda</li>
+                            <li>Espaçamento: simples</li>
                             <li>Fonte: Times new roman ou Arial</li>
                             <li>Tamanho de fonte: 12</li>
-                            <li>Espaçamento: simples</li>
+                            <li>Alinhamento de texto: à esquerda</li>
                         </ul>
 
                     </p>
@@ -481,12 +523,12 @@ export const FormatedText = () => {
                     <hr />
 
                     <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023:
+                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
                         <ul>
-                            <li>Alinhamento de texto: à esquerda</li>
+                            <li>Espaçamento: simples</li>
                             <li>Fonte: Times new roman ou Arial</li>
                             <li>Tamanho de fonte: 12</li>
-                            <li>Espaçamento: simples</li>
+                            <li>Alinhamento de texto: à esquerda</li>
                         </ul>
 
                     </p>
@@ -523,12 +565,12 @@ export const FormatedText = () => {
                     <hr />
 
                     <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023:
+                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
                         <ul>
-                            <li>Alinhamento de texto: à esquerda</li>
+                            <li>Espaçamento: simples</li>
                             <li>Fonte: Times new roman ou Arial</li>
                             <li>Tamanho de fonte: 12</li>
-                            <li>Espaçamento: simples</li>
+                            <li>Alinhamento de texto: à esquerda</li>
                         </ul>
 
                     </p>
@@ -565,12 +607,12 @@ export const FormatedText = () => {
                     <hr />
 
                     <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023:
+                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
                         <ul>
-                            <li>Alinhamento de texto: à esquerda</li>
+                            <li>Espaçamento: simples</li>
                             <li>Fonte: Times new roman ou Arial</li>
                             <li>Tamanho de fonte: 12</li>
-                            <li>Espaçamento: simples</li>
+                            <li>Alinhamento de texto: à esquerda</li>
                         </ul>
 
                     </p>
@@ -607,12 +649,12 @@ export const FormatedText = () => {
                     <hr />
 
                     <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023:
+                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
                         <ul>
-                            <li>Alinhamento de texto: à esquerda</li>
+                            <li>Espaçamento: simples</li>
                             <li>Fonte: Times new roman ou Arial</li>
                             <li>Tamanho de fonte: 12</li>
-                            <li>Espaçamento: simples</li>
+                            <li>Alinhamento de texto: à esquerda</li>
                         </ul>
 
                     </p>
@@ -649,12 +691,12 @@ export const FormatedText = () => {
                     <hr />
 
                     <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023:
+                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
                         <ul>
-                            <li>Alinhamento de texto: à esquerda</li>
+                            <li>Espaçamento: simples</li>
                             <li>Fonte: Times new roman ou Arial</li>
                             <li>Tamanho de fonte: 12</li>
-                            <li>Espaçamento: simples</li>
+                            <li>Alinhamento de texto: à esquerda</li>
                         </ul>
 
                     </p>
@@ -691,12 +733,12 @@ export const FormatedText = () => {
                     <hr />
 
                     <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023:
+                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
                         <ul>
-                            <li>Alinhamento de texto: à esquerda</li>
+                            <li>Espaçamento: simples</li>
                             <li>Fonte: Times new roman ou Arial</li>
                             <li>Tamanho de fonte: 12</li>
-                            <li>Espaçamento: simples</li>
+                            <li>Alinhamento de texto: à esquerda</li>
                         </ul>
 
                     </p>

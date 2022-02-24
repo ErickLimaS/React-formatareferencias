@@ -5,11 +5,11 @@ export const Header = () => {
 
     return (
         <C.Container>
-            <Link to="/" className='headerName'>Formata Bibliografias</Link>
+            <Link to="/" className='headerName'>Referências em Abnt</Link>
             <ul>
-                <li className='no'><Link to="/Como-Usar">Como Usar</Link></li>
-                <li><Link to="/Modelos-Abnt">Modelos em ABNT</Link></li>
-                <li><Link to="/exemplo">Exemplo</Link></li>
+                <li className='no'><Link to="/como-usar">Como Usar</Link></li>
+                <li><Link to="/modelos-abnt">Modelos em ABNT</Link></li>
+                <li><Link to="/regras-da-norma-abnt">Regras da Norma ABNT</Link></li>
             </ul>
         </C.Container>
     );

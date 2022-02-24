@@ -21,7 +21,7 @@ export const SelectOptions = () => {
         options = (
             <div>
                 <label>
-                    Especifique um pouco mais sobre o /*ref = {state.refType2}*/
+                    Especifique um pouco mais!
 
                     <select
                         autoFocus
@@ -45,7 +45,7 @@ export const SelectOptions = () => {
         options = (
             <div>
                 <label>
-                    Especifique um pouco mais sobre o /*ref = {state.refType2}*/
+                    Especifique um pouco mais!
 
                     <select
                         autoFocus
@@ -64,7 +64,7 @@ export const SelectOptions = () => {
         options = (
             <div>
                 <label>
-                    Especifique um pouco mais /*ref = {state.refType2}*/
+                    Especifique um pouco mais!
 
                     <select
                         autoFocus
@@ -82,7 +82,7 @@ export const SelectOptions = () => {
         options = (
             <div>
                 <label>
-                    Especifique um pouco mais /*ref = {state.refType2}*/
+                    Especifique um pouco mais!
 
                     <select
                         autoFocus
@@ -103,7 +103,7 @@ export const SelectOptions = () => {
         options = (
             <div>
                 <label>
-                    Especifique um pouco mais /*ref = {state.refType2}*/
+                    Especifique um pouco mais!
 
                     <select
                         autoFocus
@@ -111,7 +111,7 @@ export const SelectOptions = () => {
                     >
                         <option value='' disabled selected>Escolha Uma ...</option>
                         <option value='51'>Tese</option>
-                        <option value='52'>Disertação</option>
+                        <option value='52'>Dissertação</option>
                         <option value='53'>TCC Disponível na Internet</option>
                     </select>
                 </label>

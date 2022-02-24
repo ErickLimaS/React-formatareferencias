@@ -19,8 +19,14 @@ export const RefInputs = () => {
 
     let inputHtml: any;
 
-    // REF 11
+    // REF 11 - site
     if (auxRef === '11') {
+
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
 
         //Handles
         const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
@@ -138,7 +144,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Local da de Publicação da Matéria" description="Escreva a cidade onde a matéria foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' onChange={handleLocal} />
+                <TextInput label="Local da de Publicação da Matéria" description="Escreva a cidade onde a matéria foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' rightSection={LocalInfoCircle} onChange={handleLocal} />
 
                 <hr />
 
@@ -152,19 +158,19 @@ export const RefInputs = () => {
                         <label className="divSelect">Mês da Visualização da Matéria
                             <small>O mês que você encontrou a matéria.</small>
                             <select placeholder='Mês' onChange={handleMonthVisualization}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
@@ -183,25 +189,25 @@ export const RefInputs = () => {
                         <label className="divSelect">Mês da Publicação da Matéria
                             <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
                             <select placeholder='Mês' onChange={handleMonthPubli}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
 
                     <Grid.Col span={4}>
-                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                        <TextInput label="Ano de Publicação" description="Ano em que foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
                     </Grid.Col>
                 </Grid>
 
@@ -220,6 +226,11 @@ export const RefInputs = () => {
         );
         const AuthorSurInfoCircle = (
             <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa. Se for uma organização quem escreveu, deixe  esse espaço em branco.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
@@ -315,22 +326,8 @@ export const RefInputs = () => {
         inputHtml = (
             <C.Container>
 
-                <TextInput label="Nome do Autor(a) da Matéria" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorFirstInfoCircle} placeholder='Ex: Clara' onChange={handleNameAuthor1} />
 
-                <hr />
-
-                <TextInput label="Sobrenome do Autor(a) da Matéria" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorSurInfoCircle} placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
-
-                <hr />
-
-                <div className='checkboxEtAl'>
-                    <h1>Usar "Et al.?</h1>
-                    <small>"Et al." serve para indicar a existéncia de mais autores além do indicado nessa referência.</small>
-                    <div>
-                        <input type="checkbox" id="etal" name="etal" onChange={handleEtalCheckbox}></input>
-                        <label htmlFor="etal">Marque a caixa ao lado para usar "Et al."</label>
-                    </div>
-                </div>
+                <AuxAuthor />
 
                 <hr />
 
@@ -353,7 +350,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Local da Publicação da Matéria" description="Qual a cidade e o estado de onde essa matéria foi publicada? Se não souber, deixe em branco." type='text' placeholder='Ex: Brasília - DF' onChange={handleLocal} />
+                <TextInput label="Local da Publicação da Matéria" description="Qual a cidade e o estado de onde essa matéria foi publicada? Se não souber, deixe em branco." type='text' placeholder='Ex: Brasília - DF' rightSection={LocalInfoCircle} onChange={handleLocal} />
 
                 <hr />
 
@@ -367,19 +364,19 @@ export const RefInputs = () => {
                         <label className="divSelect">Mês da Visualização da Matéria
                             <small>O mês que você encontrou a matéria.</small>
                             <select placeholder='Mês' onChange={handleMonthVisualization}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
@@ -398,19 +395,19 @@ export const RefInputs = () => {
                         <label className="divSelect">Mês da Publicação da Matéria
                             <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
                             <select placeholder='Mês' onChange={handleMonthPubli}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
@@ -435,6 +432,11 @@ export const RefInputs = () => {
         );
         const AuthorSurInfoCircle = (
             <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa. Se for uma organização quem escreveu, deixe  esse espaço em branco.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
@@ -525,7 +527,7 @@ export const RefInputs = () => {
 
                 <div className='checkboxEtAl'>
                     <h1>Usar "Et al.?</h1>
-                    <small>"Et al." serve para indicar a existéncia de mais autores além do indicado nessa referência.</small>
+                    <small>"Et al." serve para indicar a existéncia de mais de 6 autores da sua referência.</small>
                     <div>
                         <input type="checkbox" id="etal" name="etal" onChange={handleEtalCheckbox}></input>
                         <label htmlFor="etal">Marque a caixa ao lado para usar "Et al."</label>
@@ -548,19 +550,19 @@ export const RefInputs = () => {
                         <label className="divSelect">Mês da Visualização da Matéria
                             <small>O mês que você encontrou a matéria.</small>
                             <select placeholder='Mês' onChange={handleMonthVisualization}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
@@ -579,19 +581,19 @@ export const RefInputs = () => {
                         <label className="divSelect">Mês da Publicação da Matéria
                             <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
                             <select placeholder='Mês' onChange={handleMonthPubli}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
@@ -616,6 +618,11 @@ export const RefInputs = () => {
         );
         const AuthorSurInfoCircle = (
             <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa. Se for uma organização quem escreveu, deixe  esse espaço em branco.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
@@ -744,7 +751,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Local da Publicação da Matéria" description="Qual a cidade e o estado de onde essa matéria foi publicada? Se não souber, deixe em branco." type='text' placeholder='Ex: Brasília - DF' onChange={handleLocal} />
+                <TextInput label="Local da Publicação da Matéria" description="Qual a cidade e o estado de onde essa matéria foi publicada? Se não souber, deixe em branco." type='text' placeholder='Ex: Brasília - DF' rightSection={LocalInfoCircle} onChange={handleLocal} />
 
                 <hr />
 
@@ -762,19 +769,19 @@ export const RefInputs = () => {
                         <label className="divSelect">Mês da Visualização da Matéria
                             <small>O mês que você encontrou a matéria.</small>
                             <select placeholder='Mês' onChange={handleMonthVisualization}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
@@ -793,19 +800,19 @@ export const RefInputs = () => {
                         <label className="divSelect">Mês da Publicação da Matéria
                             <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
                             <select placeholder='Mês' onChange={handleMonthPubli}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
@@ -830,6 +837,11 @@ export const RefInputs = () => {
         );
         const AuthorSurInfoCircle = (
             <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa. Se for uma organização quem escreveu, deixe  esse espaço em branco.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
@@ -894,7 +906,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Local do Envio do Email" description="Escreva a cidade de onde o email deve ter vindo. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não souber, deixe em branco.)' onChange={handleLocal} />
+                <TextInput label="Local do Envio do Email" description="Escreva a cidade de onde o email deve ter vindo. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não souber, deixe em branco.)' rightSection={LocalInfoCircle} onChange={handleLocal} />
 
                 <hr />
 
@@ -907,19 +919,19 @@ export const RefInputs = () => {
                         <label className="divSelect">Mês do Envio do Email
                             <small>O mês que o email foi feito e enviado.</small>
                             <select placeholder='Mês' onChange={handleMonthPubli}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
@@ -944,6 +956,11 @@ export const RefInputs = () => {
         );
         const AuthorSurInfoCircle = (
             <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa. Se for uma organização quem escreveu, deixe  esse espaço em branco.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
@@ -1002,19 +1019,19 @@ export const RefInputs = () => {
                         <label className="divSelect">Mês da Visualização da Matéria
                             <small>O mês que você encontrou a matéria.</small>
                             <select placeholder='Mês' onChange={handleMonthVisualization}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
@@ -1039,6 +1056,11 @@ export const RefInputs = () => {
         );
         const AuthorSurInfoCircle = (
             <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
@@ -1146,21 +1168,7 @@ export const RefInputs = () => {
         inputHtml = (
             <C.Container>
 
-                <TextInput label="Nome do Autor(a) do Livro" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorFirstInfoCircle} placeholder='Ex: Clara' onChange={handleNameAuthor1} />
-
-                <hr />
-                <TextInput label="Sobrenome do Autor(a) do Livro" description="O sobrenome do autor(a) vai nessa seção" type='text' rightSection={AuthorSurInfoCircle} placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
-
-                <hr />
-
-                <div className='checkboxEtAl'>
-                    <h1>Usar "Et al.?</h1>
-                    <small>"Et al." serve para indicar a existéncia de mais autores além do indicado nessa referência.</small>
-                    <div>
-                        <input type="checkbox" id="etal" name="etal" onChange={handleEtalCheckbox}></input>
-                        <label htmlFor="etal">Marque a caixa ao lado para usar "Et al."</label>
-                    </div>
-                </div>
+                <AuxAuthor />
 
                 <hr />
 
@@ -1173,7 +1181,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Local da Publicação do Livro" description="Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' onChange={handleLocal} />
+                <TextInput label="Local da Publicação do Livro" description="Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' rightSection={LocalInfoCircle} onChange={handleLocal} />
 
                 <hr />
 
@@ -1208,6 +1216,11 @@ export const RefInputs = () => {
         );
         const AuthorSurInfoCircle = (
             <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
@@ -1322,30 +1335,15 @@ export const RefInputs = () => {
         inputHtml = (
             <C.Container>
 
-                <TextInput label="Nome do Autor(a) do Livro" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorFirstInfoCircle} placeholder='Ex: Clara' onChange={handleNameAuthor1} />
-
-                <hr />
-
-                <TextInput label="Sobrenome do Autor(a) do Livro" description="O sobrenome do autor(a) vai nessa seção" type='text' rightSection={AuthorSurInfoCircle} placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
-
-                <hr />
-
-                <div className='checkboxEtAl'>
-                    <h1>Usar "Et al.?</h1>
-                    <small>"Et al." serve para indicar a existéncia de mais autores além do indicado nessa referência.</small>
-                    <div>
-                        <input type="checkbox" id="etal" name="etal" onChange={handleEtalCheckbox}></input>
-                        <label htmlFor="etal">Marque a caixa ao lado para usar "Et al."</label>
-                    </div>
-                </div>
-
-                <hr />
-
                 <TextInput label="Título do Livro" description="Titulo do Livro. Geralmente é o nome com grande destaque na capa." type='text' placeholder='Exemplo: A Origem das Espécies' onChange={handleTitle} />
 
                 <hr />
 
-                <TextInput label="subtítulo do Livro" description="Subtítulo do Livro. Geralmente é uma frase logo após o título com grande destaque na capa." type='text' placeholder='Caso não tenha, deixe aqui em branco.' onChange={handleSubtitle} />
+                <TextInput label="Subtítulo do Livro" description="Subtítulo do Livro. Geralmente é uma frase logo após o título com grande destaque na capa." type='text' placeholder='Caso não tenha, deixe aqui em branco.' onChange={handleSubtitle} />
+
+                <hr />
+
+                <AuxAuthor />
 
                 <hr />
 
@@ -1354,7 +1352,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Local da Publicação do Livro" description="Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' onChange={handleLocal} />
+                <TextInput label="Local da Publicação do Livro" description="Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' rightSection={LocalInfoCircle} onChange={handleLocal} />
 
                 <hr />
 
@@ -1362,7 +1360,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="DOI do Ebook" description="DOI é um código único para a identificação de ebooks e outras obras digitais. (Caso não saiba, deixe em branco." type='text' placeholder='Escreva: "DOI (identificacao DOI aqui)."' onChange={handleDoiCheckbox} />
+                <TextInput label="DOI do Ebook" description="DOI é um código único para a identificação de ebooks e outras obras digitais. (Se não souber, deixe em branco.)" type='text' placeholder='Escreva: "DOI (identificacao DOI aqui) ou deixe em branco"' onChange={handleDoiCheckbox} />
 
                 <hr />
 
@@ -1378,7 +1376,7 @@ export const RefInputs = () => {
 
 
                     <Grid.Col span={12}>
-                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                        <TextInput label="Ano de Publicação" description="Ano em que o ebook foi escrito, redigido ou editado." type='text' placeholder='2020' onChange={handleYearPubli} />
                     </Grid.Col>
                 </Grid>
 
@@ -1397,6 +1395,11 @@ export const RefInputs = () => {
         );
         const AuthorSurInfoCircle = (
             <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
@@ -1500,7 +1503,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Local de onde o Vídeo foi Feito" description="Caso não souber, deixe em branco." type='text' placeholder='Ex: Campinas - SP'
+                <TextInput label="Local de onde o Vídeo foi Feito" description="Caso não souber, deixe em branco." type='text' placeholder='Ex: Campinas - SP' rightSection={LocalInfoCircle}
                     onChange={handleLocal} />
 
                 <hr />
@@ -1512,39 +1515,39 @@ export const RefInputs = () => {
                 <Grid className='dateVisualization'>
 
                     <Grid.Col span={4}>
-                        <TextInput label="Dia da Visualização da Matéria" description="O dia que você encontrou a matéria." type='text' placeholder='25' onChange={handleDayVisualization} />
+                        <TextInput label="Dia da Visualização" description="O dia que você encontrou o material." type='text' placeholder='25' onChange={handleDayVisualization} />
                     </Grid.Col>
 
                     <Grid.Col span={4} className="mainDivSelect">
-                        <label className="divSelect">Mês da Visualização da Matéria
-                            <small>O mês que você encontrou a matéria.</small>
+                        <label className="divSelect">Mês da Visualização
+                            <small>O mês que você encontrou o material.</small>
                             <select placeholder='Mês' onChange={handleMonthVisualization}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
 
                     <Grid.Col span={4}>
-                        <TextInput label="Ano da Visualização da Matéria" description="O ano que você encontrou a matéria." type='text' placeholder='2022' onChange={handleYearVisualization} />
+                        <TextInput label="Ano da Visualização" description="O ano que você encontrou o material." type='text' placeholder='2022' onChange={handleYearVisualization} />
                     </Grid.Col>
                 </Grid>
 
                 <Grid className='datePublic'>
 
                     <Grid.Col span={12}>
-                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                        <TextInput label="Ano de Publicação" description="Ano em que foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
                     </Grid.Col>
                 </Grid>
 
@@ -1564,6 +1567,11 @@ export const RefInputs = () => {
         );
         const AuthorSurInfoCircle = (
             <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
@@ -1664,63 +1672,63 @@ export const RefInputs = () => {
                 <Grid className='dateVisualization'>
 
                     <Grid.Col span={4}>
-                        <TextInput label="Dia da Visualização da Matéria" description="O dia que você encontrou a matéria." type='text' placeholder='25' onChange={handleDayVisualization} />
+                        <TextInput label="Dia da Visualização" description="O dia que você encontrou o material." type='text' placeholder='25' onChange={handleDayVisualization} />
                     </Grid.Col>
 
                     <Grid.Col span={4} className="mainDivSelect">
-                        <label className="divSelect">Mês da Visualização da Matéria
-                            <small>O mês que você encontrou a matéria.</small>
+                        <label className="divSelect">Mês da Visualização
+                            <small>O mês que você encontrou o material.</small>
                             <select placeholder='Mês' onChange={handleMonthVisualization}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
 
                     <Grid.Col span={4}>
-                        <TextInput label="Ano da Visualização da Matéria" description="O ano que você encontrou a matéria." type='text' placeholder='2022' onChange={handleYearVisualization} />
+                        <TextInput label="Ano da Visualização" description="O ano que você encontrou o material." type='text' placeholder='2022' onChange={handleYearVisualization} />
                     </Grid.Col>
                 </Grid>
 
                 <Grid className='datePublic'>
                     <Grid.Col span={4}>
-                        <TextInput label="Dia da Matéria Publicada" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                        <TextInput label="Dia da Publicação" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
                     </Grid.Col>
 
                     <Grid.Col span={4} className="mainDivSelect">
-                        <label className="divSelect">Mês da Publicação da Matéria
-                            <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
+                        <label className="divSelect">Mês da Publicação
+                            <small>O mês que foi feita, redigita, editada ou criada.</small>
                             <select placeholder='Mês' onChange={handleMonthPubli}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
 
                     <Grid.Col span={4}>
-                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                        <TextInput label="Ano de Publicação" description="Ano em que foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
                     </Grid.Col>
                 </Grid>
 
@@ -1744,6 +1752,11 @@ export const RefInputs = () => {
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
 
         //Handles
         const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
@@ -1841,63 +1854,63 @@ export const RefInputs = () => {
                 <Grid className='dateVisualization'>
 
                     <Grid.Col span={4}>
-                        <TextInput label="Dia da Visualização da Matéria" description="O dia que você encontrou a matéria." type='text' placeholder='25' onChange={handleDayVisualization} />
+                        <TextInput label="Dia da Visualização" description="O dia que você encontrou o material." type='text' placeholder='25' onChange={handleDayVisualization} />
                     </Grid.Col>
 
                     <Grid.Col span={4} className="mainDivSelect">
-                        <label className="divSelect">Mês da Visualização da Matéria
-                            <small>O mês que você encontrou a matéria.</small>
+                        <label className="divSelect">Mês da Visualização
+                            <small>O mês que você encontrou o material.</small>
                             <select placeholder='Mês' onChange={handleMonthVisualization}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
 
                     <Grid.Col span={4}>
-                        <TextInput label="Ano da Visualização da Matéria" description="O ano que você encontrou a matéria." type='text' placeholder='2022' onChange={handleYearVisualization} />
+                        <TextInput label="Ano da Visualização" description="O ano que você encontrou o material." type='text' placeholder='2022' onChange={handleYearVisualization} />
                     </Grid.Col>
                 </Grid>
 
                 <Grid className='datePublic'>
                     <Grid.Col span={4}>
-                        <TextInput label="Dia da Matéria Publicada" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                        <TextInput label="Dia da Publicacão" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
                     </Grid.Col>
 
                     <Grid.Col span={4} className="mainDivSelect">
-                        <label className="divSelect">Mês da Publicação da Matéria
-                            <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
+                        <label className="divSelect">Mês da Publicação
+                            <small>O mês que foi feita, redigita, editada ou criada.</small>
                             <select placeholder='Mês' onChange={handleMonthPubli}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
 
                     <Grid.Col span={4}>
-                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                        <TextInput label="Ano de Publicação" description="Ano em que foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
                     </Grid.Col>
                 </Grid>
 
@@ -1917,6 +1930,11 @@ export const RefInputs = () => {
         );
         const AuthorSurInfoCircle = (
             <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
@@ -2049,7 +2067,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Cidade onde a Entrevista foi feita" description="Escreva a cidade onde a entrevista foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não souber, deixe em branco.)' onChange={handleLocal} />
+                <TextInput label="Cidade onde a Entrevista foi feita" description="Escreva a cidade onde a entrevista foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não souber, deixe em branco.)' rightSection={LocalInfoCircle} onChange={handleLocal} />
 
                 <hr />
 
@@ -2063,18 +2081,18 @@ export const RefInputs = () => {
                             <small>O mês que a reportagem foi feita, editada ou criada.</small>
                             <select placeholder='Mês' onChange={handleMonthPubli}>
                                 <option value="" disabled selected>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
@@ -2100,6 +2118,11 @@ export const RefInputs = () => {
         );
         const AuthorSurInfoCircle = (
             <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
@@ -2233,7 +2256,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Lugar onde a Entrevista foi publicada" description="Escreva a cidade onde a entrevista foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' onChange={handleLocal} />
+                <TextInput label="Lugar onde a Entrevista foi publicada" description="Escreva a cidade onde a entrevista foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' rightSection={LocalInfoCircle} onChange={handleLocal} />
 
                 <hr />
 
@@ -2247,32 +2270,32 @@ export const RefInputs = () => {
 
                 <Grid className='datePublic'>
                     <Grid.Col span={4}>
-                        <TextInput label="Dia da Matéria Publicada" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                        <TextInput label="Dia da Publicação" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
                     </Grid.Col>
 
                     <Grid.Col span={4} className="mainDivSelect">
-                        <label className="divSelect">Mês da Publicação da Matéria
-                            <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
+                        <label className="divSelect">Mês da Publicação
+                            <small>O mês que foi feita, redigita, editada ou criada.</small>
                             <select placeholder='Mês' onChange={handleMonthPubli}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
 
                     <Grid.Col span={4}>
-                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                        <TextInput label="Ano de Publicação" description="Ano em que foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
                     </Grid.Col>
                 </Grid>
 
@@ -2291,6 +2314,11 @@ export const RefInputs = () => {
         );
         const AuthorSurInfoCircle = (
             <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
@@ -2422,7 +2450,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Lugar de onde o artigo foi publicada" description="Escreva a cidade onde a entrevista foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' onChange={handleLocal} />
+                <TextInput label="Lugar de onde o artigo foi publicada" description="Escreva a cidade onde a entrevista foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' rightSection={LocalInfoCircle} onChange={handleLocal} />
 
                 <hr />
 
@@ -2436,32 +2464,32 @@ export const RefInputs = () => {
 
                 <Grid className='datePublic'>
                     <Grid.Col span={4}>
-                        <TextInput label="Dia da Matéria Publicada" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                        <TextInput label="Dia da Publicação" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
                     </Grid.Col>
 
                     <Grid.Col span={4} className="mainDivSelect">
-                        <label className="divSelect">Mês da Publicação da Matéria
-                            <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
+                        <label className="divSelect">Mês da Publicação
+                            <small>O mês que foi feita, redigita, editada ou criada.</small>
                             <select placeholder='Mês' onChange={handleMonthPubli}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
 
                     <Grid.Col span={4}>
-                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                        <TextInput label="Ano de Publicação" description="Ano em que foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
                     </Grid.Col>
                 </Grid>
 
@@ -2480,6 +2508,11 @@ export const RefInputs = () => {
         );
         const AuthorSurInfoCircle = (
             <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
@@ -2584,7 +2617,7 @@ export const RefInputs = () => {
                 payload: e.target.value
             })
         }
-        const handleMagazine= (e: ChangeEvent<HTMLInputElement>) => {
+        const handleMagazine = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setMagazine,
                 payload: e.target.value
@@ -2611,74 +2644,74 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Lugar de onde o artigo foi publicada" description="Escreva a cidade onde a entrevista foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' onChange={handleLocal} />
+                <TextInput label="Lugar de onde o artigo foi publicada" description="Escreva a cidade onde a entrevista foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' rightSection={LocalInfoCircle} onChange={handleLocal} />
 
                 <hr />
 
-                <TextInput label="URL do Site do Artigo" description="URL é o link da página da tese. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder= 'http://www.contemporanea.uerj.br/pdf/ed_03/contemporanea_n03_02_butcher.pdf' onChange={handleUrl} />
+                <TextInput label="URL do Site do Artigo" description="URL é o link da página da tese. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='http://www.contemporanea.uerj.br/pdf/ed_03/contemporanea_n03_02_butcher.pdf' onChange={handleUrl} />
 
                 <hr />
 
                 <Grid className='dateVisualization'>
 
                     <Grid.Col span={4}>
-                        <TextInput label="Dia da Visualização da Matéria" description="O dia que você encontrou a matéria." type='text' placeholder='25' onChange={handleDayVisualization} />
+                        <TextInput label="Dia da Visualização" description="O dia que você encontrou o material." type='text' placeholder='25' onChange={handleDayVisualization} />
                     </Grid.Col>
 
                     <Grid.Col span={4} className="mainDivSelect">
-                        <label className="divSelect">Mês da Visualização da Matéria
-                            <small>O mês que você encontrou a matéria.</small>
+                        <label className="divSelect">Mês da Visualização
+                            <small>O mês que você encontrou o material.</small>
                             <select placeholder='Mês' onChange={handleMonthVisualization}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
 
                     <Grid.Col span={4}>
-                        <TextInput label="Ano da Visualização da Matéria" description="O ano que você encontrou a matéria." type='text' placeholder='2022' onChange={handleYearVisualization} />
+                        <TextInput label="Ano da Visualização" description="O ano que você encontrou o material." type='text' placeholder='2022' onChange={handleYearVisualization} />
                     </Grid.Col>
                 </Grid>
 
                 <Grid className='datePublic'>
                     <Grid.Col span={4}>
-                        <TextInput label="Dia da Matéria Publicada" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                        <TextInput label="Dia da Publicação" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
                     </Grid.Col>
 
                     <Grid.Col span={4} className="mainDivSelect">
-                        <label className="divSelect">Mês da Publicação da Matéria
-                            <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
+                        <label className="divSelect">Mês da Publicação
+                            <small>O mês que foi feita, redigita, editada ou criada.</small>
                             <select placeholder='Mês' onChange={handleMonthPubli}>
-                                <option value="" disabled>Mês</option>
-                                <option value="Janeiro">Janeiro</option>
-                                <option value="Fevereiro">Fevereiro</option>
-                                <option value="Março">Março</option>
-                                <option value="Abril">Abril</option>
-                                <option value="Maio">Maio</option>
-                                <option value="Junho">Junho</option>
-                                <option value="Julho">Julho</option>
-                                <option value="Agosto">Agosto</option>
-                                <option value="Setembro">Setembro</option>
-                                <option value="Outubro">Outubro</option>
-                                <option value="Novembro">Novembro</option>
-                                <option value="Dezembro">Dezembro</option>
+                                <option value="" disabled selected>Mês</option>
+                                <option value="jan">Janeiro</option>
+                                <option value="fev">Fevereiro</option>
+                                <option value="mar">Março</option>
+                                <option value="abr">Abril</option>
+                                <option value="maio">Maio</option>
+                                <option value="jun">Junho</option>
+                                <option value="jul">Julho</option>
+                                <option value="ago">Agosto</option>
+                                <option value="set">Setembro</option>
+                                <option value="out">Outubro</option>
+                                <option value="nov">Novembro</option>
+                                <option value="dez">Dezembro</option>
                             </select>
                         </label>
                     </Grid.Col>
 
                     <Grid.Col span={4}>
-                        <TextInput label="Ano de Publicação da Matéria" description="Ano em que a matéria foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
+                        <TextInput label="Ano de Publicação" description="Ano em que foi escrita, redigida, editada ou postada." type='text' placeholder='2020' onChange={handleYearPubli} />
                     </Grid.Col>
                 </Grid>
 
@@ -2686,7 +2719,7 @@ export const RefInputs = () => {
         );
     }
 
-    //REF 51
+    //REF 51 - tese
     else if (auxRef === '51') {
 
         // INFO
@@ -2697,6 +2730,11 @@ export const RefInputs = () => {
         );
         const AuthorSurInfoCircle = (
             <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
@@ -2792,11 +2830,8 @@ export const RefInputs = () => {
         inputHtml = (
             <C.Container>
 
-                <TextInput label="Nome do Autor(a) da Tese" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorFirstInfoCircle} placeholder='Ex: Clara' onChange={handleNameAuthor1} />
 
-                <hr />
-
-                <TextInput label="Sobrenome do Autor(a) da Tese" description="O sobrenome do autor(a) vai nessa seção" type='text' rightSection={AuthorSurInfoCircle} placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
+                <AuxAuthor />
 
                 <hr />
 
@@ -2828,7 +2863,7 @@ export const RefInputs = () => {
         );
     }
 
-    //REF 52
+    //REF 52 - dissertacao
     else if (auxRef === '52') {
 
         // INFO
@@ -2839,6 +2874,11 @@ export const RefInputs = () => {
         );
         const AuthorSurInfoCircle = (
             <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
@@ -2934,11 +2974,7 @@ export const RefInputs = () => {
         inputHtml = (
             <C.Container>
 
-                <TextInput label="Nome do Autor(a) da Tese" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorFirstInfoCircle} placeholder='Ex: Clara' onChange={handleNameAuthor1} />
-
-                <hr />
-
-                <TextInput label="Sobrenome do Autor(a) da Tese" description="O sobrenome do autor(a) vai nessa seção" type='text' rightSection={AuthorSurInfoCircle} placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
+                <AuxAuthor />
 
                 <hr />
 
@@ -2984,6 +3020,11 @@ export const RefInputs = () => {
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
+        const LocalInfoCircle = (
+            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
+                <InfoCircledIcon color='black' />
+            </Tooltip>
+        );
 
         //Handles
         const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
@@ -3076,11 +3117,7 @@ export const RefInputs = () => {
         inputHtml = (
             <C.Container>
 
-                <TextInput label="Nome do Autor(a) da Tese" description="O primeiro nome do autor(a) vai nessa seção" type='text' rightSection={AuthorFirstInfoCircle} placeholder='Ex: Clara' onChange={handleNameAuthor1} />
-
-                <hr />
-
-                <TextInput label="Sobrenome do Autor(a) da Tese" description="O sobrenome do autor(a) vai nessa seção" type='text' rightSection={AuthorSurInfoCircle} placeholder='Ex: Paiva' onChange={handleSurAuthor1} />
+                <AuxAuthor />
 
                 <hr />
 

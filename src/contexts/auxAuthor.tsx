@@ -3,6 +3,7 @@ import { FormActions, useForm } from './FormContext'
 import { TextInput, Tooltip } from '@mantine/core';
 import { InfoCircledIcon } from '@modulz/radix-icons';
 import { ChangeEvent } from 'react';
+import { Teste } from './auxAuthor2'
 
 
 export const AuxAuthor = () => {
@@ -35,33 +36,61 @@ export const AuxAuthor = () => {
         });
     };
     const handleEtalCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
+
+
+        console.log(state.etAlCheckbox)
         dispatch({
             type: FormActions.setEtAlCheckbox,
-            payload: 'et al.'
+            payload: e.target.value
         })
     }
 
     // Company
     const handleCompanyName = (e: ChangeEvent<HTMLInputElement>) => {
         dispatch({
-
             type: FormActions.setCompanyName,
             payload: e.target.value
         });
     };
 
+    // aux numeros autores
+    let count: number;
+    count = 0;
+
+    const handleAuxNewAuthor = () => {
+
+        dispatch({
+            type: FormActions.setAuxNewAuthor,
+            payload: count
+        })
+        console.log(state.auxNewAuthor)
+    }
+
+    function addAuthor() {
+
+        count = state.auxNewAuthor + 1
+
+        return handleAuxNewAuthor()
+    }
+
     let authorCheck: any;
-    
-        if (state.radioCheck === '1') {
-            authorCheck = (
-            <div>
-                <TextInput label="Nome do Autor(a) ou Editor(a) que escreveu a Matéria" description="O primeiro nome do autor(a) vai nessa seção" type='text'
-                onChange={handleNameAuthor1} placeholder='Ex: Clara'
-                rightSection={AuthorFirstInfoCircle}/>
+
+    if (state.radioCheck === '1') {
+        authorCheck = (
+            <C.Container>
+                <TextInput required label="Nome do Autor(a) ou Editor(a)" description="O primeiro nome do autor(a) vai nessa seção" type='text'
+                    onChange={handleNameAuthor1} placeholder='Ex: Clara'
+                    rightSection={AuthorFirstInfoCircle} />
 
                 <hr />
 
-                <TextInput label="Sobrenome do Autor(a) da Matéria" description="Apenas o sobrenome do autor(a) vai nessa seção" type='text' onChange={handleSurAuthor1} placeholder='Ex: Paiva' rightSection={AuthorSurInfoCircle}/>
+                <TextInput required label="Sobrenome do Autor(a)" description="Apenas o sobrenome do autor(a) vai nessa seção" type='text' onChange={handleSurAuthor1} placeholder='Ex: Paiva' rightSection={AuthorSurInfoCircle} />
+
+                <Teste />
+
+                <div className='buttonNewAuthor'>
+                    <button onClick={addAuthor} >Acrescentar Autor/Editor</button>
+                </div>
 
                 <hr />
 
@@ -73,17 +102,18 @@ export const AuxAuthor = () => {
                         <label htmlFor="etal">Marque a caixa ao lado para usar "Et al."</label>
                     </div>
                 </div>
-            </div>)
-            return authorCheck
-        }
+            </C.Container>
+        )
+        return authorCheck
+    }
 
-        else if (state.radioCheck === '2') {
-            authorCheck = (
-                <div>
-                <TextInput label="Nome da Organização que escreveu a Matéria" description="O  nome completo. Começando sempre com suas siglas. Veja exemplo abaixo." type='text'
-                onChange={handleCompanyName}  placeholder='Ex:SABESP - Companhia de Saneamento Básico do Estado de São Paulo' rightSection={AuthorFirstInfoCircle}/>
+    else if (state.radioCheck === '2') {
+        authorCheck = (
+            <div>
+                <TextInput required label="Nome da Organização que escreveu a Matéria" description="O  nome completo. Começando sempre com suas siglas. Veja exemplo abaixo." type='text'
+                    onChange={handleCompanyName} placeholder='Ex:SABESP - Companhia de Saneamento Básico do Estado de São Paulo' rightSection={AuthorFirstInfoCircle} />
             </div>)
-            return authorCheck
-        }
+        return authorCheck
+    }
     return authorCheck
 }

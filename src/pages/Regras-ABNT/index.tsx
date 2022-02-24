@@ -1,7 +1,7 @@
 import * as C from './styled'
 import { Theme } from '../../components/theme2'
 
-export const ComoUsar = () => {
+export const RegrasAbnt = () => {
     return (
         <Theme>
             <C.Container>

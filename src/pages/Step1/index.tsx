@@ -47,15 +47,15 @@ export const Step1 = () => {
 
                 <div className='selectStep1'>
                     <label>
-                        Essa referência vem de um(a) ... /////(selecionado {state.refType1})
+                        De onde vem sua Referência?
 
                         <select
                             autoFocus
                             onChange={handleOptionChange}
                             value={state.refType1}
                         >
-                            <option value='' disabled>De onde vem sua Referência</option>
-                            <option value='10'>Internet - Ex: Sites, Blogs, Podcasts, Redes Sociais, Email, Wikipedia</option>
+                            <option value='' disabled>Essa referência vem de(a) ...</option>
+                            <option value='10'>Internet - Ex: Wikipédia, Sites, Podcasts, Blogs, Redes Sociais, Email</option>
                             <option value='20'>Livro ou E-Book</option>
                             <option value='30'>Mídia - Ex: Vídeo</option>
                             <option value='40'>Jornal ou Revista - Ex: Reportagem, Entrevistas, Artigos</option>

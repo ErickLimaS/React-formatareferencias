@@ -152,4 +152,15 @@ export const Container = styled.div`
         border: 1px solid #ced4da;
     }
 
+    .buttonNewAuthor {
+        display: flex;
+        justify-content: flex-end;
+        
+        button {
+            font-size: 16px;
+            font-weight: 500;
+            background-color: #1c8d00;
+        }
+    }
+
 `;

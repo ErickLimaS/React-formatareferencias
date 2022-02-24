@@ -2,6 +2,8 @@
 import { createContext, ReactNode, useContext, useReducer } from 'react';
 
 type State = {
+    auxNewAuthor: number,
+
     currentStep: number,
     refType1: string,
     refType2: string,
@@ -10,6 +12,14 @@ type State = {
     surAuthor1: string,
     nameAuthor2: string,
     surAuthor2: string,
+    nameAuthor3: string,
+    surAuthor3: string,
+    nameAuthor4: string,
+    surAuthor4: string,
+    nameAuthor5: string,
+    surAuthor5: string,
+    nameAuthor6: string,
+    surAuthor6: string,
     companyName: string,
     responsableBlog: string,
     blogTitle: string,
@@ -32,7 +42,7 @@ type State = {
     numberMagaz: string,
 
     doiCheckbox: string,
-    etAlCheckbox: string,
+    etAlCheckbox: 'off' | 'on',
     title: string,
     subtitle: string,
     url: string,
@@ -69,6 +79,8 @@ type FormProviderProps = {
 }
 
 const initialData: State = {
+    auxNewAuthor: 0,
+
     currentStep: 0,
     refType1: '',
     refType2: '',
@@ -77,6 +89,14 @@ const initialData: State = {
     surAuthor1: '',
     nameAuthor2: '',
     surAuthor2: '',
+    nameAuthor3: '',
+    surAuthor3: '',
+    nameAuthor4: '',
+    surAuthor4: '',
+    nameAuthor5: '',
+    surAuthor5: '',
+    nameAuthor6: '',
+    surAuthor6: '',
     companyName: '',
     responsableBlog: '',
     blogTitle: '',
@@ -99,7 +119,7 @@ const initialData: State = {
     numberMagaz: '',
 
     doiCheckbox: '0',
-    etAlCheckbox: '',
+    etAlCheckbox: 'off',
     title: '',
     subtitle: '',
     url: '',
@@ -132,6 +152,16 @@ export enum FormActions {
     setRefType2,
     setNameAuthor1,
     setSurAuthor1,
+    setNameAuthor2,
+    setSurAuthor2,
+    setNameAuthor3,
+    setSurAuthor3,
+    setNameAuthor4,
+    setSurAuthor4,
+    setNameAuthor5,
+    setSurAuthor5,
+    setNameAuthor6,
+    setSurAuthor6,
     setEtAlCheckbox,
     setTitle,
     setSubtitle,
@@ -169,18 +199,35 @@ export enum FormActions {
     setNameGuest,
     setMagazine,
     setNumberMagaz,
-    setSurAuthor2,
-    setNameAuthor2
+    setAuxNewAuthor
 };
 
 const formReducer = (state: State, action: Action) => {
     switch (action.type) {
+        case FormActions.setAuxNewAuthor:
+            return { ...state, auxNewAuthor: action.payload };
         case FormActions.setLocal:
             return { ...state, local: action.payload };
+        case FormActions.setSurAuthor1:
+            return { ...state, surAuthor1: action.payload };
+        case FormActions.setNameAuthor1:
+            return { ...state, nameAuthor1: action.payload };
         case FormActions.setSurAuthor2:
             return { ...state, surAuthor2: action.payload };
         case FormActions.setNameAuthor2:
             return { ...state, nameAuthor2: action.payload };
+        case FormActions.setSurAuthor3:
+            return { ...state, surAuthor3: action.payload };
+        case FormActions.setNameAuthor3:
+            return { ...state, nameAuthor3: action.payload };
+        case FormActions.setSurAuthor4:
+            return { ...state, surAuthor4: action.payload };
+        case FormActions.setNameAuthor4:
+            return { ...state, nameAuthor4: action.payload };
+        case FormActions.setSurAuthor5:
+            return { ...state, surAuthor5: action.payload };
+        case FormActions.setNameAuthor6:
+            return { ...state, nameAuthor6: action.payload };
         case FormActions.setNumberMagaz:
             return { ...state, numberMagaz: action.payload };
         case FormActions.setMagazine:
@@ -245,10 +292,7 @@ const formReducer = (state: State, action: Action) => {
             return { ...state, monthPublic: action.payload };
         case FormActions.setYearPublic:
             return { ...state, yearPublic: action.payload };
-        case FormActions.setSurAuthor1:
-            return { ...state, surAuthor1: action.payload };
-        case FormActions.setNameAuthor1:
-            return { ...state, nameAuthor1: action.payload };
+
         case FormActions.setTitle:
             return { ...state, title: action.payload };
         case FormActions.setSubtitle:
