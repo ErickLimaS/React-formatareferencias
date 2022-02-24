@@ -36,13 +36,17 @@ export const AuxAuthor = () => {
         });
     };
     const handleEtalCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
-
-
-        console.log(state.etAlCheckbox)
-        dispatch({
-            type: FormActions.setEtAlCheckbox,
-            payload: e.target.value
-        })
+        if (state.etAlCheckbox === 'et al.') {
+            dispatch({
+                type: FormActions.setEtAlCheckbox,
+                payload: ''
+            })
+        } else {
+            dispatch({
+                type: FormActions.setEtAlCheckbox,
+                payload: 'et al.'
+            })
+        }
     }
 
     // Company

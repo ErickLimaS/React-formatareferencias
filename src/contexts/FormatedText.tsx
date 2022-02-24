@@ -6,19 +6,26 @@ import * as C from '../pages/Step3/styles'
 export const FormatedText = () => {
     const { state, dispatch } = useForm();
 
-    let upperSurName = state.surAuthor1.toUpperCase();
+    let upperSurName1 = state.surAuthor1.toUpperCase();
+    let upperSurName2 = state.surAuthor2.toUpperCase();
+    let upperSurName3 = state.surAuthor3.toUpperCase();
+    let upperSurName4 = state.surAuthor4.toUpperCase();
+    let upperSurName5 = state.surAuthor5.toUpperCase();
+    let upperSurName6 = state.surAuthor6.toUpperCase();
 
     let formated: any; //stores formated text 
 
     let etalAux: any;
 
     etalAux = state.etAlCheckbox
-    
+
+
+
     //REF 11
     if (state.refType2 === '11') {
 
         if (state.radioCheck === '1') {
-            if (state.etAlCheckbox === 'on') {
+            if (state.etAlCheckbox !== '') { //checkbox not checked
                 formated = (
 
                     <C.Container>
@@ -28,7 +35,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <span className='italic'>et al</span>. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
                         <div className='buttons'>
@@ -53,43 +60,233 @@ export const FormatedText = () => {
                     </C.Container>
                 )
             }
-            else {
-                
-                    formated = (
-    
-                        <C.Container>
-                            <h1>Pronto! Sua Referência está Formatada!</h1>
-                            <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
-    
-                            <hr />
-    
-                            <div className='copyArea'>
-                                <p className='test'>{upperSurName}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
-                            </div>
-    
-    
-    
-                            <div className='buttons'>
-                                <button >
-                                    Copiar Referência
-                                </button>
-                                <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                            </div>
-    
-                            <hr />
-    
-                            <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                            <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                                <ul>
-                                    <li>Espaçamento: simples</li>
-                                    <li>Fonte: Times new roman ou Arial</li>
-                                    <li>Tamanho de fonte: 12</li>
-                                    <li>Alinhamento de texto: à esquerda</li>
-                                </ul>
-    
-                            </p>
-                        </C.Container>
-                    )
+            if (state.auxNewAuthor === 0) { //has more than one author
+
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 1) { //has more than one author
+
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 2) { //has more than one author
+
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 3) { //has more than one author
+
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 4) { //has more than one author
+
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 5 || state.auxNewAuthor > 5) { //has more than one author
+
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
             }
         }
         else if (state.radioCheck === '2') {
@@ -133,41 +330,224 @@ export const FormatedText = () => {
     else if (state.refType2 === '12') {
 
         if (state.radioCheck === '1') {
-            formated = (
+            if (state.auxNewAuthor === 0) {
+                formated = (
 
-                <C.Container>
-                    <h1>Pronto! Sua Referência está Formatada!</h1>
-                    <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
 
-                    <hr />
+                        <hr />
 
-                    <div className='copyArea'>
-                        <p className='test'>{upperSurName}, {state.nameAuthor1}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
-                    </div>
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        </div>
 
 
 
-                    <div className='buttons'>
-                        <button >
-                            Copiar Referência
-                        </button>
-                        <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                    </div>
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
 
-                    <hr />
+                        <hr />
 
-                    <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                        <ul>
-                            <li>Espaçamento: simples</li>
-                            <li>Fonte: Times new roman ou Arial</li>
-                            <li>Tamanho de fonte: 12</li>
-                            <li>Alinhamento de texto: à esquerda</li>
-                        </ul>
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
 
-                    </p>
-                </C.Container>
-            )
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 1) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 2) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        </div>
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 3) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 4) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 5 || state.auxNewAuthor > 5) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        </div>
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
         }
     }
 
@@ -337,39 +717,216 @@ export const FormatedText = () => {
     if (state.refType2 === '21') {
 
         if (state.radioCheck === '1') {
-            formated = (
+            if (state.auxNewAuthor === 0) {
+                formated = (
 
-                <C.Container>
-                    <h1>Pronto! Sua Referência está Formatada!</h1>
-                    <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
 
-                    <hr />
+                        <hr />
 
-                    <div className='copyArea'>
-                        <p className='test'>{upperSurName}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
-                    </div>
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
+                        </div>
 
-                    <div className='buttons'>
-                        <button >
-                            Copiar Referência
-                        </button>
-                        <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                    </div>
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
 
-                    <hr />
+                        <hr />
 
-                    <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                        <ul>
-                            <li>Espaçamento: simples</li>
-                            <li>Fonte: Times new roman ou Arial</li>
-                            <li>Tamanho de fonte: 12</li>
-                            <li>Alinhamento de texto: à esquerda</li>
-                        </ul>
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
 
-                    </p>
-                </C.Container>
-            )
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 1) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
+                        </div>
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 2) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
+                        </div>
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 3) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
+                        </div>
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 4) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
+                        </div>
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 5 || state.auxNewAuthor > 5) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
+                        </div>
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
         }
     }
 
@@ -377,39 +934,216 @@ export const FormatedText = () => {
     if (state.refType2 === '22') {
 
         if (state.radioCheck === '1') {
-            formated = (
+            if (state.auxNewAuthor === 0) {
+                formated = (
 
-                <C.Container>
-                    <h1>Pronto! Sua Referência está Formatada!</h1>
-                    <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
 
-                    <hr />
+                        <hr />
 
-                    <div className='copyArea'>
-                        <p className='test'>{upperSurName}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
-                    </div>
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
+                        </div>
 
-                    <div className='buttons'>
-                        <button >
-                            Copiar Referência
-                        </button>
-                        <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                    </div>
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
 
-                    <hr />
+                        <hr />
 
-                    <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                        <ul>
-                            <li>Espaçamento: simples</li>
-                            <li>Fonte: Times new roman ou Arial</li>
-                            <li>Tamanho de fonte: 12</li>
-                            <li>Alinhamento de texto: à esquerda</li>
-                        </ul>
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
 
-                    </p>
-                </C.Container>
-            )
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 1) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
+                        </div>
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 2) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
+                        </div>
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 3) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
+                        </div>
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 4) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
+                        </div>
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 5 || state.auxNewAuthor > 5) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
+                        </div>
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
         }
     }
 
@@ -468,7 +1202,7 @@ export const FormatedText = () => {
                     <hr />
 
                     <div className='copyArea'>
-                        <p className='test'>{upperSurName}, {state.nameAuthor1}. {state.title}. <b className='bold'>{state.magazine}</b>, {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}.</p>
+                        <p className='test'>{upperSurName1}, {state.nameAuthor1}. {state.title}. <b className='bold'>{state.magazine}</b>, {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}.</p>
                     </div>
 
                     <div className='buttons'>
@@ -508,7 +1242,7 @@ export const FormatedText = () => {
                     <hr />
 
                     <div className='copyArea'>
-                        <p className='test'>{upperSurName}, {state.nameAuthor1}. {state.title}. [Entrevista concedida a] {state.nameAuthor2} {state.surAuthor2}. <b className='bold'>{state.magazine}</b>, {state.local}, n. {state.numberMagaz}, p. {state.paginationBook}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}.</p>
+                        <p className='test'>{upperSurName1}, {state.nameAuthor1}. {state.title}. [Entrevista concedida a] {state.nameAuthor2} {state.surAuthor2}. <b className='bold'>{state.magazine}</b>, {state.local}, n. {state.numberMagaz}, p. {state.paginationBook}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}.</p>
                     </div>
 
 
@@ -550,7 +1284,7 @@ export const FormatedText = () => {
                     <hr />
 
                     <div className='copyArea'>
-                        <p className='test'>{upperSurName}, {state.nameAuthor1}. {state.title}. <b className='bold'>{state.magazine}</b>, {state.local}, n. {state.numberMagaz}, p. {state.paginationBook}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}.</p>
+                        <p className='test'>{upperSurName1}, {state.nameAuthor1}. {state.title}. <b className='bold'>{state.magazine}</b>, {state.local}, n. {state.numberMagaz}, p. {state.paginationBook}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}.</p>
                     </div>
 
 
@@ -592,7 +1326,7 @@ export const FormatedText = () => {
                     <hr />
 
                     <div className='copyArea'>
-                        <p className='test'>{upperSurName}, {state.nameAuthor1}. {state.title}. <b className='bold'>{state.magazine}</b>, {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}</p>
+                        <p className='test'>{upperSurName1}, {state.nameAuthor1}. {state.title}. <b className='bold'>{state.magazine}</b>, {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}</p>
                     </div>
 
 
@@ -625,41 +1359,228 @@ export const FormatedText = () => {
     if (state.refType2 === '51') {
 
         if (state.radioCheck === '1') {
-            formated = (
+            if (state.auxNewAuthor === 0) {
+                formated = (
 
-                <C.Container>
-                    <h1>Pronto! Sua Referência está Formatada!</h1>
-                    <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
 
-                    <hr />
+                        <hr />
 
-                    <div className='copyArea'>
-                        <p className='test'>{upperSurName}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
-                    </div>
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                        </div>
 
 
 
-                    <div className='buttons'>
-                        <button >
-                            Copiar Referência
-                        </button>
-                        <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                    </div>
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
 
-                    <hr />
+                        <hr />
 
-                    <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                        <ul>
-                            <li>Espaçamento: simples</li>
-                            <li>Fonte: Times new roman ou Arial</li>
-                            <li>Tamanho de fonte: 12</li>
-                            <li>Alinhamento de texto: à esquerda</li>
-                        </ul>
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
 
-                    </p>
-                </C.Container>
-            )
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 1) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 2) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 3) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 4) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 5 || state.auxNewAuthor > 5) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}.<b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
         }
     }
 
@@ -667,41 +1588,228 @@ export const FormatedText = () => {
     if (state.refType2 === '52') {
 
         if (state.radioCheck === '1') {
-            formated = (
+            if (state.auxNewAuthor === 0) {
+                formated = (
 
-                <C.Container>
-                    <h1>Pronto! Sua Referência está Formatada!</h1>
-                    <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
 
-                    <hr />
+                        <hr />
 
-                    <div className='copyArea'>
-                        <p className='test'>{upperSurName}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
-                    </div>
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                        </div>
 
 
 
-                    <div className='buttons'>
-                        <button >
-                            Copiar Referência
-                        </button>
-                        <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                    </div>
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
 
-                    <hr />
+                        <hr />
 
-                    <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                        <ul>
-                            <li>Espaçamento: simples</li>
-                            <li>Fonte: Times new roman ou Arial</li>
-                            <li>Tamanho de fonte: 12</li>
-                            <li>Alinhamento de texto: à esquerda</li>
-                        </ul>
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
 
-                    </p>
-                </C.Container>
-            )
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 1) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 2) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 3) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 4) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 5 || state.auxNewAuthor > 5) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
         }
     }
 
@@ -709,41 +1817,228 @@ export const FormatedText = () => {
     if (state.refType2 === '53') {
 
         if (state.radioCheck === '1') {
-            formated = (
+            if (state.auxNewAuthor === 0) {
+                formated = (
 
-                <C.Container>
-                    <h1>Pronto! Sua Referência está Formatada!</h1>
-                    <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
 
-                    <hr />
+                        <hr />
 
-                    <div className='copyArea'>
-                        <p className='test'>{upperSurName}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
-                    </div>
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
+                        </div>
 
 
 
-                    <div className='buttons'>
-                        <button >
-                            Copiar Referência
-                        </button>
-                        <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                    </div>
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
 
-                    <hr />
+                        <hr />
 
-                    <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                        <ul>
-                            <li>Espaçamento: simples</li>
-                            <li>Fonte: Times new roman ou Arial</li>
-                            <li>Tamanho de fonte: 12</li>
-                            <li>Alinhamento de texto: à esquerda</li>
-                        </ul>
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
 
-                    </p>
-                </C.Container>
-            )
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 1) { 
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+             }
+            else if (state.auxNewAuthor === 2) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+             }
+            else if (state.auxNewAuthor === 3) { 
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 4) { 
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 5 || state.auxNewAuthor > 5) { 
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
+                        </div>
+
+
+
+                        <div className='buttons'>
+                            <button >
+                                Copiar Referência
+                            </button>
+                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                        </div>
+
+                        <hr />
+
+                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
+                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
+                            <ul>
+                                <li>Espaçamento: simples</li>
+                                <li>Fonte: Times new roman ou Arial</li>
+                                <li>Tamanho de fonte: 12</li>
+                                <li>Alinhamento de texto: à esquerda</li>
+                            </ul>
+
+                        </p>
+                    </C.Container>
+                )
+             }
         }
     }
 

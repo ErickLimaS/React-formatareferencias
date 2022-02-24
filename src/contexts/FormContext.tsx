@@ -42,7 +42,7 @@ type State = {
     numberMagaz: string,
 
     doiCheckbox: string,
-    etAlCheckbox: 'off' | 'on',
+    etAlCheckbox: string,
     title: string,
     subtitle: string,
     url: string,
@@ -119,7 +119,7 @@ const initialData: State = {
     numberMagaz: '',
 
     doiCheckbox: '0',
-    etAlCheckbox: 'off',
+    etAlCheckbox: '',
     title: '',
     subtitle: '',
     url: '',
@@ -226,8 +226,12 @@ const formReducer = (state: State, action: Action) => {
             return { ...state, nameAuthor4: action.payload };
         case FormActions.setSurAuthor5:
             return { ...state, surAuthor5: action.payload };
+        case FormActions.setNameAuthor5:
+            return { ...state, nameAuthor5: action.payload };
         case FormActions.setNameAuthor6:
             return { ...state, nameAuthor6: action.payload };
+        case FormActions.setSurAuthor6:
+            return { ...state, surAuthor6: action.payload };
         case FormActions.setNumberMagaz:
             return { ...state, numberMagaz: action.payload };
         case FormActions.setMagazine:

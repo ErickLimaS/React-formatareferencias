@@ -486,10 +486,17 @@ export const RefInputs = () => {
             });
         }
         const handleEtalCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setEtAlCheckbox,
-                payload: 'et al.'
-            })
+            if (state.etAlCheckbox === 'et al.') {
+                dispatch({
+                    type: FormActions.setEtAlCheckbox,
+                    payload: ''
+                })
+            } else {
+                dispatch({
+                    type: FormActions.setEtAlCheckbox,
+                    payload: 'et al.'
+                })
+            }
         }
 
         const handleNamePodcastEpisode = (e: ChangeEvent<HTMLInputElement>) => {
@@ -1159,10 +1166,19 @@ export const RefInputs = () => {
             });
         }
         const handleEtalCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setEtAlCheckbox,
-                payload: 'et al.'
-            })
+            console.log(state.etAlCheckbox)
+            if (state.etAlCheckbox === 'et al.') {
+                dispatch({
+                    type: FormActions.setEtAlCheckbox,
+                    payload: ''
+                })
+            }else {
+                dispatch({
+                    type: FormActions.setEtAlCheckbox,
+                    payload: 'et al.'
+                })
+            }
+            console.log(state.etAlCheckbox)
         }
 
         inputHtml = (
