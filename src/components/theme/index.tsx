@@ -37,21 +37,21 @@ export const Theme = ({ children }: Props) => {
                             <SideBarItem
                                 title="Passo 1"
                                 description="Escolha de onde vem sua referência"
-                                icon="profile"
+                                icon="one"
                                 path="/"
                                 active={state.currentStep === 1}
                             />
                             <SideBarItem
                                 title="Passo 2"
                                 description="Preencha algumas informações."
-                                icon="book"
+                                icon="two"
                                 path="/step2"
                                 active={state.currentStep === 2}
                             />
                             <SideBarItem
                                 title="Finalizado!"
                                 description="Agora é só copiar e colar."
-                                icon="mail"
+                                icon="three"
                                 path="/step3"
                                 active={state.currentStep === 3}
                             />

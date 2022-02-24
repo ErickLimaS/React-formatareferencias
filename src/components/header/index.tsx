@@ -20,7 +20,7 @@ export const Header = () => {
 
             </div>
             <ul>
-                <li className='no'><Link to="/como-usar">Como Usar</Link></li>
+                <li><Link to="/como-usar">Como Usar</Link></li>
                 <li><Link to="/modelos-abnt">Modelos em ABNT</Link></li>
                 <li><Link to="/regras-da-norma-abnt">Regras da Norma ABNT</Link></li>
             </ul>

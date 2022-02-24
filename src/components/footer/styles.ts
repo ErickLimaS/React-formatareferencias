@@ -4,9 +4,7 @@ export const Container = styled.div`
         background-color: #000076;
         display: flex;
         flex-direction: column;
-        height: 80px;
         box-shadow: 0px -2px 2em 0px #000132;
-        
         text-decoration: none;
 
         p {
@@ -16,7 +14,7 @@ export const Container = styled.div`
 
         a {
             text-decoration: none;
-            font-size: 16px;
+            font-size: 17px;
             margin: 10px 0px;
             color: #cdcdcd;
 

@@ -6,10 +6,13 @@ export const Footer = () => {
         <C.Container>
             <ul>
                 <li>
-                    <Link to={'/sobre-nos'}>Sobre</Link>
+                    <Link to={'/sobre'}>Sobre</Link>
                 </li>
                 <li>
-                    <a href="mailto:example@gmail.com">Contato: example@gmail.com</a>
+                    <a href="mailto:example@gmail.com">Contato</a>
+                </li>
+                <li>
+                    <Link to={'/creditos'}>Créditos</Link>
                 </li>
             </ul>
             <small>Todos os Direitos Reservados. 2022</small>

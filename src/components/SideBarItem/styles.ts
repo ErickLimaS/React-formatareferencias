@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    margin: 30px 0;
+    margin: 30px 30px;
     cursos: pointer;
     
     a {
@@ -21,6 +21,7 @@ export const IconArea = styled.div<{ active: boolean; }>`
     height: 50px;
     border-radius: 50%;
     background-color: ${props => props.active ? '#25CD89' : '#494A7C'};
+    filter:  ${props => props.active ? 'blur(0px)' : 'blur(1px)'};
     display: flex;
     justify-content: center;
 `;

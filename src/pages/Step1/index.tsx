@@ -21,12 +21,13 @@ export const Step1 = () => {
             if (state.refType1 === '11') {
                 navigate('./step2')
             }
+            alert("Preencha o Tipo da Referência.")
         }
         else if (state.refType1 !== '' || state.refType2 !== '') {
             navigate('./step2')
         }
         else {
-            alert("preencha os dados")
+            alert("Preencha o Tipo da Referência.")
         }
     };
 

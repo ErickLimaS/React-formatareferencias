@@ -5,7 +5,7 @@ export const RegrasAbnt = () => {
     return (
         <Theme>
             <C.Container>
-                <h1>Como Usar o Formatar Referências</h1>
+                <h1>Como Usar o Formatar Referências.</h1>
                 <h2>É facil e simples.</h2>
 
                 <p>
