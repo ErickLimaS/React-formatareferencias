@@ -5,7 +5,6 @@ export const Container = styled.div`
     color: #FFF;
     min-height: 100vh;
 
-    
     .divMainText {
         display: flex;
         align-items: center;
@@ -47,8 +46,6 @@ export const Container = styled.div`
             margin-right: 80px;
             text-decoration: underline solid #FFF;
         }
-    }
-        
     }
 
 `;
