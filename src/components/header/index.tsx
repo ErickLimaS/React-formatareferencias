@@ -2,10 +2,23 @@ import * as C from './styles';
 import { Link } from 'react-router-dom'
 
 export const Header = () => {
+    const Logo = require('./logo.png')
 
     return (
         <C.Container>
-            <Link to="/" className='headerName'>Referências em Abnt</Link>
+            <div className='divHeaderName'>
+                <div>
+                    <Link to="/" className='headerName'>
+                        <img src={Logo} alt="Logo do Site Referência em ABNT" className='imgLogo' />
+                    </Link>
+                </div>
+                <div>
+                    <Link to="/" className='headerName'>
+                        Referência em ABNT
+                    </Link>
+                </div>
+
+            </div>
             <ul>
                 <li className='no'><Link to="/como-usar">Como Usar</Link></li>
                 <li><Link to="/modelos-abnt">Modelos em ABNT</Link></li>

@@ -8,10 +8,18 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
 
+    .divHeaderName {
+        display: flex;
+    }
+
     .headerName {
         font-size: 28px;
         color: #FFF;
+        display: flex;
+        justify-content: center;
+        margin: 0 5px;
     }
+
 
     ul {
         display: flex;
@@ -48,5 +56,9 @@ export const Container = styled.div`
             -o-transition: all 0.1s ease-in-out;
             transition: all 0.1s ease-in-out;
         }
+    }
+
+    .imgLogo {
+        width: 40px;
     }
 `;

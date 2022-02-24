@@ -11,15 +11,24 @@ type Props = {
 
 export const Theme = ({ children }: Props) => {
     const { state } = useForm();
+    const logo = require('./logoxl.png')
 
     return (
         <C.Container>
             <Header />
 
-            <div className='mainTitle'>
-                <h1>Faça sua Referência em um instante!</h1>
-                <p>Formate toda a referências do seu trabalho usando as normas ABNT e use no seu trabalho escolar, projeto de faculdade ou TCC.</p>
-                <p>Siga os passos abaixo e cole a referência já pronta na área de "Referências Bibliografias" do seu trabalho em ABNT!</p>
+            <div className='divMainText'>
+                <div className='mainText'>
+                    <h1>Faça sua Referência em um instante!</h1>
+                    <p>Formate toda a referências do seu trabalho usando as normas ABNT e use no seu trabalho escolar, projeto de faculdade ou TCC.</p>
+                    <p>Siga os passos abaixo e cole a referência já pronta na área de "Referências Bibliografias" do seu trabalho em ABNT!</p>
+                </div>
+                <div>
+                    <img src={logo} alt="Logo do site Referência em ABNT" className='imgLogoxl' />
+                </div>
+                <div>
+                    
+                </div>
             </div>
 
             <C.Area>
