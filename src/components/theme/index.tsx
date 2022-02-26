@@ -14,7 +14,7 @@ export const Theme = ({ children }: Props) => {
     const logo = require('./logoxl.png')
 
     return (
-        <C.Container>
+        <C.Container bgColor='red'>
                 <Header />
 
                 <div className='divMainText'>
@@ -34,6 +34,7 @@ export const Theme = ({ children }: Props) => {
                 <C.Area>
                     <C.Steps>
                         <C.Sidebar>
+
                             <SideBarItem
                                 title="Passo 1"
                                 description="Escolha de onde vem sua referência"
@@ -55,7 +56,6 @@ export const Theme = ({ children }: Props) => {
                                 path="/step3"
                                 active={state.currentStep === 3}
                             />
-
 
                         </C.Sidebar>
                         <C.Page>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../theme/media';
 
 export const Container = styled.div`
         background-color: #000076;
@@ -14,8 +15,7 @@ export const Container = styled.div`
 
         a {
             text-decoration: none;
-            font-size: 17px;
-            margin: 10px 0px;
+            font-size: 18px;
             color: #cdcdcd;
 
             &:hover{
@@ -31,6 +31,12 @@ export const Container = styled.div`
 
         ul {
             list-style-type: none;
+            margin: 0;
+        }
+
+        li {
+            margin: 5px 0;
+            padding: 10px 0;
         }
         
         small {
@@ -39,4 +45,23 @@ export const Container = styled.div`
             color: #c3c3c3;
             justify-content: center;
         }
+
+        ${media.greaterThan('sm')``}
+        ${media.greaterThan('md')``}
+        ${media.greaterThan('lg')``}
+        ${media.greaterThan('xl')`
+            a {
+                font-size: 20px;
+            }
+        `}
+        ${media.greaterThan('xxl')`
+            a {
+                font-size: 28px;
+            }
+            small {
+                font-size: 22px;
+            }
+
+        `}
+        
 `;
