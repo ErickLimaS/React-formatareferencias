@@ -7,6 +7,9 @@ import { Step2 } from './pages/Step2';
 import { Step3 } from './pages/Step3';
 import { Creditos } from './pages/Creditos';
 import { Sobre } from './pages/Sobre';
+import { TermsConditions } from './pages/TermsConditions';
+import { Contatos } from './pages/Contacts';
+import { Privacidade } from './pages/Privacy';
 
 export const Router = () => {
     return (
@@ -18,8 +21,11 @@ export const Router = () => {
                 <Route path="/como-usar" element={<ComoUsar />} />
                 <Route path="/modelos-abnt" element={<ModelosAbnt />} />
                 <Route path="/regras-da-norma-abnt" element={<RegrasAbnt />} />
-                <Route path='/sobre' element={<Sobre />} />
-                <Route path='/creditos' element={<Creditos />} />
+                <Route path='/about' element={<Sobre />} />
+                <Route path='/credits' element={<Creditos />} />
+                <Route path='/contacts' element={<Contatos />} />
+                <Route path='/terms-and-conditions' element={<TermsConditions />} />
+                <Route path='/privacy' element={<Privacidade />} />
             </Routes>
         </BrowserRouter>
     );

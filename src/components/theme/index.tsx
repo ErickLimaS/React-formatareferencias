@@ -4,6 +4,7 @@ import { Header } from '../header'
 import { SideBarItem } from '../SideBarItem'
 import { useForm } from '../../contexts/FormContext'
 import { Footer } from '../footer';
+import Logo  from './../theme/logoxl.png'
 
 type Props = {
     children: ReactNode;
@@ -19,9 +20,10 @@ export const Theme = ({ children }: Props) => {
 
                 <div className='divMainText'>
                     <div className='mainText'>
-                        <h1>Faça sua Referência em Um Instante!</h1>
+                        <h1>Faça sua Referência em ABNT em Um Instante!</h1>
                         <p>Formate toda as referências do seu trabalho usando as normas ABNT e use no seu trabalho escolar, projeto de faculdade ou TCC.</p>
                         <p>Siga os passos abaixo e cole a referência já pronta na área de "Referências Bibliografias" do seu trabalho em ABNT!</p>
+                        <a href='#mainContent' className='buttonAMainText'>Fazer Minha Referência Agora!</a>
                     </div>
                     <div>
                         <img src={logo} alt="Logo do site Referência em ABNT" className='imgLogoxl' />
@@ -31,7 +33,7 @@ export const Theme = ({ children }: Props) => {
                     </div>
                 </div>
 
-                <C.Area>
+                <C.Area id='mainContent'>
                     <C.Steps>
                         <C.Sidebar>
 

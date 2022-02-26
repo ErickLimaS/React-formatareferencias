@@ -15,14 +15,20 @@ export const Container = styled.div<{ bgColor: string }>`
         box-shadow: 0px 6px 2em 8px #000132;
         margin: 10px 0 15px 0;
         padding: 20px;
+        backgroundImage: 'url(/logoxl.png)';
+        backgroundPosition: 'center';
+        backgroundSize: 'cover';
+        backgroundRepeat: 'no-repeat';
 
         .imgLogoxl {
-            width: 320px;
-            filter: blur(0px);
+            width: 280px;
+            filter: blur(8px);
             margin: 0 20px;
+            margin-top: -10000px;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            z-index: 0;
         }
     }
 
@@ -33,8 +39,30 @@ export const Container = styled.div<{ bgColor: string }>`
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        z-index: 1;
+        background-color: #00000025;
+        border-radius: 10px;
         
       }
+
+        .buttonAMainText {
+            text-decoration: none;
+            background-color: #455da0;
+            padding: 15px;
+            margin: 25px 0 0 0;
+            border: 1px solid #FFF;
+            border-radius: 4px;
+            color: #FFF;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: "Nunito Sans", sans-serif;
+            transition: all 0.2s ease-out;
+
+            :hover {
+                transform: scale(1.05);
+                background-color: #3351a5;
+            }
+        }
         
         h1 {
             font-size: 30px;
@@ -68,6 +96,19 @@ export const Container = styled.div<{ bgColor: string }>`
                 margin-left: 40px;
                 margin-right: 40px;
 
+            }
+            
+            .mainText {
+                z-index: 0;
+                background-color: unset;
+                border-radius: 0px;
+            }
+
+            .imgLogoxl {
+                width: 320px;
+                z-index: 1;
+                margin-top: 0;
+                filter: blur(0px);
             }
         }
 
@@ -105,21 +146,31 @@ export const Container = styled.div<{ bgColor: string }>`
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            font-family: "Nunito Sans", sans-serif;
             
             h1 {
                 font-size: 42px;
                 font-weight: 500;
+                width: 500px;
+                margin-left: -100px;
+                
+                margin-top: 0px;
             }
 
             p {
                 margin-left: 80px;
                 margin-right: 80px;
                 font-size: 20px;
+                font-weight: 100;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 600px;
             }
             p:last-child {
                 margin-left: 80px;
                 margin-right: 80px;
                 text-decoration: underline solid #FFF;
+                margin-top: 10px;
             }
         }
 
@@ -189,8 +240,8 @@ export const Area = styled.div`
 `;
 
 export const Steps = styled.div`
-        flex: 1;
-        display: block;
+    flex: 1;
+    display: block;
 
     ${media.greaterThan('xs')`
         
@@ -247,7 +298,6 @@ export const Page = styled.div`
     padding-right: 20px;
 
     ${media.greaterThan('xs')` 
-        margin-top: 40px;
 
     `}
     

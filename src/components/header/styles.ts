@@ -16,7 +16,7 @@ export const Container = styled.div`
     }
 
     .headerName {
-        font-size: 28px;
+        font-size: 24px;
         color: #FFF;
         display: flex;
         justify-content: center;
@@ -85,6 +85,9 @@ export const Container = styled.div`
         justify-content: space-between;
         align-items: center;
         flex-direction: row;
+        a {
+        font-size: 17px;
+        }
 
         .divHeaderName {
             display: flex;

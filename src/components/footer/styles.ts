@@ -36,7 +36,7 @@ export const Container = styled.div`
 
         li {
             margin: 5px 0;
-            padding: 10px 0;
+            padding: 5px 0;
         }
         
         small {
@@ -51,12 +51,12 @@ export const Container = styled.div`
         ${media.greaterThan('lg')``}
         ${media.greaterThan('xl')`
             a {
-                font-size: 20px;
+                font-size: 16px;
             }
         `}
         ${media.greaterThan('xxl')`
             a {
-                font-size: 28px;
+                font-size: 24px;
             }
             small {
                 font-size: 22px;
