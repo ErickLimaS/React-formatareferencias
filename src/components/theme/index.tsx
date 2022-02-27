@@ -21,16 +21,14 @@ export const Theme = ({ children }: Props) => {
                 <div className='divMainText'>
                     <div className='mainText'>
                         <h1>Faça sua Referência em ABNT em Um Instante!</h1>
-                        <p>Formate toda as referências do seu trabalho usando as normas ABNT e use no seu trabalho escolar, projeto de faculdade ou TCC.</p>
-                        <p>Siga os passos abaixo e cole a referência já pronta na área de "Referências Bibliografias" do seu trabalho em ABNT!</p>
+                        <p id='p1'>Formate toda as referências do seu trabalho usando as normas ABNT e use no seu trabalho escolar, projeto de faculdade ou TCC.</p>
+                        <p id='p2'>Siga os passos abaixo e cole a referência já pronta na área de "Referências Bibliografias" do seu trabalho em ABNT!</p>
                         <a href='#mainContent' className='buttonAMainText'>Fazer Minha Referência Agora!</a>
                     </div>
                     <div>
                         <img src={logo} alt="Logo do site Referência em ABNT" className='imgLogoxl' />
                     </div>
-                    <div>
-
-                    </div>
+                    <p id="disapearP">Se possível, recomendamos usar a ferramenta em um Computador ou Notebook para melhor experiência.</p>
                 </div>
 
                 <C.Area id='mainContent'>

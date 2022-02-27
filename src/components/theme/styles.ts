@@ -34,14 +34,22 @@ export const Container = styled.div<{ bgColor: string }>`
 
     .mainText{
         margin: 10px 0 15px 0;
-        padding: 20px;
+        padding: 20px 10px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         z-index: 1;
-        background-color: #00000025;
-        border-radius: 10px;
+        background-color: #00000055;
+        border-radius: 4px;
+
+        p {
+            font-size: 16px;
+        }
+
+        #p2 {
+            display: none;
+        }
         
       }
 
@@ -67,6 +75,7 @@ export const Container = styled.div<{ bgColor: string }>`
         h1 {
             font-size: 30px;
             font-weight: 500;
+            width: 280px;
         }
 
         p {
@@ -79,9 +88,40 @@ export const Container = styled.div<{ bgColor: string }>`
             margin-right: 10px;
             text-decoration: underline solid #FFF;
         }
+
+        #disapearP {
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 4px;
+            box-shadow: inset 0px 0px 3em 10px #000132;
+        }
     }
+    ${media.greaterThan('sm')`
+        #disapearP{
+            display: none;
+        }
+
+        .mainText{
+            padding: 20px;
+            #p2 {
+                display: block;
+                text-decoration: underline;
+            }
+            
+        }
+
+        .mainText
+            #p1{
+                display: block;
+            }
+            
+        }
+    `}
 
     ${media.greaterThan('md')`
+        #disapearP{
+            display: none;
+        }
 
     `}
     ${media.greaterThan('lg')`
