@@ -44,13 +44,14 @@ export const Container = styled.div`
     button {
         background-color: #25CD89;
         color: #FFF;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: bold;
         padding: 20px 40px;
         border: 0;
         border-radius: 30px;
         cursor: pointer;
         margin-top: 30px;
+        border: 1px solid #FFF;
     }
     
     div.buttons {

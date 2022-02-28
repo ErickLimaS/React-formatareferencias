@@ -103,7 +103,13 @@ export const Container = styled.div`
         margin-top: 30px;
         text-decoration: none;
         margin: 0 10px 0 10px;
-        background-color: #4b64df;
+        border: 2px solid white;
+
+        &:hover {
+            transition: all 0.1s ease-out;
+            transform: scale(1.02)
+        }
+
     }
 
     h2 {
@@ -112,6 +118,10 @@ export const Container = styled.div`
     p{
         color: #FFF;
         font-size: 14px;
+    }
+
+    .lastP{
+        margin: 30px;
     }
 
     ${media.greaterThan('sm')`

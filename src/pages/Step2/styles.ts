@@ -40,7 +40,7 @@ export const Container = styled.div`
     button {
         background-color: #00c144;
         color: #FFF;
-        font-size: 17px;
+        font-size: 16px;
         font-weight: 600;
         padding: 10px 40px;
         border: 0;
@@ -52,16 +52,22 @@ export const Container = styled.div`
     .backButton{
         font-size: 16px;
         text-decoration: none;
-        padding: 20px 40px;
+        padding: 10px 40px;
         color: #B8B8D4;
+        margin: 20px 10px;
     }
 
-    div.buttons {
+    div.buttons{
         display: flex;
         flex-direction: column-reverse;
         justify-content: flex-end;
         align-items: baseline;
-        margin-bottom: 25px; 
+        margin-bottom: 25px;
+    }
+
+    div.buttons > * {
+        border-radius: 30px;
+        border: 1px solid #FFF;
     }
 
     select {
@@ -72,6 +78,17 @@ export const Container = styled.div`
         div.buttons {
             flex-direction: row;
         }
+        
+        .backButton {
+            margin: 0 30px;
+        }
+
+    `}
+    
+    ${media.greaterThan('md')`
+    
+
+
     `}
 
 `;

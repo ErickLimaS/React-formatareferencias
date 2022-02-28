@@ -249,7 +249,7 @@ export const Step3 = () => {
 
                 <h2>Copie a referência acima e cole ou transcreva no seu trabalho.</h2>
                 <div className='buttons'>
-                    <button onClick={refreshToStep1}>Fazer Nova Referência</button>
+                    <button onClick={refreshToStep1} className="backButton">Fazer Nova Referência</button>
                 </div>
 
                 <hr />
