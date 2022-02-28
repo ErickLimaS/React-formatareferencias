@@ -38,7 +38,6 @@ export const Container = styled.div`
     }
 
     p {
-        font-size: 13px;
         color: #B8B8D4;
 
     }
@@ -115,13 +114,21 @@ export const Container = styled.div`
     h2 {
         font-size: 18px;
     }
+    h3 {
+        font-weight: 500;
+
+    }
+    .warning {
+        font-size: 16px;
+        font-weight: 500;
+    }
     p{
         color: #FFF;
-        font-size: 14px;
+        font-size: 16px;
     }
 
-    .lastP{
-        margin: 30px;
+    .lastUl{
+        margin-bottom: 30px;
     }
 
     ${media.greaterThan('sm')`

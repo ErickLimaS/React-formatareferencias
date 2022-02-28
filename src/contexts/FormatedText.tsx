@@ -25,7 +25,8 @@ export const FormatedText = () => {
     if (state.refType2 === '11') {
 
         if (state.radioCheck === '1') {
-            if (state.etAlCheckbox !== '') { //checkbox not checked
+            console.log(state)
+            if (state.etAlCheckbox !== '') { //checkbox checked
                 formated = (
 
                     <C.Container>
@@ -35,7 +36,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <span className='italic'>et al</span>. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <span className='italic'>{state.etAlCheckbox}</span>. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
                         </div>
 
                         <hr />
@@ -43,7 +44,7 @@ export const FormatedText = () => {
                     </C.Container>
                 )
             }
-            if (state.auxNewAuthor === 0) { //has more than one author
+            else if (state.auxNewAuthor === 0) { // 0 equal to has more than one author
 
                 formated = (
 
@@ -54,7 +55,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
                         </div>
 
                     </C.Container>
@@ -71,7 +72,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
                     </C.Container>
@@ -88,7 +89,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
                     </C.Container>
@@ -105,7 +106,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
                     </C.Container>
@@ -122,7 +123,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
                     </C.Container>
@@ -139,7 +140,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
                     </C.Container>
@@ -178,7 +179,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {state.title}. <span className='italic'>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
                     </C.Container>
@@ -194,7 +195,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {state.title}. <span className='italic'>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
                     </C.Container>
@@ -210,7 +211,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {state.title}. <span className='italic'>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
                     </C.Container>
@@ -226,7 +227,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {state.title}. <span className='italic'>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
                     </C.Container>
@@ -242,7 +243,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {state.title}. <span className='italic'>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
                     </C.Container>
@@ -258,7 +259,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. {state.title}. <span className='italic'>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
                     </C.Container>
@@ -468,7 +469,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
                         </div>
 
                     </C.Container>
@@ -484,7 +485,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
                         </div>
 
                     </C.Container>
@@ -500,7 +501,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
                         </div>
 
                     </C.Container>
@@ -516,7 +517,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
                         </div>
 
                     </C.Container>
@@ -532,7 +533,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
                         </div>
 
                     </C.Container>
@@ -548,7 +549,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
                         </div>
 
                     </C.Container>
@@ -756,7 +757,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}.<b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
                         </div>
 
                     </C.Container>

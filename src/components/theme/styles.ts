@@ -86,7 +86,6 @@ export const Container = styled.div<{ bgColor: string }>`
         p:last-child {
             margin-left: 10px;
             margin-right: 10px;
-            text-decoration: underline solid #FFF;
         }
 
         #disapearP {
@@ -214,7 +213,6 @@ export const Container = styled.div<{ bgColor: string }>`
             p:last-child {
                 margin-left: 80px;
                 margin-right: 80px;
-                text-decoration: underline solid #FFF;
                 margin-top: 10px;
             }
         }

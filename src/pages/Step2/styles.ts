@@ -3,7 +3,6 @@ import { media } from "../../components/theme/media";
 
 export const Container = styled.div`
     p {
-        font-size: 13px;
         color: #B8B8D4;
 
     }

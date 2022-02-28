@@ -40,6 +40,7 @@ export const Container = styled.div`
         }
         
         small {
+            margin: 20px 10px 10px 10px;
             display: flex;
             background-color: inherit;
             color: #c3c3c3;

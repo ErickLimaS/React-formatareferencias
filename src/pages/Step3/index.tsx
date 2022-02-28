@@ -248,6 +248,7 @@ export const Step3 = () => {
                 <FormatedText />
 
                 <h2>Copie a referência acima e cole ou transcreva no seu trabalho.</h2>
+                <h3 className='warning'>Se na sua referência houver espaços em branco, volte e reveja se não esqueceu de preencher algum campo.</h3>
                 <div className='buttons'>
                     <button onClick={refreshToStep1} className="backButton">Fazer Nova Referência</button>
                 </div>
@@ -255,14 +256,13 @@ export const Step3 = () => {
                 <hr />
 
                 <h3>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h3>
-                <p className='lastP'>Seguindo a ABNT NBR 6023 (Atual/2022):
-                    <ul>
+                <p className='lastP'>Seguindo a ABNT NBR 6023 (Atual/2022):</p>
+                    <ul className='lastUl'>
                         <li>Espaçamento: simples</li>
-                        <li>Fonte: Times new roman ou Arial</li>
+                        <li>Fonte: Recomendada Arial ou Times new roman </li>
                         <li>Tamanho de fonte: 12</li>
                         <li>Alinhamento de texto: à esquerda</li>
                     </ul>
-                </p>
 
             </Theme>
         </C.Container>

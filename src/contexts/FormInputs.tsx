@@ -125,10 +125,12 @@ export const RefInputs = () => {
                 </div>
 
                 <hr />
+                
 
                 <AuxAuthor />
 
                 <hr />
+                {state.etAlCheckbox}
 
                 <TextInput label="Título da Matéria" description="Titulo da Matéria. Geralmente o nome com grande destaque na página." type='text' placeholder='Exemplo do Título: Clarice Lispector: Vida e Obra da Escritora'
                     onChange={handleTitle} required/>
@@ -305,10 +307,17 @@ export const RefInputs = () => {
             });
         }
         const handleEtalCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setEtAlCheckbox,
-                payload: 'et al.'
-            })
+            if (state.etAlCheckbox === 'et al.') {
+                dispatch({
+                    type: FormActions.setEtAlCheckbox,
+                    payload: ''
+                })
+            } else {
+                dispatch({
+                    type: FormActions.setEtAlCheckbox,
+                    payload: 'et al.'
+                })
+            }
         }
         const handleBlogTitle = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
@@ -704,10 +713,17 @@ export const RefInputs = () => {
             });
         }
         const handleEtalCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setEtAlCheckbox,
-                payload: 'et al.'
-            })
+            if (state.etAlCheckbox === 'et al.') {
+                dispatch({
+                    type: FormActions.setEtAlCheckbox,
+                    payload: ''
+                })
+            } else {
+                dispatch({
+                    type: FormActions.setEtAlCheckbox,
+                    payload: 'et al.'
+                })
+            }
         }
         const handleUserSocialMedia = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
@@ -1335,10 +1351,17 @@ export const RefInputs = () => {
             });
         }
         const handleEtalCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setEtAlCheckbox,
-                payload: 'et al.'
-            })
+            if (state.etAlCheckbox === 'et al.') {
+                dispatch({
+                    type: FormActions.setEtAlCheckbox,
+                    payload: ''
+                })
+            } else {
+                dispatch({
+                    type: FormActions.setEtAlCheckbox,
+                    payload: 'et al.'
+                })
+            }
         }
 
         const handleDoiCheckbox = (e: ChangeEvent<HTMLInputElement>) => {

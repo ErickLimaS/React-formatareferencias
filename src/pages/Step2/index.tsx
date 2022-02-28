@@ -13,7 +13,7 @@ export const Step2 = () => {
 
     useEffect(() => {
         document.title = title;
-        setTitle('Passo 2 - Referência em ABNT')
+        setTitle('Passo 2 | Referência em ABNT')
         if (state.refType1 === '') {
             navigate('/');
         }
