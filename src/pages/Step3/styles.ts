@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "../../components/theme/media";
 
 export const Container = styled.div`
     .test {
@@ -30,10 +31,10 @@ export const Container = styled.div`
 
     div.buttons {
         display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
+        flex-direction: column;
+        justify-content: center;
         align-items: baseline;
-        margin-bottom: 25px; 
+        margin: 25px 0; 
     }
 
     p {
@@ -46,6 +47,11 @@ export const Container = styled.div`
         padding: 0;
         font-size: 26px;
 
+    }
+    h2 {
+        font-weight: 100;
+        font-size: 18px;
+        margin: 15px 0;
     }
     hr {
         height: 1px;
@@ -107,4 +113,14 @@ export const Container = styled.div`
         color: #FFF;
         font-size: 14px;
     }
+
+    ${media.greaterThan('sm')`
+        div.buttons{
+            flex-direction: row;
+        }
+    `}
+
+    ${media.greaterThan('md')`
+    
+    `}
 `;

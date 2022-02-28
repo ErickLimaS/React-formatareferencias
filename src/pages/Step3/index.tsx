@@ -3,6 +3,7 @@ import { useForm, FormActions } from '../../contexts/FormContext'
 import { Theme } from '../../components/theme';
 import { useEffect, useState } from 'react';
 import { FormatedText } from '../../contexts/FormatedText';
+import * as C from './styles'
 
 export const Step3 = () => {
     const navigate = useNavigate();
@@ -32,11 +33,30 @@ export const Step3 = () => {
     }, []);
 
     return (
-        <Theme>
+        <C.Container>
+            <Theme>
 
-            <FormatedText/>
+                <FormatedText />
 
-        </Theme>
-        
+                <h2>Copie a referência acima e cole ou transcreva no seu trabalho.</h2>
+                <div className='buttons'>
+                    <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
+                </div>
+
+                <hr />
+
+                <h3>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h3>
+                <p className='lastP'>Seguindo a ABNT NBR 6023 (Atual/2022):
+                    <ul>
+                        <li>Espaçamento: simples</li>
+                        <li>Fonte: Times new roman ou Arial</li>
+                        <li>Tamanho de fonte: 12</li>
+                        <li>Alinhamento de texto: à esquerda</li>
+                    </ul>
+                </p>
+
+            </Theme>
+        </C.Container>
+
     );
 }

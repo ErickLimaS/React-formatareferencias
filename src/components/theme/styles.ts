@@ -114,7 +114,10 @@ export const Container = styled.div<{ bgColor: string }>`
             #p1{
                 display: block;
             }
-            
+        }
+
+        h1 {
+            width: unset;
         }
     `}
 
@@ -122,6 +125,8 @@ export const Container = styled.div<{ bgColor: string }>`
         #disapearP{
             display: none;
         }
+
+        
 
     `}
     ${media.greaterThan('lg')`

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "../../components/theme/media";
 
 export const Container = styled.div`
     p {
@@ -57,7 +58,7 @@ export const Container = styled.div`
 
     div.buttons {
         display: flex;
-        flex-direction: row;
+        flex-direction: column-reverse;
         justify-content: flex-end;
         align-items: baseline;
         margin-bottom: 25px; 
@@ -66,4 +67,11 @@ export const Container = styled.div`
     select {
         outline: 0;
     }
+    
+    ${media.greaterThan('sm')`
+        div.buttons {
+            flex-direction: row;
+        }
+    `}
+
 `;

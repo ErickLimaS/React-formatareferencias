@@ -38,25 +38,8 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. <span className='italic'>et al</span>. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
                         <hr />
 
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -74,27 +57,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -112,27 +74,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -150,27 +91,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -188,27 +108,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -226,27 +125,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -264,27 +142,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}, {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -302,25 +159,6 @@ export const FormatedText = () => {
                         <p className='test'>{state.companyName}. <b className='bold'>{state.title}</b>. {state.local}. {state.noDate}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                     </div>
 
-                    <div className='buttons'>
-                        <button >
-                            Copiar Referência
-                        </button>
-                        <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                    </div>
-
-                    <hr />
-
-                    <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                        <ul>
-                            <li>Espaçamento: simples</li>
-                            <li>Fonte: Times new roman ou Arial</li>
-                            <li>Tamanho de fonte: 12</li>
-                            <li>Alinhamento de texto: à esquerda</li>
-                        </ul>
-
-                    </p>
                 </C.Container>
             )
         }
@@ -343,27 +181,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -380,27 +197,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -417,25 +213,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -452,27 +229,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -489,27 +245,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -526,25 +261,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. {state.title}. <span>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                         </div>
 
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -567,27 +283,6 @@ export const FormatedText = () => {
                         <p className='test'>{state.namePodcastEpisode}. [Locução de]: {state.podcastAnnouncer}. {state.placePublic}: {state.namePodcast}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Podcast. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                     </div>
 
-
-
-                    <div className='buttons'>
-                        <button >
-                            Copiar Referência
-                        </button>
-                        <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                    </div>
-
-                    <hr />
-
-                    <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                        <ul>
-                            <li>Espaçamento: simples</li>
-                            <li>Fonte: Times new roman ou Arial</li>
-                            <li>Tamanho de fonte: 12</li>
-                            <li>Alinhamento de texto: à esquerda</li>
-                        </ul>
-
-                    </p>
                 </C.Container>
             )
         }
@@ -609,25 +304,6 @@ export const FormatedText = () => {
                         <p className='test'>{state.displayNameUser}. <b className='bold'>{state.socialMediaMensage}</b> [...]. {state.local}. {state.dayPublic} {state.monthPublic}. {state.yearPublic}. {state.userSocialMedia}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                     </div>
 
-                    <div className='buttons'>
-                        <button >
-                            Copiar Referência
-                        </button>
-                        <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                    </div>
-
-                    <hr />
-
-                    <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                        <ul>
-                            <li>Espaçamento: simples</li>
-                            <li>Fonte: Times new roman ou Arial</li>
-                            <li>Tamanho de fonte: 12</li>
-                            <li>Alinhamento de texto: à esquerda</li>
-                        </ul>
-
-                    </p>
                 </C.Container>
             )
         }
@@ -649,25 +325,6 @@ export const FormatedText = () => {
                         <p className='test'>{state.remetenteName}. <b className='bold'>{state.emailSubject}</b>. Destinatários: {state.destinatario}. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. 1 mensagem eletrônica.</p>
                     </div>
 
-                    <div className='buttons'>
-                        <button >
-                            Copiar Referência
-                        </button>
-                        <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                    </div>
-
-                    <hr />
-
-                    <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                        <ul>
-                            <li>Espaçamento: simples</li>
-                            <li>Fonte: Times new roman ou Arial</li>
-                            <li>Tamanho de fonte: 12</li>
-                            <li>Alinhamento de texto: à esquerda</li>
-                        </ul>
-
-                    </p>
                 </C.Container>
             )
         }
@@ -689,25 +346,6 @@ export const FormatedText = () => {
                         <p className='test'>{state.title}. <span className='italic'>In</span>: WIKIPÉDIA: a enciclopédia livre. [São Francisco, CA: Fundação Wikimedia], 2017. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                     </div>
 
-                    <div className='buttons'>
-                        <button >
-                            Copiar Referência
-                        </button>
-                        <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                    </div>
-
-                    <hr />
-
-                    <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                        <ul>
-                            <li>Espaçamento: simples</li>
-                            <li>Fonte: Times new roman ou Arial</li>
-                            <li>Tamanho de fonte: 12</li>
-                            <li>Alinhamento de texto: à esquerda</li>
-                        </ul>
-
-                    </p>
                 </C.Container>
             )
         }
@@ -730,25 +368,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
                         </div>
 
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -765,25 +384,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
                         </div>
 
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -800,25 +400,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
                         </div>
 
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -835,25 +416,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
                         </div>
 
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -870,25 +432,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
                         </div>
 
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -905,25 +448,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
                         </div>
 
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -947,25 +471,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
                         </div>
 
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -982,25 +487,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
                         </div>
 
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1017,25 +503,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
                         </div>
 
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1052,25 +519,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
                         </div>
 
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1087,25 +535,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
                         </div>
 
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1122,25 +551,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox} Disponível em: {state.url}</p>
                         </div>
 
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1163,27 +573,6 @@ export const FormatedText = () => {
                         <p className='test'>{state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.local}, {state.yearPublic}. 1 vídeo ({state.durationVideo} min). Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
                     </div>
 
-
-
-                    <div className='buttons'>
-                        <button >
-                            Copiar Referência
-                        </button>
-                        <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                    </div>
-
-                    <hr />
-
-                    <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                        <ul>
-                            <li>Espaçamento: simples</li>
-                            <li>Fonte: Times new roman ou Arial</li>
-                            <li>Tamanho de fonte: 12</li>
-                            <li>Alinhamento de texto: à esquerda</li>
-                        </ul>
-
-                    </p>
                 </C.Container>
             )
         }
@@ -1205,25 +594,6 @@ export const FormatedText = () => {
                         <p className='test'>{upperSurName1}, {state.nameAuthor1}. {state.title}. <b className='bold'>{state.magazine}</b>, {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}.</p>
                     </div>
 
-                    <div className='buttons'>
-                        <button >
-                            Copiar Referência
-                        </button>
-                        <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                    </div>
-
-                    <hr />
-
-                    <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                        <ul>
-                            <li>Espaçamento: simples</li>
-                            <li>Fonte: Times new roman ou Arial</li>
-                            <li>Tamanho de fonte: 12</li>
-                            <li>Alinhamento de texto: à esquerda</li>
-                        </ul>
-
-                    </p>
                 </C.Container>
             )
         }
@@ -1245,27 +615,6 @@ export const FormatedText = () => {
                         <p className='test'>{upperSurName1}, {state.nameAuthor1}. {state.title}. [Entrevista concedida a] {state.nameAuthor2} {state.surAuthor2}. <b className='bold'>{state.magazine}</b>, {state.local}, n. {state.numberMagaz}, p. {state.paginationBook}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}.</p>
                     </div>
 
-
-
-                    <div className='buttons'>
-                        <button >
-                            Copiar Referência
-                        </button>
-                        <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                    </div>
-
-                    <hr />
-
-                    <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                        <ul>
-                            <li>Espaçamento: simples</li>
-                            <li>Fonte: Times new roman ou Arial</li>
-                            <li>Tamanho de fonte: 12</li>
-                            <li>Alinhamento de texto: à esquerda</li>
-                        </ul>
-
-                    </p>
                 </C.Container>
             )
         }
@@ -1287,27 +636,6 @@ export const FormatedText = () => {
                         <p className='test'>{upperSurName1}, {state.nameAuthor1}. {state.title}. <b className='bold'>{state.magazine}</b>, {state.local}, n. {state.numberMagaz}, p. {state.paginationBook}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}.</p>
                     </div>
 
-
-
-                    <div className='buttons'>
-                        <button >
-                            Copiar Referência
-                        </button>
-                        <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                    </div>
-
-                    <hr />
-
-                    <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                        <ul>
-                            <li>Espaçamento: simples</li>
-                            <li>Fonte: Times new roman ou Arial</li>
-                            <li>Tamanho de fonte: 12</li>
-                            <li>Alinhamento de texto: à esquerda</li>
-                        </ul>
-
-                    </p>
                 </C.Container>
             )
         }
@@ -1329,27 +657,6 @@ export const FormatedText = () => {
                         <p className='test'>{upperSurName1}, {state.nameAuthor1}. {state.title}. <b className='bold'>{state.magazine}</b>, {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}</p>
                     </div>
 
-
-
-                    <div className='buttons'>
-                        <button >
-                            Copiar Referência
-                        </button>
-                        <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                    </div>
-
-                    <hr />
-
-                    <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                    <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                        <ul>
-                            <li>Espaçamento: simples</li>
-                            <li>Fonte: Times new roman ou Arial</li>
-                            <li>Tamanho de fonte: 12</li>
-                            <li>Alinhamento de texto: à esquerda</li>
-                        </ul>
-
-                    </p>
                 </C.Container>
             )
         }
@@ -1372,27 +679,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1409,27 +695,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1446,27 +711,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1483,27 +727,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1520,27 +743,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1557,27 +759,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}.<b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1601,27 +782,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1638,27 +798,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1675,27 +814,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1713,26 +831,6 @@ export const FormatedText = () => {
                         </div>
 
 
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1749,27 +847,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1786,27 +863,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1830,27 +886,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1867,27 +902,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
              }
@@ -1904,27 +918,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
              }
@@ -1941,27 +934,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -1978,27 +950,6 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
             }
@@ -2015,34 +966,11 @@ export const FormatedText = () => {
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
                         </div>
 
-
-
-                        <div className='buttons'>
-                            <button >
-                                Copiar Referência
-                            </button>
-                            <Link to="/step2" className='backButton'>Fazer Nova Referência</Link>
-                        </div>
-
-                        <hr />
-
-                        <h2>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h2>
-                        <p>Seguindo a ABNT NBR 6023 (Atual/2022):
-                            <ul>
-                                <li>Espaçamento: simples</li>
-                                <li>Fonte: Times new roman ou Arial</li>
-                                <li>Tamanho de fonte: 12</li>
-                                <li>Alinhamento de texto: à esquerda</li>
-                            </ul>
-
-                        </p>
                     </C.Container>
                 )
              }
         }
     }
-
-
 
     return formated;
 }

@@ -79,7 +79,7 @@ export const Container = styled.div`
 
     ${media.greaterThan('xl')`
         background-color: #00008d ;
-        padding: 0px 15px;
+        padding: 15px 15px;
         border-bottom: 1px solid #16195C;
         display:flex; 
         justify-content: space-between;
