@@ -40,6 +40,7 @@ export const Step1 = () => {
             payload: e.target.value
         });
     }
+    
     return (
         <Theme>
             <C.Container>

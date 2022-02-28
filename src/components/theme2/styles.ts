@@ -157,6 +157,7 @@ export const Page = styled.div`
     padding-left: 20px;
     padding-top: 40px;
     padding-right: 20px;
+    margin-bottom: 40px;
 
     ${media.greaterThan('sm')`
         padding-left: 30px;

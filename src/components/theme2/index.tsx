@@ -26,21 +26,6 @@ export const Theme = ({ children }: Props) => {
                                     Fazer Minha Referência Agora
                                 </h2>
                             </Link>
-                            <Link to={'/'}>
-                                <h2>
-                                    Ver Modelos de Trabalhos Prontos
-                                </h2>
-                            </Link>
-                            <Link to={'/'}>
-                                <h2>
-                                    Como Fazer a Introdução
-                                </h2>
-                            </Link>
-                            <Link to={'/'}>
-                                <h2>
-                                    Como Fazer a Conclusão
-                                </h2>
-                            </Link>
                         </div>
 
 
