@@ -12,7 +12,7 @@ export const Step1 = () => {
 
     useEffect(() => {
         document.title = title;
-        setTitle('Referência em ABNT - Faça Agora!')
+        setTitle('Referência em ABNT | Faça Agora!')
         dispatch({
             type: FormActions.setCurrentStep,
             payload: 1

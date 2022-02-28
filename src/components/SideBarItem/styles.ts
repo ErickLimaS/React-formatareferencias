@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     margin: 30px 30px;
-    cursos: pointer;
+    cursos: none;
     
     a {
         display: flex;

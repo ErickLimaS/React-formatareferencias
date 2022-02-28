@@ -15,7 +15,7 @@ export const Step3 = () => {
         if (state.refType1 === '') {
             navigate('/');
         }
-        setTitle('Concluído! - Referência em ABNT')
+        setTitle('Concluído! | Referência em ABNT')
         dispatch({
             type: FormActions.setCurrentStep,
             payload: 3

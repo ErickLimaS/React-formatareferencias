@@ -7,7 +7,7 @@ export const ModelosAbnt = () => {
 
     useEffect(() => {
         document.title = title;
-        setTitle('Modelos de Trabalho em ABNT - Referência em ABNT')
+        setTitle('Modelos de Trabalho em ABNT | Referência em ABNT')
     }, [title])
 
     return (

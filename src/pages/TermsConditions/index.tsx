@@ -8,7 +8,7 @@ export const TermsConditions = () => {
 
     useEffect(() => {
         document.title = title;
-        setTitle('Termos e Condições - Referência em ABNT')
+        setTitle('Termos e Condições | Referência em ABNT')
     }, [title])
 
     return (

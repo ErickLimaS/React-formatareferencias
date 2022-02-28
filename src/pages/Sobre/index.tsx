@@ -8,19 +8,19 @@ export const Sobre = () => {
 
     useEffect(() => {
         document.title = title;
-        setTitle('Sobre Nós - Referência em ABNT')
+        setTitle('Sobre Nós | Referência em ABNT')
     }, [title])
 
     return (
         <Theme>
             <C.Container>
-                <h1>Sobre Nós</h1>
+                <h1>Sobre</h1>
 
                 <p>
                     Somos uma equipe que já passamos por muitos trabalhos e projetos, seja de faculdade ou de escola, onde alguns precisavam ser feitos em conjunto com as normas ABNT.
                 </p>
                 <p>
-                    Então, um dia após ter terminado um projeto da faculdade, pensei que as normas ABNT podem não ser tão fáceis assim para se aprender. Além do mais, apenas olhamos essas normas quando precisamos fazer esses trabalhos escolares e universitários.
+                    Um dia após ter terminado um projeto da faculdade, pensei que as normas ABNT podem não ser tão fáceis assim para se aprender. Além do mais, apenas olhamos essas normas quando precisamos fazer esses trabalhos escolares e universitários.
                 </p>
                 <p>
                     Pensamos juntos sobre isso, e vimos que poderiamos fazer pelo menos parte do projeto ou trabalho de algumas pessoas mais fáceis.

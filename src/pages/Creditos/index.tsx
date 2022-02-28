@@ -7,7 +7,7 @@ export const Creditos = () => {
 
     useEffect(() => {
         document.title = title;
-        setTitle('Créditos - Referência em ABNT')
+        setTitle('Créditos | Referência em ABNT')
     }, [title])
 
     return (

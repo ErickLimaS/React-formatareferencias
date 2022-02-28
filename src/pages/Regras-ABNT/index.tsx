@@ -7,7 +7,7 @@ export const RegrasAbnt = () => {
 
     useEffect(() => {
         document.title = title;
-        setTitle('Regras para o seu Trabalho ABNT - Referência em ABNT')
+        setTitle('Regras para o seu Trabalho ABNT | Referência em ABNT')
     }, [title])
 
     return (

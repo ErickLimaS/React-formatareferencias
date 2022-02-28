@@ -8,7 +8,7 @@ export const Privacidade = () => {
 
     useEffect(() => {
         document.title = title;
-        setTitle('Política de Privacidade - Referência em ABNT')
+        setTitle('Política de Privacidade | Referência em ABNT')
     }, [title])
 
     return (

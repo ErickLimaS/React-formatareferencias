@@ -8,7 +8,7 @@ export const Contatos = () => {
 
     useEffect(() => {
         document.title = title;
-        setTitle('Contatos - Referência em ABNT')
+        setTitle('Contatos | Referência em ABNT')
     }, [title])
 
     return (
