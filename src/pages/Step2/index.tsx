@@ -13,7 +13,8 @@ export const Step2 = () => {
 
     useEffect(() => {
         document.title = title;
-        setTitle('Passo 2 | Referência em ABNT')
+        setTitle('Passo 2 | Referência em ABNT');
+        window.scrollTo(0, 0);
         if (state.refType1 === '') {
             navigate('/');
         }
@@ -24,7 +25,6 @@ export const Step2 = () => {
     }, [title])
 
     const handleNextStep = () => {
-        console.log(state);
         if (state.refType2) {
             navigate('/step3')
         }

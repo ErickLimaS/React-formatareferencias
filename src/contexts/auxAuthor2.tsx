@@ -322,7 +322,7 @@ export const Teste = () => {
         )
     }
     else {
-        console.log('aut2')
+        console.log('')
     }
 
     return newAuthor;

@@ -12,6 +12,7 @@ export const Step1 = () => {
 
     useEffect(() => {
         document.title = title;
+        window.scrollTo(0, 0);
         setTitle('Referência em ABNT | Faça Agora!')
         dispatch({
             type: FormActions.setCurrentStep,

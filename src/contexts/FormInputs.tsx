@@ -86,12 +86,10 @@ export const RefInputs = () => {
         }
 
         const handleAuthorRadioGroup1 = (e: ChangeEvent<HTMLInputElement>) => {
-            console.log(state)
             dispatch({
                 type: FormActions.setRadioCheck,
                 payload: e.target.value
             })
-            console.log(state)
         }
 
         const handleAuthorRadioGroup2 = (e: ChangeEvent<HTMLInputElement>) => {
@@ -130,7 +128,6 @@ export const RefInputs = () => {
                 <AuxAuthor />
 
                 <hr />
-                {state.etAlCheckbox}
 
                 <TextInput label="Título da Matéria" description="Titulo da Matéria. Geralmente o nome com grande destaque na página." type='text' placeholder='Exemplo do Título: Clarice Lispector: Vida e Obra da Escritora'
                     onChange={handleTitle} required/>
@@ -1182,7 +1179,6 @@ export const RefInputs = () => {
             });
         }
         const handleEtalCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
-            console.log(state.etAlCheckbox)
             if (state.etAlCheckbox === 'et al.') {
                 dispatch({
                     type: FormActions.setEtAlCheckbox,
@@ -1194,7 +1190,6 @@ export const RefInputs = () => {
                     payload: 'et al.'
                 })
             }
-            console.log(state.etAlCheckbox)
         }
 
         inputHtml = (

@@ -67,7 +67,6 @@ export const AuxAuthor = () => {
             type: FormActions.setAuxNewAuthor,
             payload: count
         })
-        console.log(state.auxNewAuthor)
     }
 
     function addAuthor() {

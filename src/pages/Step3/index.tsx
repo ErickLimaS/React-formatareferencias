@@ -12,6 +12,7 @@ export const Step3 = () => {
 
     useEffect(() => {
         document.title = title;
+        window.scrollTo(0, 0);
         if (state.refType1 === '') {
             navigate('/');
         }

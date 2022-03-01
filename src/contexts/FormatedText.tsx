@@ -25,7 +25,6 @@ export const FormatedText = () => {
     if (state.refType2 === '11') {
 
         if (state.radioCheck === '1') {
-            console.log(state)
             if (state.etAlCheckbox !== '') { //checkbox checked
                 formated = (
 
@@ -36,7 +35,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <span className='italic'>{state.etAlCheckbox}</span>. <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <span className='italic'>{state.etAlCheckbox}</span> <b className='bold'>{state.title}</b>. {state.subtitle}. Disponível em: {state.url}. Publicado em: {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
                         </div>
 
                         <hr />
