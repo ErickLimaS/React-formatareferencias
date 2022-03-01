@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from '../theme/media';
 
 export const Container = styled.div`
     margin: 30px 30px;
@@ -22,6 +23,7 @@ export const IconArea = styled.div<{ active: boolean; }>`
     border-radius: 50%;
     background-color: ${props => props.active ? '#25CD89' : '#494A7C'};
     filter:  ${props => props.active ? 'blur(0px)' : 'blur(1px)'};
+    transform: scale( ${props => props.active ? '1.08' : '1'});
     display: flex;
     justify-content: center;
     
@@ -32,13 +34,13 @@ export const Title = styled.div <{ active: boolean; }>`
     font-weight: bold;
     margin-bottom: 5px;
     font-size:15px;
-    color: ${props => props.active ? '#FFF' : '#494A7C'};
+    color: ${props => props.active ? '#FFF' : '#343434'};
 `;
 
 export const Description = styled.div <{ active: boolean; }>`
     text-align: right;
     font-size: 13px;
-    color: ${props => props.active ? '#B8B8D4' : '#494A7C'};
+    color: ${props => props.active ? '#FFF' : '#343434'};
 `;
 export const Point = styled.div <{ active: boolean; }>`
     width: 6px;

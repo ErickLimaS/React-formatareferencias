@@ -15,7 +15,7 @@ export const TermsConditions = () => {
         <Theme>
             <C.Container>
                 <h1>Termos e Condições - Terms and Conditions</h1>
-                <p>Last updated: February 26, 2022</p>
+                <p>Last updated: February 28, 2022</p>
                 <p>Please read these terms and conditions carefully before using Our Service.</p>
                 <h1>Interpretation and Definitions</h1>
                 <h2>Interpretation</h2>
@@ -94,7 +94,7 @@ export const TermsConditions = () => {
                 <h1>Contact Us</h1>
                 <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
                 <ul>
-                    <li>By email: referenciaemabnt@gmail.com</li>
+                    <li>By email: contato.referenciaemabnt@gmail.com</li>
                 </ul>
             </C.Container>
         </Theme>

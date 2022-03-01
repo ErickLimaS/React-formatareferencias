@@ -3,7 +3,7 @@ import { media } from '../../components/theme/media'
 
 export const Container = styled.div<{ bgColor: string }>`
 
-    background-color: #02044A;
+    background-color: rgb(78 83 255);
     color: #FFF;
     min-height: 100vh;
 
@@ -11,18 +11,15 @@ export const Container = styled.div<{ bgColor: string }>`
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: #06086e;
-        box-shadow: 0px 6px 2em 8px #000132;
         margin: 10px 0 15px 0;
-        padding: 20px;
         backgroundImage: 'url(/logoxl.png)';
         backgroundPosition: 'center';
         backgroundSize: 'cover';
         backgroundRepeat: 'no-repeat';
+        width: fit-content;
 
         .imgLogoxl {
-            width: 280px;
-            filter: blur(8px);
+            width: 0px;
             margin: 0 20px;
             margin-top: -10000px;
             background-position: center;
@@ -40,11 +37,11 @@ export const Container = styled.div<{ bgColor: string }>`
         justify-content: center;
         align-items: center;
         z-index: 1;
-        background-color: #00000055;
         border-radius: 4px;
+        font-family: "Nunito Sans", sans-serif;
 
         p {
-            font-size: 16px;
+            font-size: 18px;
         }
 
         #p2 {
@@ -55,7 +52,7 @@ export const Container = styled.div<{ bgColor: string }>`
 
         .buttonAMainText {
             text-decoration: none;
-            background-color: #455da0;
+            background-color:  #2125ed;
             padding: 15px;
             margin: 25px 0 0 0;
             border: 1px solid #FFF;
@@ -73,12 +70,13 @@ export const Container = styled.div<{ bgColor: string }>`
         }
         
         h1 {
-            font-size: 30px;
-            font-weight: 500;
+            font-size: 40px;
+            font-weight: 600;
             width: 280px;
         }
 
         p {
+            font-weight: 500;
             margin-left: 10px;
             margin-right: 10px;
             font-size: 20px;
@@ -89,17 +87,24 @@ export const Container = styled.div<{ bgColor: string }>`
         }
 
         #disapearP {
+            margin: 10px 0;
             padding: 10px;
+            background-color: #00000050;
+            border-top: 1px solid #FFF;
+            border-bottom: 1px solid #FFF;
             text-decoration: none;
-            border-radius: 4px;
-            box-shadow: inset 0px 0px 3em 10px #000132;
         }
     }
     ${media.greaterThan('sm')`
         #disapearP{
             display: none;
         }
+        .divMainText {
 
+            .imgLogoxl{
+                width: 320px;
+            }
+        }
         .mainText{
             padding: 20px;
             #p2 {
@@ -159,7 +164,7 @@ export const Container = styled.div<{ bgColor: string }>`
     `}
     ${media.greaterThan('xl')`
 
-        background-color: #02044A;
+        background-color: rgb(78 83 255);
         color: #FFF;
         min-height: 100vh;
 
@@ -167,11 +172,11 @@ export const Container = styled.div<{ bgColor: string }>`
             display: flex;
             align-items: center;
             flex-direction: row;
-            background-color: #06086e;
-            box-shadow: 0px 6px 2em 8px #000132;
+            background-color: #000397;
             margin: 10px 0 15px 0;
             padding: 20px;
             min-width: 100vh;
+            width: auto;
 
             .imgLogoxl {
                 width: 420px;
@@ -309,8 +314,10 @@ export const Sidebar = styled.div`
 
 
     ${media.greaterThan('xs')` 
+        border-top: 1px solid #FFF;
+        border-bottom: 1px solid #FFF;
         display: flex;
-        background-color: #000028;
+        background-color: transparent;
         overflow: auto;
     `}
     
@@ -324,6 +331,9 @@ export const Sidebar = styled.div`
     `}
 
     ${media.greaterThan('xl')`
+    
+        border-top: none;
+        border-bottom: none;
         background-color: unset;
         display: block;
         width: 250px;
@@ -348,7 +358,7 @@ export const Page = styled.div`
 
     ${media.greaterThan('xl')` 
     
-        border-left: 1px solid #16195C;
+        border-left: 1px solid #FFF;
         flex: 1;
         padding-left: 40px;
         padding-top: 40px;

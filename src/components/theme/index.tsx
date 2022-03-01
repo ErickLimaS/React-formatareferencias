@@ -28,7 +28,7 @@ export const Theme = ({ children }: Props) => {
                     <div>
                         <img src={logo} alt="Logo do site Referência em ABNT" className='imgLogoxl' />
                     </div>
-                    <p id="disapearP">Se possível, recomendamos usar a ferramenta em um Computador ou Notebook para melhor experiência.</p>
+                    <p id="disapearP">Para melhor experiência, recomendamos usar a ferramenta em um Computador ou Notebook.</p>
                 </div>
 
                 <C.Area id='mainContent'>
@@ -65,7 +65,6 @@ export const Theme = ({ children }: Props) => {
                 </C.Area>
 
                 <Footer />
-
         </C.Container>
     )
 }

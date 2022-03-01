@@ -15,7 +15,7 @@ export const Privacidade = () => {
         <Theme>
             <C.Container>
                 <h1>Política de Privacidade - Privacy Policy</h1>
-                <p>Last updated: February 26, 2022</p>
+                <p>Last updated: February 28, 2022</p>
                 <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
                 <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <a href="https://www.termsfeed.com/blog/sample-privacy-policy-template/" target="_blank">Privacy Policy Template</a>.</p>
                 <h1>Interpretation and Definitions</h1>
@@ -173,7 +173,7 @@ export const Privacidade = () => {
                 <h1>Contact Us</h1>
                 <p>If you have any questions about this Privacy Policy, You can contact us:</p>
                 <ul>
-                    <li>By email: referenciaemabnt@gmail.com</li>
+                    <li>By email: contato.referenciaemabnt@gmail.com</li>
                 </ul>
 
 </C.Container>

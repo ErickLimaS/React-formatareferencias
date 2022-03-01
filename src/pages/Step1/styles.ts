@@ -9,7 +9,7 @@ export const Container = styled.div`
     }
 
     p {
-        color: #B8B8D4;
+        color: #FFF;
 
     }
     h1 {
@@ -19,9 +19,9 @@ export const Container = styled.div`
 
     }
     hr {
+        background-color: #FFF;
         height: 1px;
         border: 0;
-        background-color: #16195C;
         margin: 30px 0;
     }
 
@@ -32,8 +32,8 @@ export const Container = styled.div`
             margin-top: 7px;
             box-sizing: border-box;
             width: 100%;
-            padding: 20px 10px;
-            border: 2px solid #25CD89;
+            padding: 15px 10px;
+            border: 1px solid #585858;
             border-radius: 10px;
             outline: 0; 
             font-size: 18px;

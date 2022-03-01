@@ -5,7 +5,6 @@ export const Container = styled.div`
         background-color: #000076;
         display: flex;
         flex-direction: column;
-        box-shadow: 0px -2px 2em 0px #000132;
         text-decoration: none;
 
         p {

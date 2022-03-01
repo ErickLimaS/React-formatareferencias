@@ -3,7 +3,7 @@ import { media } from "../../components/theme/media";
 
 export const Container = styled.div`
     p {
-        color: #B8B8D4;
+        color: #FFF;
 
     }
     h1 {
@@ -15,7 +15,7 @@ export const Container = styled.div`
     hr {
         height: 1px;
         border: 0;
-        background-color: #16195C;
+        background-color: #FFF;
         margin: 30px 0 15px 0;
     }
 
@@ -34,6 +34,9 @@ export const Container = styled.div`
             font-size: 15px;
             background-color: #02044A;
         }
+    }
+    div small {
+        color: #FFF;
     }
 
     button {

@@ -68,6 +68,7 @@ export const Container = styled.div`
     }
 
     input {
+        border: 1px solid #585858;
         font-size: 16px
     }
 
@@ -86,6 +87,14 @@ export const Container = styled.div`
     .datePublic {
         margin: 10px 0 15px 0;
         border-radius: 4px;
+    }
+
+    .mantine-pb0o5j{
+        color: #FFF!important;
+    }
+
+    small {
+        color: #FFF!important;
     }
 
     .datePublic .mantine-Text-root {
@@ -117,7 +126,7 @@ export const Container = styled.div`
     .divSelect small{
         font-size: 12px;
         font-weight: 400;
-        color: #688e96!important;
+        color: #FFF!important;
         padding: 20px 5px 20px 5px;
     }
     .divSelect select {

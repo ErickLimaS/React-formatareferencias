@@ -55,7 +55,7 @@ export const Container = styled.div`
     hr {
         height: 1px;
         border: 0;
-        background-color: #16195C;
+        background-color: #FFF;
         margin: 30px 0;
     }
 
