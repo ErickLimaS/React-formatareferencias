@@ -13,6 +13,7 @@ export const Container = styled.div`
 
     .divHeaderName {
         display: flex;
+        align-items: center;
     }
 
     .headerName {

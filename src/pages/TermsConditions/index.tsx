@@ -8,6 +8,7 @@ export const TermsConditions = () => {
 
     useEffect(() => {
         document.title = title;
+        window.scrollTo(0, 0);
         setTitle('Termos e Condições | Referência em ABNT')
     }, [title])
 

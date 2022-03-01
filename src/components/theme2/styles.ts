@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import { media } from '../theme/media';
 
 export const Container = styled.div`
-    background-color: #02044A;
-    color: #FFF;
+    background: linear-gradient(to bottom,#5356ff1f 0%,#ffffff 70%);
+    color: #3f4554;
     min-height: 100vh;
+
 
 `;
 
@@ -58,24 +59,38 @@ export const Steps = styled.div`
 `;
 
 export const Sidebar = styled.div`
-        background-color: #1e1e7c;
+        background-color: #d9d9ff;
         margin: 10px 0;
+        color: #3f4554;
 
         div {
             padding-right: 10px;
             margin: 20px 40px;
             text-decoration: none;
+
+            h2 {
+                
+                font-size: 18px;
+                margin: 15px 0px;
+                color: #000;
+                font-weight: 400;
+                text-decoration: underline;
+
+                &:hover {
+                    color: #000;
+                }
+            }
         }
 
-        div h2{
+        .121{
             font-size: 16px;
             margin: 15px 0px;
-            color: #FFF;
+            color: #000;
             font-weight: 400;
             text-decoration: underline;
 
             &:hover {
-                color: #afafaf;
+                color: #3f4554;
             }
         }
 
@@ -103,19 +118,14 @@ export const Sidebar = styled.div`
         div {
             padding-right: 10px;
             margin: 80% 0px;
-        text-decoration: none;
+            text-decoration: none;
         }
 
         div h2{
             font-size: 14px;
             margin: 15px 0px;
-            color: #FFF;
             font-weight: 400;
             text-decoration: underline;
-
-            &:hover {
-                color: #afafaf;
-            }
         }
     `}
 
@@ -130,14 +140,13 @@ export const Sidebar = styled.div`
         }
 
         div h2{
-            font-size: 14px;
+            font-size: 16px;
             margin: 15px 0px;
-            color: #FFF;
             font-weight: 400;
             text-decoration: underline;
 
             &:hover {
-                color: #afafaf;
+                color: #3f4554;
             }
         }
     `}
@@ -158,6 +167,14 @@ export const Page = styled.div`
     padding-top: 40px;
     padding-right: 20px;
     margin-bottom: 40px;
+    color: #3f4554;
+
+    div a {
+            color: #000;
+            &:hover {
+                color: #3f4554;
+            }
+    }
 
     ${media.greaterThan('sm')`
         padding-left: 30px;

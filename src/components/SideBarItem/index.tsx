@@ -21,13 +21,13 @@ export const SideBarItem = ({ title, description, icon, path, active }: Props) =
                 </C.Info>
                 <C.IconArea active={active}>
                     {icon === 'one' &&
-                        <NumberOne fill='blue' width='50' height='50' />
+                        <NumberOne fill='#56B48C' width='50' height='50' />
                     }
                     {icon === 'two' &&
-                        <NumberTwo fill='blue' width='50' height='50' />
+                        <NumberTwo fill='#56B48C' width='50' height='50' />
                     }
                     {icon === 'three' &&
-                        <NumberThree fill='blue' width='50' height='50' />
+                        <NumberThree fill='#56B48C' width='50' height='50' />
                     }
                 </C.IconArea>
             </Link>

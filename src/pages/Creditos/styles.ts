@@ -8,7 +8,7 @@ export const Container = styled.div`
         a {
             margin: 20px 0;
             font-size: 20px;
-            color: #FFF;
+            color: #3f4554;
         }
     }
 `;

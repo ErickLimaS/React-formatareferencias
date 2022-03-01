@@ -8,6 +8,7 @@ export const Sobre = () => {
 
     useEffect(() => {
         document.title = title;
+        window.scrollTo(0, 0);
         setTitle('Sobre Nós | Referência em ABNT')
     }, [title])
 
@@ -20,16 +21,16 @@ export const Sobre = () => {
                     Somos uma equipe que já passamos por muitos trabalhos e projetos, seja de faculdade ou de escola, onde alguns precisavam ser feitos em conjunto com as normas ABNT.
                 </p>
                 <p>
-                    Um dia após ter terminado um projeto da faculdade, pensei que as normas ABNT podem não ser tão fáceis assim para se aprender. Além do mais, apenas olhamos essas normas quando precisamos fazer esses trabalhos escolares e universitários.
+                    Um dia após termos terminado um projeto da faculdade, pensamos que as normas ABNT podem ser complicados e virar mais um assunto a ser estudado além do assunto do seu trabalho/projeto. E uma pessoa não sabendo bem as normas pode ficar entre um trabalho com a nota perfeita ou a nota que foi prejudicada pelo mal conhecimento das normas de entrega do trabalho.
                 </p>
                 <p>
-                    Pensamos juntos sobre isso, e vimos que poderiamos fazer pelo menos parte do projeto ou trabalho de algumas pessoas mais fáceis.
+                    Pensamos juntos sobre isso, e vimos que poderiamos fazer pelo menos parte do projeto/trabalho de alguem mais fácil.
                 </p>
                 <p>
-                    Então decimos criar o site. Sempre pensando no modo que as pessoas possam apenas olhar e entender o que dá para ser feito e que realmente pode ajudar o trabalho em ABNT delas ser bem sucedido.
+                    Então decimos criar um site. Sempre pensando em um modo que as pessoas possam apenas olhar e entender o que você conseguirá fazer explicando de uma forma simples e prática as normas ABNT que o seu trabalho ou projeto precisam.
                 </p>
                 <p>
-                    Não podemos deixar de citar que somos da área de T.I., e estamos, além de tudo, testando nossos conhecimentos sobre front-end.
+                    Não podemos deixar de citar que somos da área de T.I., e estamos, além de tudo, testando nossos conhecimentos sobre front-end com a criação desse site.
                 </p>
             </C.Container>
         </Theme>

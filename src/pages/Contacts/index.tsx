@@ -8,6 +8,7 @@ export const Contatos = () => {
 
     useEffect(() => {
         document.title = title;
+        window.scrollTo(0, 0);
         setTitle('Contatos | Referência em ABNT')
     }, [title])
 
@@ -20,7 +21,7 @@ export const Contatos = () => {
                     Atualmente estamos com esses meios de contato:
                 </p>
                 <ul>
-                    <li>Email: <a href="mailto:referenciaemabnt@gmail.com">referenciaemabnt@gmail.com</a></li>
+                    <li>Email: <a href="mailto:contato.referenciaemabnt@gmail.com">contato.referenciaemabnt@gmail.com</a></li>
                 </ul>
             </C.Container>
         </Theme>

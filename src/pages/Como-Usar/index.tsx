@@ -7,6 +7,7 @@ export const ComoUsar = () => {
 
     useEffect(() => {
         document.title = title;
+        window.scrollTo(0, 0);
         setTitle('Como Usar o Formatar Referências | Referência em ABNT')
     }, [title])
 
