@@ -33,14 +33,14 @@ export const Title = styled.div <{ active: boolean; }>`
     text-align: right;
     font-weight: bold;
     margin-bottom: 5px;
-    font-size:15px;
-    color: ${props => props.active ? '#FFF' : '#343434'};
+    font-size: ${props => props.active ? '17px' : '15px'};
+    color: ${props => props.active ? '#3f4554' : '#5c5c5c'};
 `;
 
 export const Description = styled.div <{ active: boolean; }>`
     text-align: right;
     font-size: 13px;
-    color: ${props => props.active ? '#FFF' : '#343434'};
+    color: ${props => props.active ? '#3f4554' : '#5c5c5c'};
 `;
 export const Point = styled.div <{ active: boolean; }>`
     width: 6px;

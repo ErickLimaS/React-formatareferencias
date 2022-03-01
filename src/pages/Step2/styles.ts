@@ -3,7 +3,7 @@ import { media } from "../../components/theme/media";
 
 export const Container = styled.div`
     p {
-        color: #FFF;
+        color: #3f4554;
 
     }
     h1 {
@@ -15,12 +15,12 @@ export const Container = styled.div`
     hr {
         height: 1px;
         border: 0;
-        background-color: #FFF;
+        background-color: #3f4554;
         margin: 30px 0 15px 0;
     }
 
     label {
-
+        color: #3f4554;
         input {
             display: block;
             margin-top: 7px;
@@ -55,7 +55,7 @@ export const Container = styled.div`
         font-size: 16px;
         text-decoration: none;
         padding: 10px 40px;
-        color: #B8B8D4;
+        color: #878787;
         margin: 20px 10px;
     }
 
@@ -69,7 +69,8 @@ export const Container = styled.div`
 
     div.buttons > * {
         border-radius: 30px;
-        border: 1px solid #FFF;
+        border: 1px solid #878787;
+        width: -webkit-fill-available;
     }
 
     select {
@@ -88,9 +89,11 @@ export const Container = styled.div`
     `}
     
     ${media.greaterThan('md')`
-    
-
-
+        div.buttons > * {
+            border-radius: 30px;
+            border: 1px solid #878787;
+            width: auto;
+        }
     `}
 
 `;

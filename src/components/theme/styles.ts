@@ -3,7 +3,7 @@ import { media } from '../../components/theme/media'
 
 export const Container = styled.div<{ bgColor: string }>`
 
-    background-color: rgb(78 83 255);
+    background-color: #faf9ff;
     color: #FFF;
     min-height: 100vh;
 
@@ -41,7 +41,8 @@ export const Container = styled.div<{ bgColor: string }>`
         font-family: "Nunito Sans", sans-serif;
 
         p {
-            font-size: 18px;
+            font-size: 24px;
+            color: #000;
         }
 
         #p2 {
@@ -52,27 +53,28 @@ export const Container = styled.div<{ bgColor: string }>`
 
         .buttonAMainText {
             text-decoration: none;
-            background-color:  #2125ed;
+            background-color: #d9d9ff;
             padding: 15px;
             margin: 25px 0 0 0;
-            border: 1px solid #FFF;
+            border: 1px solid #232399;
             border-radius: 4px;
-            color: #FFF;
-            font-size: 16px;
+            color: #232399;
+            font-size: 18px;
             font-weight: 600;
             font-family: "Nunito Sans", sans-serif;
             transition: all 0.2s ease-out;
 
             :hover {
                 transform: scale(1.05);
-                background-color: #3351a5;
+                background-color: #cfcfcf;
             }
         }
         
         h1 {
-            font-size: 40px;
+            font-size: 54px;
             font-weight: 600;
             width: 280px;
+            color: #3f4554;
         }
 
         p {
@@ -89,7 +91,7 @@ export const Container = styled.div<{ bgColor: string }>`
         #disapearP {
             margin: 10px 0;
             padding: 10px;
-            background-color: #00000050;
+            background-color: #00000090;
             border-top: 1px solid #FFF;
             border-bottom: 1px solid #FFF;
             text-decoration: none;
@@ -106,6 +108,7 @@ export const Container = styled.div<{ bgColor: string }>`
             }
         }
         .mainText{
+            background-color: #faf9ff9e;
             padding: 20px;
             #p2 {
                 display: block;
@@ -126,30 +129,33 @@ export const Container = styled.div<{ bgColor: string }>`
     `}
 
     ${media.greaterThan('md')`
-        #disapearP{
-            display: none;
-        }
-
-        
 
     `}
+
     ${media.greaterThan('lg')`
         .divMainText {
             flex-direction: row;
+            background-color: #5356ff;
 
             h1 {
-                font-size: 32px;
+                color: #FFF;
+                font-size: 36px;
             }
 
             p {
+                color: #FFF;
                 margin-left: 40px;
                 margin-right: 40px;
 
             }
-            
+            .buttonAMainText {
+                background-color: #FFF;
+                color: #2c2ce1;
+                font-weight: 500;
+            }
             .mainText {
-                z-index: 0;
                 background-color: unset;
+                z-index: 0;
                 border-radius: 0px;
             }
 
@@ -164,7 +170,6 @@ export const Container = styled.div<{ bgColor: string }>`
     `}
     ${media.greaterThan('xl')`
 
-        background-color: rgb(78 83 255);
         color: #FFF;
         min-height: 100vh;
 
@@ -172,7 +177,6 @@ export const Container = styled.div<{ bgColor: string }>`
             display: flex;
             align-items: center;
             flex-direction: row;
-            background-color: #000397;
             margin: 10px 0 15px 0;
             padding: 20px;
             min-width: 100vh;
@@ -229,12 +233,17 @@ export const Container = styled.div<{ bgColor: string }>`
             justify-content: center;
 
             h1 {
-                font-size: 52px;
+                font-size: 62px;
+                width: 900px;
             }
 
             p {
-                width: 1200px;
+                width: 1000px;
+                font-size: 32px;
+            }
+            .buttonAMainText {
                 font-size: 28px;
+
             }
 
             .imgLogoxl {
@@ -314,10 +323,10 @@ export const Sidebar = styled.div`
 
 
     ${media.greaterThan('xs')` 
-        border-top: 1px solid #FFF;
-        border-bottom: 1px solid #FFF;
+        border-top: 1px solid #303540;
+        border-bottom: 1px solid #303540;
         display: flex;
-        background-color: transparent;
+        background-color: #5356ff3b;
         overflow: auto;
     `}
     
@@ -349,6 +358,21 @@ export const Page = styled.div`
     padding-left: 20px;
     padding-top: 40px;
     padding-right: 20px;
+    color: #3f4554;
+
+    h1 {
+        color: #3f4554;
+        font-size: 36px;
+    }
+
+    hr {
+        background-color: #3f4554;
+    }
+
+    p {
+        color: #3f4554;
+        font-size: 20px;
+    }
 
     ${media.greaterThan('xs')` 
 
@@ -358,7 +382,7 @@ export const Page = styled.div`
 
     ${media.greaterThan('xl')` 
     
-        border-left: 1px solid #FFF;
+        border-left: 1px solid #3f4554;
         flex: 1;
         padding-left: 40px;
         padding-top: 40px;

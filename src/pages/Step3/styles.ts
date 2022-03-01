@@ -12,7 +12,7 @@ export const Container = styled.div`
         background-color: #FFF;
         border-radius: 4px;
         height: 180px;
-        width: 90%;
+        border: 1px solid #3f4554;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -41,12 +41,6 @@ export const Container = styled.div`
         color: #B8B8D4;
 
     }
-    h1 {
-        margin:0;
-        padding: 0;
-        font-size: 26px;
-
-    }
     h2 {
         font-weight: 100;
         font-size: 18px;
@@ -55,7 +49,7 @@ export const Container = styled.div`
     hr {
         height: 1px;
         border: 0;
-        background-color: #FFF;
+        background-color: #3f4554;
         margin: 30px 0;
     }
 
@@ -103,6 +97,7 @@ export const Container = styled.div`
         text-decoration: none;
         margin: 0 10px 0 10px;
         border: 2px solid white;
+        width: -webkit-fill-available;
 
         &:hover {
             transition: all 0.1s ease-out;
@@ -123,8 +118,12 @@ export const Container = styled.div`
         font-weight: 500;
     }
     p{
+        color: #3f4554;
+        font-size: 20px;
+    }
+    #disapearP {
+        
         color: #FFF;
-        font-size: 16px;
     }
 
     .lastUl{
@@ -139,5 +138,8 @@ export const Container = styled.div`
 
     ${media.greaterThan('md')`
     
+    .backButton{
+        width: auto;
+    }
     `}
 `;

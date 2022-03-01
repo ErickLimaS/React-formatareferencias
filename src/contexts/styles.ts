@@ -3,14 +3,14 @@ import styled from 'styled-components'
 export const Container = styled.div`
 
     label {
-        font-size: 20px;
-        color: #FFF;
+        font-size: 22px;
+        color: #3f4554;
         margin: 25px 20px 10px 20px;
     }
 
     h1 {
-        font-size: 20px;
-        color: #FFF;
+        font-size: 22px;
+        color: #3f4554;
         margin: 25px 20px 10px 20px;
     }
 
@@ -23,15 +23,19 @@ export const Container = styled.div`
             justify-content: space-evenly;
             align-items: center;
             border-radius: 4px;
-            background-color: #1e1e7c;
+            background-color: #d9d9ff;
             padding-bottom: 10px;
+            border: 1px solid #00000063;
         }
 
         h2 {
             font-weight: 500;
             font-size: 20px;
-            color: #FFF;
+            color: #3f4554;
             margin: 25px 20px 10px 20px;
+        }
+        label {
+            color: #3f4554;
         }
     }
 
@@ -43,6 +47,10 @@ export const Container = styled.div`
             font-weight: 500;
             font-size: 20px;
         }
+        h2 {
+            font-weight: 500;
+            font-size: 20px;
+        }
 
         small {
             color: #868E96;
@@ -51,18 +59,18 @@ export const Container = styled.div`
 
         div {
             margin: 10px 0 0 0;
-            padding: 5px 0;
-            background-color: #1e1e7c;
+            padding: 5px;
+            background-color: #d9d9ff;
             border-radius: 4px;
 
             input {
-                margin: 16px;
+                margin: 10px;
             }
 
             label {
                 margin-left: 0;
                 font-weight: 100;
-                font-size: 18px;
+                font-size: 22px;
             }
         }
     }
@@ -81,7 +89,7 @@ export const Container = styled.div`
 
     .datePublic, .dateVisualization{
         align-items: flex-end;
-        background-color: #1e1e7c;
+        background-color: #d9d9ff;
     }
 
     .datePublic {
@@ -90,11 +98,13 @@ export const Container = styled.div`
     }
 
     .mantine-pb0o5j{
-        color: #FFF!important;
+        color: #3f4554!important;
+        font-size: 14px!important;
     }
 
     small {
-        color: #FFF!important;
+        color: #3f4554!important;
+        font-size: 14px!important;
     }
 
     .datePublic .mantine-Text-root {
@@ -126,7 +136,6 @@ export const Container = styled.div`
     .divSelect small{
         font-size: 12px;
         font-weight: 400;
-        color: #FFF!important;
         padding: 20px 5px 20px 5px;
     }
     .divSelect select {
@@ -168,7 +177,8 @@ export const Container = styled.div`
         button {
             font-size: 16px;
             font-weight: 500;
-            background-color: #1c8d00;
+            border: 1px solid #878787;
+            background-color: #65cf4b;
         }
     }
 
