@@ -31,7 +31,7 @@ export const IconArea = styled.div<{ active: boolean; }>`
 
 export const Title = styled.div <{ active: boolean; }>`
     text-align: right;
-    font-weight: bold;
+    font-weight: ${props => props.active ? 'bold' : '400'};
     margin-bottom: 5px;
     font-size: ${props => props.active ? '17px' : '15px'};
     color: ${props => props.active ? '#3f4554' : '#5c5c5c'};

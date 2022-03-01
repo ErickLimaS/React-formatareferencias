@@ -12,7 +12,7 @@ export const Container = styled.div`
         background-color: #FFF;
         border-radius: 4px;
         height: 180px;
-        border: 1px solid #3f4554;
+        border: 2px solid #3f4554;
         display: flex;
         justify-content: center;
         align-items: center;
