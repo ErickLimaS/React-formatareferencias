@@ -169,6 +169,43 @@ export const Page = styled.div`
     margin-bottom: 40px;
     color: #3f4554;
 
+    h1 {
+        font-size: 34px;
+        margin-bottom: 35px;
+    }
+
+    h2 {
+        margin-top: 50px;
+        margin-bottom: 30px;
+        font-size: 28px;
+        font-weight: 600;
+    }
+    h3 {
+        margin: 60px 40px 20px 40px;
+        font-size: 22px;
+        font-weight: 500;
+    }
+    .imgCenter {
+        display: flex;
+        justify-content: center;
+        margin: 40px 0;
+    }
+    img{
+        border: 1px solid #0000004a;
+        width: 500px;
+    }
+    .underline {
+        text-decoration: underline;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .spaceOnText{
+        margin: 25px 10px 35px 10px;
+    }
+
     div a {
             color: #000;
             &:hover {

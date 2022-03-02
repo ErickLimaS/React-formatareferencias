@@ -11,6 +11,10 @@ export const Container = styled.div`
     align-items: center;
     flex-direction: column;
 
+    .dropdown {
+        display: none;
+    }
+    
     .divHeaderName {
         display: flex;
         align-items: center;
@@ -73,14 +77,80 @@ export const Container = styled.div`
     ${media.greaterThan('md')`
         flex-direction: row;
         
+        
         li  {
             font-size: 17px;
         }
     `};
 
+    ${media.greaterThan('lg')`
+
+        .dropdown {
+            display: block;
+            padding: 25px;
+            font-size: 18px;
+            color: #FFF;
+            cursor: pointer;
+
+            &:hover {
+                color: #b7b5b5;
+                transition: all 0.1s ease-in-out
+            }
+        }
+
+        .dropdown-content{
+            display: none;
+            position: absolute;
+            background-color: #dbdbdb;
+            margin-top: 2vh;
+            margin-left: -10vh;
+            margin-right: 2vh;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 2px;
+            color: #000;
+            min-width: 200px;
+            max-width: 210px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 1s ease-in-out;
+        }
+
+        .dropdown:after{
+            content: '';
+            border: 8px solid transparent;
+            border-top: 8px solid white;
+            margin-left: 5px;
+            margin-bottom: 0px;
+            display: inline-block;
+            vertical-align: bottom;
+        }
+
+        .dropdown-content a {
+            text-decoration: none;
+            padding: 15px;
+            min-width: 20px;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        .dropdown-content a:nth-child(odd) {
+            background-color: #FFF;
+            
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    `}
+
     ${media.greaterThan('xl')`
         background-color: #00008d ;
-        padding: 15px 15px;
         border-bottom: 1px solid #16195C;
         display:flex; 
         justify-content: space-between;

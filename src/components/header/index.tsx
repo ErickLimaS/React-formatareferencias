@@ -1,31 +1,39 @@
 import * as C from './styles';
 import { Link } from 'react-router-dom'
+import { Referencias } from '../../pages/aboutAbnt/referencias';
 
 export const Header = () => {
     const Logo = require('./logo.png')
 
-            /* < ul >
-                <li><Link to="/como-usar">Como Usar</Link></li>
-                <li><Link to="/modelos-abnt">Modelos em ABNT</Link></li>
-                <li><Link to="/regras-da-norma-abnt">Regras da Norma ABNT</Link></li>
-            </ul >*/
+    /* < ul >
+        <li><Link to="/como-usar">Como Usar</Link></li>
+        <li><Link to="/modelos-abnt">Modelos em ABNT</Link></li>
+        <li><Link to="/regras-da-norma-abnt">Regras da Norma ABNT</Link></li>
+    </ul >*/
 
     return (
-    <C.Container>
-        <div className='divHeaderName'>
-            <div>
-                <Link to="/" className='headerName'>
-                    <img src={Logo} alt="Logo do Site Referência em ABNT" className='imgLogo' />
-                </Link>
-            </div>
-            <div>
-                <Link to="/" className='headerName'>
-                    Referência em ABNT
-                </Link>
+        <C.Container>
+            <div className='divHeaderName'>
+                <div>
+                    <Link to="/" className='headerName'>
+                        <img src={Logo} alt="Logo do Site Referência em ABNT" className='imgLogo' />
+                    </Link>
+                </div>
+                <div>
+                    <Link to="/" className='headerName'>
+                        Referência em ABNT
+                    </Link>
+                </div>
+
             </div>
 
-        </div>
+            <div className='dropdown'>
+                <span>Como Fazer ... </span>
+                <div className='dropdown-content'>
+                    <Link to={'/abnt/como-fazer-referencias-bibliograficas-em-abnt'}>Como Fazer as Referências Bibliográficas</Link>
+                </div>
+            </div>
 
-    </C.Container>
-);
+        </C.Container>
+    );
 }
