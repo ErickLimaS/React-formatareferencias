@@ -6,19 +6,19 @@ export const Footer = () => {
         <C.Container>
             <ul>
                 <li>
-                    <Link to={'/about'}>Sobre</Link>
+                    <a href={'/about'}>Sobre</a>
                 </li>
                 <li>
-                    <Link to={'/terms-and-conditions'}>Termos e Condições</Link>
+                    <a href={'/terms-and-conditions'}>Termos e Condições</a>
                 </li>
                 <li>
-                    <Link to={'/privacy'}>Política de Privacidade</Link>
+                    <a href={'/privacy'}>Política de Privacidade</a>
                 </li>
                 <li>
-                    <Link to={'/contacts'}>Contato</Link>
+                    <a href={'/contacts'}>Contato</a>
                 </li>
                 <li>
-                    <Link to={'/credits'}>Créditos</Link>
+                    <a href={'/credits'}>Créditos</a>
                 </li>
             </ul>
             <small>Referência em ABNT © 2022. Todos os Direitos Reservados.</small>

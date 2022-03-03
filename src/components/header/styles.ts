@@ -9,7 +9,20 @@ export const Container = styled.div`
     display:flex; 
     justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+    font-size: 1px;
+    flex-direction: row-reverse;
+    
+    .menuDesktop button {
+        background-color: #5356ff;
+    }
+
+    .menuDesktop {
+        display: none;
+    }
+
+    .menuMobile {
+        display: block;
+    }
 
     .dropdown {
         display: none;
@@ -17,11 +30,20 @@ export const Container = styled.div`
     
     .divHeaderName {
         display: flex;
+        margin: 15px 0;
         align-items: center;
+        flex-direction: row-reverse;
+
+    }
+
+    .divMenuMobile {
+        border: 1px solid #bfbfbf;
+        padding: 10px;
+        border-radius: 60px;
     }
 
     .headerName {
-        font-size: 24px;
+        font-size: 22px;
         color: #FFF;
         display: flex;
         justify-content: center;
@@ -76,7 +98,23 @@ export const Container = styled.div`
 
     ${media.greaterThan('md')`
         flex-direction: row;
-        
+
+        .divHeaderName {
+            flex-direction: row;
+        }
+        .headerName {
+            font-size: 24px;
+        }
+
+        .menuDesktop {
+            display: block;
+        }
+        .menuMobile{
+            display: none;
+        }
+        .divMenuMobile {
+            border: unset;
+        }
         
         li  {
             font-size: 17px;
@@ -96,6 +134,10 @@ export const Container = styled.div`
                 color: #b7b5b5;
                 transition: all 0.1s ease-in-out
             }
+        }
+
+        .headerName {
+            font-size: 26px;
         }
 
         .dropdown-content{

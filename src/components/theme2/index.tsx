@@ -21,11 +21,11 @@ export const Theme = ({ children }: Props) => {
                     <C.Sidebar>
 
                         <div>
-                            <Link to={'/'}>
+                            <a href={'/'}>
                                 <h2 className='121'>
                                     Fazer Minha Referência Agora
                                 </h2>
-                            </Link>
+                            </a>
                         </div>
 
 

@@ -73,7 +73,7 @@ export const Container = styled.div`
         }
     }
 
-    button {
+    .buttons button {
         background-color: #00c144;
         color: #FFF;
         font-size: 16px;
