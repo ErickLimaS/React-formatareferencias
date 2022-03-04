@@ -4,6 +4,7 @@ import { useForm, FormActions } from '../../contexts/FormContext'
 import { SelectOptions } from '../../contexts/selectOptionStep1'
 import { Theme } from '../../components/theme';
 import { ChangeEvent, useEffect, useState } from 'react';
+import swal from 'sweetalert';
 
 export const Step1 = () => {
     const navigate = useNavigate();
@@ -25,13 +26,13 @@ export const Step1 = () => {
             if (state.refType1 === '11') {
                 navigate('./step2')
             }
-            alert("Preencha o Tipo da Referência.")
+            swal("Tipo não Selecionado!", "Você precisa dizer de onde a referência vem!", "warning");
         }
         else if (state.refType1 !== '' || state.refType2 !== '') {
             navigate('./step2')
         }
         else {
-            alert("Preencha o Tipo da Referência.")
+            swal("Tipo não Selecionado!", "Você precisa dizer de onde a referência vem!", "warning");
         }
     };
 
@@ -41,7 +42,7 @@ export const Step1 = () => {
             payload: e.target.value
         });
     }
-    
+
     return (
         <Theme>
             <C.Container>

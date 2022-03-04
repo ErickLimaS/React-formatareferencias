@@ -4,6 +4,7 @@ import { Theme } from '../../components/theme';
 import { useEffect, useState } from 'react';
 import { FormatedText } from '../../contexts/FormatedText';
 import * as C from './styles'
+import { Alert } from '@mantine/core';
 
 export const Step3 = () => {
     const navigate = useNavigate();
@@ -249,7 +250,19 @@ export const Step3 = () => {
                 <FormatedText />
 
                 <h2>Copie a referência acima e cole ou transcreva no seu trabalho.</h2>
-                <h3 className='warning'>Se na sua referência houver espaços em branco, volte e reveja se não esqueceu de preencher algum campo.</h3>
+                <Alert title="Atenção!" variant="filled" styles={{
+                    root: { color: 'red' },
+                    wrapper: { color: 'red' },
+                    light: { color: 'red' },
+                    filled: { color: 'blue' },
+                    outline: { color: 'black' },
+                    body: { color: 'red' },
+                    title: { color: 'white' },
+                    label: { color: 'white' },
+                    message: { color: 'white' },
+                }}>
+                    Sempre verifique se não há espaços em branco ou não preenchidos em sua referência. Se houver, por favor, faça novamente.
+                </Alert>
                 <div className='buttons'>
                     <button onClick={refreshToStep1} className="backButton">Fazer Nova Referência</button>
                 </div>
@@ -258,12 +271,12 @@ export const Step3 = () => {
 
                 <h3>Não se Esqueça de Verificar a Formatação no seu Trabalho!</h3>
                 <p className='lastP'>Seguindo a ABNT NBR 6023 (Atual/2022):</p>
-                    <ul className='lastUl'>
-                        <li>Espaçamento: simples</li>
-                        <li>Fonte: Recomendada Arial ou Times new roman </li>
-                        <li>Tamanho de fonte: 12</li>
-                        <li>Alinhamento de texto: à esquerda</li>
-                    </ul>
+                <ul className='lastUl'>
+                    <li>Espaçamento: simples</li>
+                    <li>Fonte: Recomendada Arial ou Times new roman </li>
+                    <li>Tamanho de fonte: 12</li>
+                    <li>Alinhamento de texto: à esquerda</li>
+                </ul>
 
             </Theme>
         </C.Container>

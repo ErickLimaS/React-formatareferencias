@@ -37,9 +37,7 @@ export const Container = styled.div`
     }
 
     .divMenuMobile {
-        border: 1px solid #bfbfbf;
         padding: 10px;
-        border-radius: 60px;
     }
 
     .headerName {
