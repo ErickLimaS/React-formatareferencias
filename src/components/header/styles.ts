@@ -11,6 +11,18 @@ export const Container = styled.div`
     align-items: center;
     font-size: 1px;
     flex-direction: row-reverse;
+
+    .buttonMobile {
+        background-color: inherit;
+    }
+
+    .mantine-Drawer-header {
+        list-style-type: none;
+        background-color: #000;
+        font-size: 22px;
+        padding: 5px 0;
+        margin: 5px 0;
+    }
     
     .menuDesktop button {
         background-color: #5356ff;
@@ -18,10 +30,6 @@ export const Container = styled.div`
 
     .menuDesktop {
         display: none;
-    }
-
-    .menuMobile {
-        display: block;
     }
 
     .dropdown {
@@ -47,7 +55,6 @@ export const Container = styled.div`
         justify-content: center;
         margin: 20px 5px 10px 5px;
     }
-
 
     ul {
         display: flex;
@@ -97,6 +104,11 @@ export const Container = styled.div`
     ${media.greaterThan('md')`
         flex-direction: row;
 
+        
+        .buttonMobile {
+            display: none;
+        }
+
         .divHeaderName {
             flex-direction: row;
         }
@@ -120,6 +132,7 @@ export const Container = styled.div`
     `};
 
     ${media.greaterThan('lg')`
+
 
         .dropdown {
             display: block;
