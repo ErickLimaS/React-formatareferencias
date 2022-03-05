@@ -90,7 +90,7 @@ export const SelectOptions = () => {
                     >
                         <option value='' disabled selected>Escolha Uma ...</option>
                         <option value='41'>Reportagem</option>
-                        <option value='42'>Entrevista em Revista</option>
+                        <option value='42'>Entrevista em Revista ou Jornal</option>
                         <option value='43'>Artigo de Revista</option>
                         <option value='44'>Artigo de Internet</option>
                     </select>

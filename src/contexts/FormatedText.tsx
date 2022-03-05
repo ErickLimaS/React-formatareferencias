@@ -355,7 +355,7 @@ export const FormatedText = () => {
     if (state.refType2 === '21') {
 
         if (state.radioCheck === '1') {
-            if (state.auxNewAuthor === 0) {
+            if (state.etAlCheckbox !== '') {
                 formated = (
 
                     <C.Container>
@@ -365,7 +365,23 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <span className='italic'>{state.etAlCheckbox}</span> <b className='bold'>{state.title}</b>. {state.editionBook}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 0) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.editionBook}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
                         </div>
 
                     </C.Container>
@@ -381,7 +397,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.editionBook}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
                         </div>
 
                     </C.Container>
@@ -397,7 +413,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.editionBook}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
                         </div>
 
                     </C.Container>
@@ -413,7 +429,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.editionBook}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
                         </div>
 
                     </C.Container>
@@ -429,7 +445,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.editionBook}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
                         </div>
 
                     </C.Container>
@@ -445,7 +461,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.edition}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.editionBook}. ed. {state.local}: {state.publishingComp}, {state.yearPublic}. {state.paginationBook} p.</p>
                         </div>
 
                     </C.Container>
@@ -458,7 +474,104 @@ export const FormatedText = () => {
     if (state.refType2 === '22') {
 
         if (state.radioCheck === '1') {
-            if (state.auxNewAuthor === 0) {
+            if (state.etAlCheckbox !== '' && state.doiCheckbox === '0' && state.subtitle === '') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <span className='italic'>{state.etAlCheckbox}</span> <b className='bold'>{state.title}</b>. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.etAlCheckbox !== '' && state.doiCheckbox === '0') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <span className='italic'>{state.etAlCheckbox}</span> <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+
+            else if (state.etAlCheckbox !== '' && state.doiCheckbox !== '0' && state.subtitle === '') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <span className='italic'>{state.etAlCheckbox}</span> <b className='bold'>{state.title}</b>. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.etAlCheckbox !== '' && state.doiCheckbox !== '0') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <span className='italic'>{state.etAlCheckbox}</span> <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 0 && state.doiCheckbox === '0' && state.subtitle === '') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 0 && state.doiCheckbox === '0') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 0) {
                 formated = (
 
                     <C.Container>
@@ -469,6 +582,55 @@ export const FormatedText = () => {
 
                         <div className='copyArea'>
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+
+            else if (state.auxNewAuthor === 1 && state.doiCheckbox === '0' && state.subtitle === '') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 1 && state.doiCheckbox === '0') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 1 && state.subtitle === '') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
                         </div>
 
                     </C.Container>
@@ -490,6 +652,55 @@ export const FormatedText = () => {
                     </C.Container>
                 )
             }
+
+            else if (state.auxNewAuthor === 2 && state.doiCheckbox === '0' && state.subtitle === '') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 2 && state.doiCheckbox === '0') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 2 && state.subtitle === '') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
             else if (state.auxNewAuthor === 2) {
                 formated = (
 
@@ -501,6 +712,55 @@ export const FormatedText = () => {
 
                         <div className='copyArea'>
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+
+            else if (state.auxNewAuthor === 3 && state.doiCheckbox === '0' && state.subtitle === '') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 3 && state.doiCheckbox === '0') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 3 && state.subtitle === '') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
                         </div>
 
                     </C.Container>
@@ -522,6 +782,55 @@ export const FormatedText = () => {
                     </C.Container>
                 )
             }
+
+            else if (state.auxNewAuthor === 4 && state.doiCheckbox === '0' && state.subtitle === '') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 4 && state.doiCheckbox === '0') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 4 && state.subtitle === '') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
             else if (state.auxNewAuthor === 4) {
                 formated = (
 
@@ -533,6 +842,55 @@ export const FormatedText = () => {
 
                         <div className='copyArea'>
                             <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+
+            else if ((state.auxNewAuthor === 5 || state.auxNewAuthor > 5) && state.doiCheckbox === '0' && state.subtitle === '') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if ((state.auxNewAuthor === 5 || state.auxNewAuthor > 5) && state.doiCheckbox === '0') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.subtitle}. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if ((state.auxNewAuthor === 5 || state.auxNewAuthor > 5) && state.subtitle === '') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.local}: {state.publishingComp}, {state.yearPublic}. <span className='italic'>E-book</span>. {state.paginationBook} p. {state.doiCheckbox}. Disponível em: {state.url}.</p>
                         </div>
 
                     </C.Container>
@@ -666,7 +1024,7 @@ export const FormatedText = () => {
     if (state.refType2 === '51') {
 
         if (state.radioCheck === '1') {
-            if (state.auxNewAuthor === 0) {
+            if (state.auxNewAuthor === 0 && state.etAlCheckbox !== '') {
                 formated = (
 
                     <C.Container>
@@ -676,7 +1034,23 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <span className='italic'>{state.etAlCheckbox}</span> <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearPublic}. </p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 0) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearPublic}. </p>
                         </div>
 
                     </C.Container>
@@ -692,7 +1066,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearPublic}. </p>
                         </div>
 
                     </C.Container>
@@ -708,7 +1082,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearPublic}. </p>
                         </div>
 
                     </C.Container>
@@ -724,7 +1098,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearPublic}. </p>
                         </div>
 
                     </C.Container>
@@ -740,7 +1114,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearPublic}. </p>
                         </div>
 
                     </C.Container>
@@ -756,7 +1130,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearPublic}. </p>
                         </div>
 
                     </C.Container>
@@ -769,7 +1143,7 @@ export const FormatedText = () => {
     if (state.refType2 === '52') {
 
         if (state.radioCheck === '1') {
-            if (state.auxNewAuthor === 0) {
+            if (state.auxNewAuthor === 0 && state.etAlCheckbox !== '') {
                 formated = (
 
                     <C.Container>
@@ -779,7 +1153,23 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <span className='italic'>{state.etAlCheckbox}</span> <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearPublic}. </p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 0) {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearPublic}. </p>
                         </div>
 
                     </C.Container>
@@ -795,7 +1185,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearPublic}. </p>
                         </div>
 
                     </C.Container>
@@ -811,7 +1201,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearPublic}. </p>
                         </div>
 
                     </C.Container>
@@ -827,7 +1217,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearPublic}. </p>
                         </div>
 
 
@@ -844,7 +1234,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearPublic}. </p>
                         </div>
 
                     </C.Container>
@@ -860,7 +1250,7 @@ export const FormatedText = () => {
                         <hr />
 
                         <div className='copyArea'>
-                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. </p>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {upperSurName2}, {state.nameAuthor2}. {upperSurName3}, {state.nameAuthor3}. {upperSurName4}, {state.nameAuthor4}. {upperSurName5}, {state.nameAuthor5}. {upperSurName6}, {state.nameAuthor6}. <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Dissertação. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearPublic}. </p>
                         </div>
 
                     </C.Container>
@@ -873,7 +1263,23 @@ export const FormatedText = () => {
     if (state.refType2 === '53') {
 
         if (state.radioCheck === '1') {
-            if (state.auxNewAuthor === 0) {
+            if (state.auxNewAuthor === 0 && state.etAlCheckbox !== '') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. <span className='italic'>{state.etAlCheckbox}</span> <b className='bold'>{state.title}</b>. {state.yearPublic}. {state.paginationBook} p. Tese. ({state.uniDegreed}) - {state.university}, {state.local}, {state.yearAcess}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}.</p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 0) {
                 formated = (
 
                     <C.Container>
@@ -889,7 +1295,7 @@ export const FormatedText = () => {
                     </C.Container>
                 )
             }
-            else if (state.auxNewAuthor === 1) { 
+            else if (state.auxNewAuthor === 1) {
                 formated = (
 
                     <C.Container>
@@ -904,7 +1310,7 @@ export const FormatedText = () => {
 
                     </C.Container>
                 )
-             }
+            }
             else if (state.auxNewAuthor === 2) {
                 formated = (
 
@@ -920,8 +1326,8 @@ export const FormatedText = () => {
 
                     </C.Container>
                 )
-             }
-            else if (state.auxNewAuthor === 3) { 
+            }
+            else if (state.auxNewAuthor === 3) {
                 formated = (
 
                     <C.Container>
@@ -937,7 +1343,7 @@ export const FormatedText = () => {
                     </C.Container>
                 )
             }
-            else if (state.auxNewAuthor === 4) { 
+            else if (state.auxNewAuthor === 4) {
                 formated = (
 
                     <C.Container>
@@ -953,7 +1359,7 @@ export const FormatedText = () => {
                     </C.Container>
                 )
             }
-            else if (state.auxNewAuthor === 5 || state.auxNewAuthor > 5) { 
+            else if (state.auxNewAuthor === 5 || state.auxNewAuthor > 5) {
                 formated = (
 
                     <C.Container>
@@ -968,7 +1374,7 @@ export const FormatedText = () => {
 
                     </C.Container>
                 )
-             }
+            }
         }
     }
 

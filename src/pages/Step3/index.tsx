@@ -261,7 +261,7 @@ export const Step3 = () => {
                     label: { color: 'white' },
                     message: { color: 'white' },
                 }}>
-                    Sempre verifique se não há espaços em branco ou não preenchidos em sua referência. Se houver, por favor, faça novamente.
+                    Sempre verifique se não há espaços em branco ou não preenchidos em sua referência. Se houver, por favor, refaça a referência do começo.
                 </Alert>
                 <div className='buttons'>
                     <button onClick={refreshToStep1} className="backButton">Fazer Nova Referência</button>

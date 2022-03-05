@@ -926,7 +926,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Local do Envio do Email" description="Escreva a cidade de onde o email deve ter vindo. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não souber, deixe em branco.)' rightSection={LocalInfoCircle} onChange={handleLocal} />
+                <TextInput label="Local do Envio do Email" description="Escreva a cidade de onde o email foi enviado. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não souber, deixe em branco.)' rightSection={LocalInfoCircle} onChange={handleLocal} />
 
                 <hr />
 
@@ -1212,7 +1212,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Editora do Livro" description="Escreva a cidade onde a matéria foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' onChange={handlePublishingComp} required/>
+                <TextInput label="Editora do Livro" description="Escreva o nome da editora que publicou o livro." type='text' placeholder='Ex: Bloomsbury Publishing' onChange={handlePublishingComp} required/>
 
                 <hr />
 
@@ -1341,7 +1341,7 @@ export const RefInputs = () => {
         }
         const handleEditionBook = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
-                type: FormActions.setEditionBook,
+                type: FormActions.setEdition,
                 payload: e.target.value
             });
         }
@@ -1390,7 +1390,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Editora do Livro" description="Escreva a cidade onde a matéria foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' onChange={handlePublishingComp} required/>
+                <TextInput label="Editora do Livro" description="Escreva o nome da editora que publicou o livro." type='text' placeholder='Ex: Bloomsbury Publishing' onChange={handlePublishingComp} required/>
 
                 <hr />
 
@@ -2194,9 +2194,9 @@ export const RefInputs = () => {
                 payload: e.target.value
             });
         }
-        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
+        const handleMagazine = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
-                type: FormActions.setSubtitle,
+                type: FormActions.setMagazine,
                 payload: e.target.value
             });
         }
@@ -2264,7 +2264,7 @@ export const RefInputs = () => {
         inputHtml = (
             <C.Container>
 
-                <TextInput label="Nome de quem foi Entrevistado(a)" description="O primeiro nome do Entrevistado(a) vai nessa seção" type='text' placeholder='Ex: Clara' onChange={handleNameAuthor1} required/>
+                <TextInput label="Primeiro nome de quem foi Entrevistado(a)" description="O primeiro nome do Entrevistado(a) vai nessa seção" type='text' placeholder='Ex: Clara' onChange={handleNameAuthor1} required/>
 
                 <hr />
 
@@ -2277,7 +2277,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Nome do Entrevistador(a)" description="O primeiro nome do Entrevistado(a) vai nessa seção" type='text' placeholder='Ex: João' onChange={handleNameAuthor2} required/>
+                <TextInput label="Primeiro nome do Entrevistador(a)" description="O primeiro nome do Entrevistado(a) vai nessa seção" type='text' placeholder='Ex: João' onChange={handleNameAuthor2} required/>
 
                 <hr />
 
@@ -2285,8 +2285,8 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Nome da Revista" description="Nome da Revista onde a entrevista foi publicada." type='text' placeholder='Ex: Veja'
-                    onChange={handleTitle} required/>
+                <TextInput label="Nome da Revista ou Jornal" description="Nome da Revista/Jornal onde a entrevista foi publicada." type='text' placeholder='Ex: Veja, O Estado de São Paulo'
+                    onChange={handleMagazine} required/>
 
                 <hr />
 
@@ -2673,7 +2673,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Nome do Meio Veiculador" description="Nome de onde o artigo foi publicada." type='text' placeholder='Ex: G1, R7, etc.'
+                <TextInput label="Nome do Meio Veiculador" description="Nome do site onde o artigo foi publicada." type='text' placeholder='Ex: G1, R7, etc.'
                     onChange={handleMagazine} required/>
 
                 <hr />
@@ -2881,7 +2881,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Instituição a que a Tese foi Apresentada" description="Nome da instituição que recebeu a tese." type='text' placeholder='Ex: Possibilidades de Automação com IoT' onChange={handleUniversity} required/>
+                <TextInput label="Instituição a que a Tese foi Apresentada" description="Nome da instituição que recebeu a tese." type='text' placeholder='Ex: Universidade de São Paulo' onChange={handleUniversity} required/>
 
                 <hr />
 
@@ -3024,7 +3024,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Instituição a que a Tese foi Apresentada" description="Nome da instituição que recebeu a tese." type='text' placeholder='Ex: Possibilidades de Automação com IoT' onChange={handleUniversity} required/>
+                <TextInput label="Instituição a que a Tese foi Apresentada" description="Nome da instituição que recebeu a tese." type='text' placeholder='Ex: Universidade de São Paulo' onChange={handleUniversity} required/>
 
                 <hr />
 
@@ -3166,7 +3166,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Instituição a que a Tese foi Apresentada" description="Nome da instituição que recebeu a tese." type='text' placeholder='Ex: Possibilidades de Automação com IoT' onChange={handleUniversity} required/>
+                <TextInput label="Instituição a que a Tese foi Apresentada" description="Nome da instituição que recebeu a tese." type='text' placeholder='Ex: Universidade de São Paulo' onChange={handleUniversity} required/>
 
                 <hr />
 
