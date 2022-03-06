@@ -8,7 +8,7 @@ import { FormActions, useForm } from '../../contexts/FormContext';
 export const Header = () => {
     const Logo = require('./logo.png')
     const [opened, setOpened] = useState(false);
-    const {state, dispatch} = useForm();
+    const {dispatch} = useForm();
     const navigate = useNavigate();
 
     //*<li><a href='/abnt/como-fazer-referencias-bibliograficas-em-abnt' target="_blank">... as Margens</a></li>
@@ -230,7 +230,7 @@ export const Header = () => {
             <div className='divHeaderName'>
                 <div>
                     <a href="/" className='headerName' onClick={refreshToStep1}>
-                        <img src={Logo} alt="Logo do Site Referência em ABNT" className='imgLogo' />
+                        <img src={Logo} alt="Logo do Site Referência em ABNT" className='imgLogo' width={40} height={40}/>
                     </a>
                 </div>
                 <div>

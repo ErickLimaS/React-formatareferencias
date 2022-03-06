@@ -4,7 +4,6 @@ import { Header } from '../header'
 import { SideBarItem } from '../SideBarItem'
 import { useForm } from '../../contexts/FormContext'
 import { Footer } from '../footer';
-import Logo  from './../theme/logoxl.png'
 
 type Props = {
     children: ReactNode;
@@ -26,7 +25,7 @@ export const Theme = ({ children }: Props) => {
                         <a href='#mainContent' className='buttonAMainText'>Fazer Minha Referência Agora!</a>
                     </div>
                     <div className='divImgLogoxl'>
-                        <img src={logo} alt="Logo do site Referência em ABNT" className='imgLogoxl' />
+                        <img src={logo} alt="Logo do site Referência em ABNT" className='imgLogoxl' width={320} height={320}/>
                     </div>
                     <p id="disapearP">Para melhor experiência, recomendamos usar a ferramenta em um Computador ou Notebook.</p>
                 </div>

@@ -1,6 +1,6 @@
 import { FormActions, useForm } from './FormContext';
 import * as C from './styles'
-import { TextInput, Tooltip, RadioGroup, Radio, Grid } from '@mantine/core';
+import { TextInput, Tooltip, Grid } from '@mantine/core';
 import { InfoCircledIcon } from '@modulz/radix-icons';
 import { ChangeEvent } from 'react';
 import { AuxAuthor } from './auxAuthor';
@@ -218,16 +218,6 @@ export const RefInputs = () => {
     if (auxRef === '12') {
 
         // INFO
-        const AuthorFirstInfoCircle = (
-            <Tooltip label='Escreva o primeiro nome nessa seção. Se for uma organização quem escreveu, bote o nome aqui.' position='top' placement="center" withArrow>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
-        const AuthorSurInfoCircle = (
-            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa. Se for uma organização quem escreveu, deixe  esse espaço em branco.' position='top' placement="center" withArrow arrowSize={3}>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
         const LocalInfoCircle = (
             <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
@@ -235,19 +225,6 @@ export const RefInputs = () => {
         );
 
         //Handles
-        const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setNameAuthor1,
-                payload: e.target.value
-            });
-        }
-        const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-
-                type: FormActions.setSurAuthor1,
-                payload: e.target.value
-            });
-        };
         const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setTitle,
@@ -431,21 +408,6 @@ export const RefInputs = () => {
     if (auxRef === '13') {
 
         // INFO
-        const AuthorFirstInfoCircle = (
-            <Tooltip label='Escreva o primeiro nome nessa seção. Se for uma organização quem escreveu, bote o nome aqui.' position='top' placement="center" withArrow>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
-        const AuthorSurInfoCircle = (
-            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa. Se for uma organização quem escreveu, deixe  esse espaço em branco.' position='top' placement="center" withArrow arrowSize={3}>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
-        const LocalInfoCircle = (
-            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
 
         //Handles
         const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
@@ -624,16 +586,6 @@ export const RefInputs = () => {
     if (auxRef === '14') {
 
         // INFO
-        const AuthorFirstInfoCircle = (
-            <Tooltip label='Escreva o primeiro nome nessa seção. Se for uma organização quem escreveu, bote o nome aqui.' position='top' placement="center" withArrow>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
-        const AuthorSurInfoCircle = (
-            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa. Se for uma organização quem escreveu, deixe  esse espaço em branco.' position='top' placement="center" withArrow arrowSize={3}>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
         const LocalInfoCircle = (
             <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
@@ -641,31 +593,6 @@ export const RefInputs = () => {
         );
 
         //Handles
-        const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setNameAuthor1,
-                payload: e.target.value
-            });
-        }
-        const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-
-                type: FormActions.setSurAuthor1,
-                payload: e.target.value
-            });
-        };
-        const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setTitle,
-                payload: e.target.value
-            });
-        }
-        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setSubtitle,
-                payload: e.target.value
-            });
-        }
         const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setUrl,
@@ -850,16 +777,6 @@ export const RefInputs = () => {
     if (auxRef === '15') {
 
         // INFO
-        const AuthorFirstInfoCircle = (
-            <Tooltip label='Escreva o primeiro nome nessa seção. Se for uma organização quem escreveu, bote o nome aqui.' position='top' placement="center" withArrow>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
-        const AuthorSurInfoCircle = (
-            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa. Se for uma organização quem escreveu, deixe  esse espaço em branco.' position='top' placement="center" withArrow arrowSize={3}>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
         const LocalInfoCircle = (
             <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
@@ -974,16 +891,6 @@ export const RefInputs = () => {
                 <InfoCircledIcon color='black' />
             </Tooltip>
         );
-        const AuthorSurInfoCircle = (
-            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa. Se for uma organização quem escreveu, deixe  esse espaço em branco.' position='top' placement="center" withArrow arrowSize={3}>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
-        const LocalInfoCircle = (
-            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
 
         //Handles
         const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
@@ -1069,16 +976,6 @@ export const RefInputs = () => {
     else if (auxRef === '21') {
 
         // INFO
-        const AuthorFirstInfoCircle = (
-            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
-        const AuthorSurInfoCircle = (
-            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
         const LocalInfoCircle = (
             <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
@@ -1111,43 +1008,7 @@ export const RefInputs = () => {
                 payload: e.target.value
             });
         }
-        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setUrl,
-                payload: e.target.value
-            });
-        }
 
-        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setDayAcess,
-                payload: e.target.value
-            });
-        }
-        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
-            dispatch({
-                type: FormActions.setMonthAcess,
-                payload: e.target.value
-            });
-        }
-        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setYearAcess,
-                payload: e.target.value
-            });
-        }
-        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setDayPublic,
-                payload: e.target.value
-            });
-        }
-        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
-            dispatch({
-                type: FormActions.setMonthPublic,
-                payload: e.target.value
-            });
-        }
         const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setYearPublic,
@@ -1236,16 +1097,6 @@ export const RefInputs = () => {
     else if (auxRef === '22') {
 
         // INFO
-        const AuthorFirstInfoCircle = (
-            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
-        const AuthorSurInfoCircle = (
-            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
         const LocalInfoCircle = (
             <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
@@ -1253,19 +1104,7 @@ export const RefInputs = () => {
         );
 
         //Handles
-        const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setNameAuthor1,
-                payload: e.target.value
-            });
-        }
-        const handleSurAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-
-                type: FormActions.setSurAuthor1,
-                payload: e.target.value
-            });
-        };
+        
         const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setTitle,
@@ -1285,36 +1124,6 @@ export const RefInputs = () => {
             });
         }
 
-        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setDayAcess,
-                payload: e.target.value
-            });
-        }
-        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
-            dispatch({
-                type: FormActions.setMonthAcess,
-                payload: e.target.value
-            });
-        }
-        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setYearAcess,
-                payload: e.target.value
-            });
-        }
-        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setDayPublic,
-                payload: e.target.value
-            });
-        }
-        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
-            dispatch({
-                type: FormActions.setMonthPublic,
-                payload: e.target.value
-            });
-        }
         const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setYearPublic,
@@ -1422,16 +1231,6 @@ export const RefInputs = () => {
     else if (auxRef === '31') {
 
         // INFO
-        const AuthorFirstInfoCircle = (
-            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
-        const AuthorSurInfoCircle = (
-            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
         const LocalInfoCircle = (
             <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
@@ -1486,18 +1285,6 @@ export const RefInputs = () => {
         const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setYearAcess,
-                payload: e.target.value
-            });
-        }
-        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setDayPublic,
-                payload: e.target.value
-            });
-        }
-        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
-            dispatch({
-                type: FormActions.setMonthPublic,
                 payload: e.target.value
             });
         }
@@ -1957,16 +1744,6 @@ export const RefInputs = () => {
     else if (auxRef === '41') {
 
         // INFO
-        const AuthorFirstInfoCircle = (
-            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
-        const AuthorSurInfoCircle = (
-            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
         const LocalInfoCircle = (
             <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
@@ -1987,19 +1764,6 @@ export const RefInputs = () => {
                 payload: e.target.value
             });
         };
-        const handleNameAuthor2 = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setNameAuthor2,
-                payload: e.target.value
-            });
-        }
-        const handleSurAuthor2 = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-
-                type: FormActions.setSurAuthor2,
-                payload: e.target.value
-            });
-        };
         const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setTitle,
@@ -2009,31 +1773,6 @@ export const RefInputs = () => {
         const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setSubtitle,
-                payload: e.target.value
-            });
-        }
-        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setUrl,
-                payload: e.target.value
-            });
-        }
-
-        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setDayAcess,
-                payload: e.target.value
-            });
-        }
-        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
-            dispatch({
-                type: FormActions.setMonthAcess,
-                payload: e.target.value
-            });
-        }
-        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setYearAcess,
                 payload: e.target.value
             });
         }
@@ -2058,18 +1797,6 @@ export const RefInputs = () => {
         const handleLocal = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setLocal,
-                payload: e.target.value
-            })
-        }
-        const handlePaginationBook = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setPaginationBook,
-                payload: e.target.value
-            })
-        }
-        const handleNumberMagaz = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setNumberMagaz,
                 payload: e.target.value
             })
         }
@@ -2145,16 +1872,6 @@ export const RefInputs = () => {
     else if (auxRef === '42') {
 
         // INFO
-        const AuthorFirstInfoCircle = (
-            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
-        const AuthorSurInfoCircle = (
-            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
         const LocalInfoCircle = (
             <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
@@ -2197,31 +1914,6 @@ export const RefInputs = () => {
         const handleMagazine = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setMagazine,
-                payload: e.target.value
-            });
-        }
-        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setUrl,
-                payload: e.target.value
-            });
-        }
-
-        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setDayAcess,
-                payload: e.target.value
-            });
-        }
-        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
-            dispatch({
-                type: FormActions.setMonthAcess,
-                payload: e.target.value
-            });
-        }
-        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setYearAcess,
                 payload: e.target.value
             });
         }
@@ -2341,16 +2033,6 @@ export const RefInputs = () => {
     else if (auxRef === '43') {
 
         // INFO
-        const AuthorFirstInfoCircle = (
-            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
-        const AuthorSurInfoCircle = (
-            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
         const LocalInfoCircle = (
             <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
@@ -2371,56 +2053,13 @@ export const RefInputs = () => {
                 payload: e.target.value
             });
         };
-        const handleNameAuthor2 = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setNameAuthor2,
-                payload: e.target.value
-            });
-        }
-        const handleSurAuthor2 = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-
-                type: FormActions.setSurAuthor2,
-                payload: e.target.value
-            });
-        };
         const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setTitle,
                 payload: e.target.value
             });
         }
-        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setSubtitle,
-                payload: e.target.value
-            });
-        }
-        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setUrl,
-                payload: e.target.value
-            });
-        }
-
-        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setDayAcess,
-                payload: e.target.value
-            });
-        }
-        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
-            dispatch({
-                type: FormActions.setMonthAcess,
-                payload: e.target.value
-            });
-        }
-        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setYearAcess,
-                payload: e.target.value
-            });
-        }
+        
         const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setDayPublic,
@@ -2535,16 +2174,6 @@ export const RefInputs = () => {
     else if (auxRef === '44') {
 
         // INFO
-        const AuthorFirstInfoCircle = (
-            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
-        const AuthorSurInfoCircle = (
-            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
         const LocalInfoCircle = (
             <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
                 <InfoCircledIcon color='black' />
@@ -2565,28 +2194,9 @@ export const RefInputs = () => {
                 payload: e.target.value
             });
         };
-        const handleNameAuthor2 = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setNameAuthor2,
-                payload: e.target.value
-            });
-        }
-        const handleSurAuthor2 = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-
-                type: FormActions.setSurAuthor2,
-                payload: e.target.value
-            });
-        };
         const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setTitle,
-                payload: e.target.value
-            });
-        }
-        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setSubtitle,
                 payload: e.target.value
             });
         }
@@ -2636,18 +2246,6 @@ export const RefInputs = () => {
         const handleLocal = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setLocal,
-                payload: e.target.value
-            })
-        }
-        const handlePaginationBook = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setPaginationBook,
-                payload: e.target.value
-            })
-        }
-        const handleNumberMagaz = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setNumberMagaz,
                 payload: e.target.value
             })
         }
@@ -2757,21 +2355,6 @@ export const RefInputs = () => {
     else if (auxRef === '51') {
 
         // INFO
-        const AuthorFirstInfoCircle = (
-            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
-        const AuthorSurInfoCircle = (
-            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
-        const LocalInfoCircle = (
-            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
 
         //Handles
         const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
@@ -2790,49 +2373,6 @@ export const RefInputs = () => {
         const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setTitle,
-                payload: e.target.value
-            });
-        }
-        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setSubtitle,
-                payload: e.target.value
-            });
-        }
-        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setUrl,
-                payload: e.target.value
-            });
-        }
-
-        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setDayAcess,
-                payload: e.target.value
-            });
-        }
-        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
-            dispatch({
-                type: FormActions.setMonthAcess,
-                payload: e.target.value
-            });
-        }
-        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setYearAcess,
-                payload: e.target.value
-            });
-        }
-        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setDayPublic,
-                payload: e.target.value
-            });
-        }
-        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
-            dispatch({
-                type: FormActions.setMonthPublic,
                 payload: e.target.value
             });
         }
@@ -2936,49 +2476,6 @@ export const RefInputs = () => {
                 payload: e.target.value
             });
         }
-        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setSubtitle,
-                payload: e.target.value
-            });
-        }
-        const handleUrl = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setUrl,
-                payload: e.target.value
-            });
-        }
-
-        const handleDayVisualization = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setDayAcess,
-                payload: e.target.value
-            });
-        }
-        const handleMonthVisualization = (e: ChangeEvent<HTMLSelectElement>) => {
-            dispatch({
-                type: FormActions.setMonthAcess,
-                payload: e.target.value
-            });
-        }
-        const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setYearAcess,
-                payload: e.target.value
-            });
-        }
-        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setDayPublic,
-                payload: e.target.value
-            });
-        }
-        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
-            dispatch({
-                type: FormActions.setMonthPublic,
-                payload: e.target.value
-            });
-        }
         const handleYearPubli = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setYearPublic,
@@ -3043,21 +2540,6 @@ export const RefInputs = () => {
     else if (auxRef === '53') {
 
         // INFO
-        const AuthorFirstInfoCircle = (
-            <Tooltip label='Escreva o primeiro nome nessa seção. Ex: Ana.' position='top' placement="center" withArrow>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
-        const AuthorSurInfoCircle = (
-            <Tooltip label='Escreva o sobrenome nessa seção. Ex: Sousa.' position='top' placement="center" withArrow arrowSize={3}>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
-        const LocalInfoCircle = (
-            <Tooltip label='Se não souber, deixe em branco. Caso tenha uma ideia de onde é mas não exatamente, escreva entre colchetes. EX: [Rio de Janeiro].' position='top' placement="center" withArrow>
-                <InfoCircledIcon color='black' />
-            </Tooltip>
-        );
 
         //Handles
         const handleNameAuthor1 = (e: ChangeEvent<HTMLInputElement>) => {
@@ -3076,12 +2558,6 @@ export const RefInputs = () => {
         const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setTitle,
-                payload: e.target.value
-            });
-        }
-        const handleSubtitle = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setSubtitle,
                 payload: e.target.value
             });
         }
@@ -3107,18 +2583,6 @@ export const RefInputs = () => {
         const handleYearVisualization = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setYearAcess,
-                payload: e.target.value
-            });
-        }
-        const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
-            dispatch({
-                type: FormActions.setDayPublic,
-                payload: e.target.value
-            });
-        }
-        const handleMonthPubli = (e: ChangeEvent<HTMLSelectElement>) => {
-            dispatch({
-                type: FormActions.setMonthPublic,
                 payload: e.target.value
             });
         }

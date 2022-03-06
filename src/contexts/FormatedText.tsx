@@ -1,10 +1,8 @@
-import { Link } from 'react-router-dom';
-import { Theme } from '../components/theme';
 import { useForm } from './FormContext'
 import * as C from '../pages/Step3/styles'
 
 export const FormatedText = () => {
-    const { state, dispatch } = useForm();
+    const { state } = useForm();
 
     let upperSurName1 = state.surAuthor1.toUpperCase();
     let upperSurName2 = state.surAuthor2.toUpperCase();
@@ -14,12 +12,6 @@ export const FormatedText = () => {
     let upperSurName6 = state.surAuthor6.toUpperCase();
 
     let formated: any; //stores formated text 
-
-    let etalAux: any;
-
-    etalAux = state.etAlCheckbox
-
-
 
     //REF 11
     if (state.refType2 === '11') {
