@@ -181,7 +181,7 @@ export const RefInputs = () => {
 
                 <Grid className='datePublic'>
                     <Grid.Col span={4}>
-                        <TextInput label="Dia da Matéria Publicada" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                        <TextInput label="Dia da Matéria Publicada" description="Pode não ser possível saber o dia." type='text' placeholder='12' onChange={handleDayPubli} />
                     </Grid.Col>
 
                     <Grid.Col span={4} className="mainDivSelect">
@@ -394,7 +394,7 @@ export const RefInputs = () => {
 
                 <Grid className='datePublic'>
                     <Grid.Col span={4}>
-                        <TextInput label="Dia da Matéria Publicada" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                        <TextInput label="Dia da Matéria Publicada" description="Dia da Matéria publicada. " type='text' placeholder='12' onChange={handleDayPubli} />
                     </Grid.Col>
 
                     <Grid.Col span={4} className="mainDivSelect">
@@ -813,7 +813,7 @@ export const RefInputs = () => {
 
                 <Grid className='datePublic'>
                     <Grid.Col span={4}>
-                        <TextInput label="Dia da Publicação" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                        <TextInput label="Dia da Publicação" description="Dia da publicação. " type='text' placeholder='12' onChange={handleDayPubli} />
                     </Grid.Col>
 
                     <Grid.Col span={4} className="mainDivSelect">
@@ -1919,7 +1919,7 @@ export const RefInputs = () => {
 
                 <Grid className='datePublic'>
                     <Grid.Col span={4}>
-                        <TextInput label="Dia da Publicacão" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                        <TextInput label="Dia da Publicacão" description="Dia da publicação. " type='text' placeholder='12' onChange={handleDayPubli} />
                     </Grid.Col>
 
                     <Grid.Col span={4} className="mainDivSelect">
@@ -2107,7 +2107,7 @@ export const RefInputs = () => {
 
                 <Grid className='datePublic'>
                     <Grid.Col span={4}>
-                        <TextInput label="Dia da Publicação da Reportagem" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco." type='text' placeholder='12' onChange={handleDayPubli} />
+                        <TextInput label="Dia da Publicação da Reportagem" description="Dia da publicação." type='text' placeholder='12' onChange={handleDayPubli} />
                     </Grid.Col>
 
                     <Grid.Col span={4} className="mainDivSelect">
@@ -2304,7 +2304,7 @@ export const RefInputs = () => {
 
                 <Grid className='datePublic'>
                     <Grid.Col span={4}>
-                        <TextInput label="Dia da Publicação" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                        <TextInput label="Dia da Publicação" description="Dia da publicação. " type='text' placeholder='12' onChange={handleDayPubli} />
                     </Grid.Col>
 
                     <Grid.Col span={4} className="mainDivSelect">
@@ -2498,7 +2498,7 @@ export const RefInputs = () => {
 
                 <Grid className='datePublic'>
                     <Grid.Col span={4}>
-                        <TextInput label="Dia da Publicação" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                        <TextInput label="Dia da Publicação" description="Dia da publicação." type='text' placeholder='12' onChange={handleDayPubli} />
                     </Grid.Col>
 
                     <Grid.Col span={4} className="mainDivSelect">
@@ -2720,7 +2720,7 @@ export const RefInputs = () => {
 
                 <Grid className='datePublic'>
                     <Grid.Col span={4}>
-                        <TextInput label="Dia da Publicação" description="Pode não ser possível saber o dia. Caso seja essa sua situação, apenas deixe em branco. " type='text' placeholder='12' onChange={handleDayPubli} />
+                        <TextInput label="Dia da Publicação" description="Dia da publicação." type='text' placeholder='12' onChange={handleDayPubli} />
                     </Grid.Col>
 
                     <Grid.Col span={4} className="mainDivSelect">

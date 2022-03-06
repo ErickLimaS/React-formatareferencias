@@ -168,7 +168,23 @@ export const FormatedText = () => {
     else if (state.refType2 === '12') {
 
         if (state.radioCheck === '1') {
-            if (state.auxNewAuthor === 0) {
+            if (state.etAlCheckbox !== '') {
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{upperSurName1}, {state.nameAuthor1}. {state.etAlCheckbox} {state.title}. <span className='italic'>In</span>: {state.responsableBlog}. <b className='bold'>{state.blogTitle}</b>. {state.local}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
+            else if (state.auxNewAuthor === 0) {
                 formated = (
 
                     <C.Container>
@@ -271,20 +287,38 @@ export const FormatedText = () => {
     else if (state.refType2 === '13') {
 
         if (state.radioCheck === '1') {
-            formated = (
+            if (state.etAlCheckbox !== '') {
+                formated = (
 
-                <C.Container>
-                    <h1>Pronto! Sua Referência está Formatada!</h1>
-                    <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
 
-                    <hr />
+                        <hr />
 
-                    <div className='copyArea'>
-                        <p className='test'>{state.namePodcastEpisode}. [Locução de]: {state.podcastAnnouncer}. {state.placePublic}: {state.namePodcast}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Podcast. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
-                    </div>
+                        <div className='copyArea'>
+                            <p className='test'>{state.namePodcastEpisode}. [Locução de]: {state.podcastAnnouncer}. {state.etAlCheckbox} {state.placePublic}: {state.namePodcast}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Podcast. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        </div>
 
-                </C.Container>
-            )
+                    </C.Container>
+                )
+            }
+            else{
+                formated = (
+
+                    <C.Container>
+                        <h1>Pronto! Sua Referência está Formatada!</h1>
+                        <p>Copie o texto abaixo e cole a Referência no seu trabalho!</p>
+
+                        <hr />
+
+                        <div className='copyArea'>
+                            <p className='test'>{state.namePodcastEpisode}. [Locução de]: {state.podcastAnnouncer}. {state.placePublic}: {state.namePodcast}, {state.dayPublic} {state.monthPublic}. {state.yearPublic}. Podcast. Disponível em: {state.url}. Acesso em: {state.dayAcess} {state.monthAcess}. {state.yearAcess}. </p>
+                        </div>
+
+                    </C.Container>
+                )
+            }
         }
     }
 
