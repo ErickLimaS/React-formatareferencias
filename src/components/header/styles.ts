@@ -38,7 +38,7 @@ export const Container = styled.div`
     
     .divHeaderName {
         display: flex;
-        margin: 15px 0;
+        margin: 5px 0;
         align-items: center;
         flex-direction: row-reverse;
 
@@ -215,6 +215,7 @@ export const Container = styled.div`
 
         .divHeaderName {
             display: flex;
+            margin: 15px 0;
         }
 
         .headerName {
@@ -272,6 +273,11 @@ export const Container = styled.div`
     ${media.greaterThan('xxl')`
         .headerName {
             font-size: 32px;
+        }
+
+        .divHeaderName {
+            margin: 20px 0;
+    
         }
         
         ul li {

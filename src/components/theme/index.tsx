@@ -25,7 +25,7 @@ export const Theme = ({ children }: Props) => {
                         <p id='p2'>Siga os passos abaixo e cole a referência já pronta na área de "Referências Bibliografias" do seu trabalho em ABNT!</p>
                         <a href='#mainContent' className='buttonAMainText'>Fazer Minha Referência Agora!</a>
                     </div>
-                    <div>
+                    <div className='divImgLogoxl'>
                         <img src={logo} alt="Logo do site Referência em ABNT" className='imgLogoxl' />
                     </div>
                     <p id="disapearP">Para melhor experiência, recomendamos usar a ferramenta em um Computador ou Notebook.</p>

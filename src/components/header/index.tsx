@@ -58,7 +58,7 @@ export const Header = () => {
 
             <Group position="center">
                 <Button className='buttonMobile' onClick={() => setOpened(true)}>
-                    <MenuSvg fill='#FFF' width={30} height={30} />
+                    <MenuSvg fill='#FFF' width={25} height={25} />
                 </Button>
             </Group>
 

@@ -102,6 +102,10 @@ export const Container = styled.div<{ bgColor: string }>`
             display: none;
         }
         .divMainText {
+            .divImgLogoxl {
+                margin-top: -120px;
+                margin-bottom: 100px;
+            }
 
             .imgLogoxl{
                 width: 320px;
@@ -157,6 +161,10 @@ export const Container = styled.div<{ bgColor: string }>`
                 background-color: unset;
                 z-index: 0;
                 border-radius: 0px;
+            }
+            .divImgLogoxl {
+                margin-top: 0px;
+                margin-bottom: 0px;
             }
 
             .imgLogoxl {
