@@ -1,7 +1,7 @@
 import { useNavigate, Link } from 'react-router-dom'; //history didnt work
 import * as C from './styles';
 import { useForm, FormActions } from '../../contexts/FormContext'
-import { Theme } from '../../components/theme';
+import { Theme } from '../../components/theme1variant';
 import { useEffect, useState } from 'react';
 import { RefInputs } from '../../contexts/FormInputs' //test
 import { Button } from '@mantine/core';

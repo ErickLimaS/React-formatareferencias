@@ -1,6 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom'; //history didnt work
 import { useForm, FormActions } from '../../contexts/FormContext'
-import { Theme } from '../../components/theme';
+import { Theme } from '../../components/theme1variant';
 import { useEffect, useState } from 'react';
 import { FormatedText } from '../../contexts/FormatedText';
 import * as C from './styles'
