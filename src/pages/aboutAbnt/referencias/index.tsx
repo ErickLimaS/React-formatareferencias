@@ -70,7 +70,7 @@ export const Referencias = () => {
                     No campo da URL, iremos botar o endereço do site onde está essa nossa referência. Nesse caso, iremos na parte de cima do nosso navegador e pegar a URL do site da <span className='underline'>Wikipédia</span> onde está o texto sobre o Planeta Terra, que é o seguinte: <span className='underline'>https://pt.wikipedia.org/wiki/Terra</span>.
                 </p>
                 <p>
-                    No próximo campo, apenas colacaremos a data em que vimos o texto, matéria ou artigo relacionado ao tema. 
+                    No próximo campo, apenas colacaremos a data em que vimos o texto, matéria ou artigo relacionado ao tema.
                 </p>
                 <p>
                     Colacaremos como exemplo a data: 1 de Março de 2022.

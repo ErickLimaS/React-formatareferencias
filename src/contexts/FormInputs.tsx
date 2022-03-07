@@ -1,7 +1,7 @@
 import { FormActions, useForm } from './FormContext';
 import * as C from './styles'
-import { TextInput, Tooltip, Grid } from '@mantine/core';
-import { InfoCircledIcon } from '@modulz/radix-icons';
+import { TextInput, Tooltip, Grid, Input } from '@mantine/core';
+import { ChevronDownIcon, InfoCircledIcon } from '@modulz/radix-icons';
 import { ChangeEvent } from 'react';
 import { AuxAuthor } from './auxAuthor';
 
@@ -123,14 +123,14 @@ export const RefInputs = () => {
                 </div>
 
                 <hr />
-                
+
 
                 <AuxAuthor />
 
                 <hr />
 
                 <TextInput label="Título da Matéria" description="Titulo da Matéria. Geralmente o nome com grande destaque na página." type='text' placeholder='Exemplo do Título: Clarice Lispector: Vida e Obra da Escritora'
-                    onChange={handleTitle} required/>
+                    onChange={handleTitle} required />
 
                 <hr />
 
@@ -139,11 +139,11 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="URL da Página da Matéria" description="URL é o link da página da matéria. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} required/>
+                <TextInput label="URL da Página da Matéria" description="URL é o link da página da matéria. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} required />
 
                 <hr />
 
-                <TextInput label="Local da de Publicação da Matéria" description="Escreva a cidade onde a matéria foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' rightSection={LocalInfoCircle} onChange={handleLocal}/>
+                <TextInput label="Local da de Publicação da Matéria" description="Escreva a cidade onde a matéria foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não sabe, deixe em branco.)' rightSection={LocalInfoCircle} onChange={handleLocal} />
 
                 <hr />
 
@@ -156,7 +156,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Visualização da Matéria
                             <small>O mês que você encontrou a matéria.</small>
-                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthVisualization}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -170,7 +170,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -187,7 +187,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Publicação da Matéria
                             <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
-                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthPubli}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -201,7 +201,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -315,21 +315,21 @@ export const RefInputs = () => {
                 <hr />
 
                 <TextInput label="Título da Matéria" description="Titulo da Matéria. Geralmente o nome com grande destaque na página." type='text' placeholder='Exemplo do Título: Clarice Lispector: Vida e Obra da Escritora'
-                    onChange={handleTitle} required/>
+                    onChange={handleTitle} required />
 
                 <hr />
 
                 <TextInput label="Responsavel pelo Blog" description="Geralmente é quem cuida de manter o blog ativo. Ex: Responsavel do site do Enem é a Secretaria da Educação." type='text' placeholder='Ex: Secretaria da Educação.'
-                    onChange={handleResponsableBlog} required/>
+                    onChange={handleResponsableBlog} required />
 
                 <hr />
 
                 <TextInput label="Título da Blog" description="Titulo do Blog. Costuma ser o nome do própio site. " type='text' placeholder='Ex: Wikipedia'
-                    onChange={handleBlogTitle} required/>
+                    onChange={handleBlogTitle} required />
 
                 <hr />
 
-                <TextInput label="URL da Página da Matéria" description="URL é o link da página da matéria. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} required/>
+                <TextInput label="URL da Página da Matéria" description="URL é o link da página da matéria. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} required />
 
                 <hr />
 
@@ -346,7 +346,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Visualização da Matéria
                             <small>O mês que você encontrou a matéria.</small>
-                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthVisualization}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -360,7 +360,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -377,7 +377,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Publicação da Matéria
                             <small>O mês que a matéria foi feita, redigita, editada ou criada.</small>
-                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthPubli}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -391,7 +391,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -488,15 +488,15 @@ export const RefInputs = () => {
         inputHtml = (
             <C.Container>
 
-                <TextInput label="Nome do Podcast" description="O nome principal do podcast." type='text' placeholder='Ex: NerdCast, Inteligência ltda. ou Flow' onChange={handleNamePodcast} required/>
+                <TextInput label="Nome do Podcast" description="O nome principal do podcast." type='text' placeholder='Ex: NerdCast, Inteligência ltda. ou Flow' onChange={handleNamePodcast} required />
 
                 <hr />
 
-                <TextInput label="Nome do Podcast e do Episódio" description="Nome do Podcast junto com o nome e identificação do Episódio." type='text' placeholder='Ex: NerdCast #689: O jogo mental do Futebol Americano' onChange={handleNamePodcastEpisode} required/>
+                <TextInput label="Nome do Podcast e do Episódio" description="Nome do Podcast junto com o nome e identificação do Episódio." type='text' placeholder='Ex: NerdCast #689: O jogo mental do Futebol Americano' onChange={handleNamePodcastEpisode} required />
 
                 <hr />
 
-                <TextInput label="Nome dos(as) Apresentadores(as)" description="Nome do apresentador ou participantes do podcast" type='text' placeholder='Ex: Rogério Vilela' onChange={handlePodcastAnnouncer} required/>
+                <TextInput label="Nome dos(as) Apresentadores(as)" description="Nome do apresentador ou participantes do podcast" type='text' placeholder='Ex: Rogério Vilela' onChange={handlePodcastAnnouncer} required />
 
                 <hr />
 
@@ -511,7 +511,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="URL da Página do Podcast" description="URL é o link da página da matéria. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} required/>
+                <TextInput label="URL da Página do Podcast" description="URL é o link da página da matéria. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} required />
 
                 <hr />
 
@@ -524,7 +524,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Visualização
                             <small>O mês que você encontrou.</small>
-                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthVisualization}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -538,7 +538,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -555,7 +555,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Publicação
                             <small>O mês que em que foi postado.</small>
-                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthPubli}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -569,7 +569,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -684,17 +684,17 @@ export const RefInputs = () => {
         inputHtml = (
             <C.Container>
 
-                <TextInput label="Nome do Perfil do Usuário" description="Nome Principal mostrado pelo perfil de quem escreveu a mensagem." type='text' placeholder='Ex: USP - Universidade de São Paulo' onChange={handleDisplayNameUser} required/>
+                <TextInput label="Nome do Perfil do Usuário" description="Nome Principal mostrado pelo perfil de quem escreveu a mensagem." type='text' placeholder='Ex: USP - Universidade de São Paulo' onChange={handleDisplayNameUser} required />
 
                 <hr />
 
                 <TextInput label="Identificação do Usuário" description="Identificação do perfil em si. Ex no Twitter: @usponline" type='text' placeholder='Ex: @usponline'
-                    onChange={handleUserSocial}/>
+                    onChange={handleUserSocial} />
 
                 <hr />
 
                 <TextInput label="Texto sendo Referênciada" description="O texto usado como base para a sua referência. Atenção! Não precisa botar o texto/mensagem inteira. " type='text' placeholder='Ex: Um grupo de pacientes com HIV foi acompanhado em estudo no Hospital das Clínicas da USP para identificar o quão vulneráveis'
-                    onChange={handleSocialMediaMensage} required/>
+                    onChange={handleSocialMediaMensage} required />
 
                 <hr />
 
@@ -702,7 +702,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="URL da Página do Post" description="URL é o link da página da matéria. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} required/>
+                <TextInput label="URL da Página do Post" description="URL é o link da página da matéria. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} required />
 
                 <hr />
 
@@ -715,7 +715,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Visualização
                             <small>O mês que você encontrou a referência.</small>
-                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthVisualization}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -729,7 +729,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -746,7 +746,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Publicação
                             <small>O mês em que foi postado.</small>
-                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthPubli}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -760,7 +760,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -830,16 +830,16 @@ export const RefInputs = () => {
         inputHtml = (
             <C.Container>
 
-                <TextInput label="Nome do Remetente" description="Nome de quem enviou o email. Geralmente, o remente nesse caso é quem está fazendo a referência." type='text' placeholder='Ex: Jõao Tavares da Silva' onChange={handleRemetenteName} required/>
+                <TextInput label="Nome do Remetente" description="Nome de quem enviou o email. Geralmente, o remente nesse caso é quem está fazendo a referência." type='text' placeholder='Ex: Jõao Tavares da Silva' onChange={handleRemetenteName} required />
 
                 <hr />
 
                 <TextInput label="Quem é o Destinatário" description="Nome de quem deveria receber o Email" type='text' placeholder='Ex: Banco Nacional de Espanha'
-                    onChange={handleDestinatario} required/>
+                    onChange={handleDestinatario} required />
 
                 <hr />
 
-                <TextInput label="Assunto do Email" description="Assunto sobre o que se espera ser falado no Email enviado." type='text' placeholder='Ex: Falha no Sistema de Verificação de Usuário do Site.' onChange={handleEmailSubject} required/>
+                <TextInput label="Assunto do Email" description="Assunto sobre o que se espera ser falado no Email enviado." type='text' placeholder='Ex: Falha no Sistema de Verificação de Usuário do Site.' onChange={handleEmailSubject} required />
 
                 <hr />
 
@@ -855,7 +855,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês do Envio do Email
                             <small>O mês que o email foi feito e enviado.</small>
-                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthPubli}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -869,7 +869,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -928,11 +928,11 @@ export const RefInputs = () => {
         inputHtml = (
             <C.Container>
 
-                <TextInput label="Título do Assunto" description="Título do assunto pesquisado na Wikipédia." type='text' rightSection={AuthorFirstInfoCircle} placeholder='Ex: Planeta Terra' onChange={handleTitle} required/>
+                <TextInput label="Título do Assunto" description="Título do assunto pesquisado na Wikipédia." type='text' rightSection={AuthorFirstInfoCircle} placeholder='Ex: Planeta Terra' onChange={handleTitle} required />
 
                 <hr />
 
-                <TextInput label="URL da Página da Matéria" description="URL é o link da página da matéria. Fica no topo do seu navegador, começando com https://www e terminando com .com.br" type='text' placeholder='Ex: https://pt.wikipedia.org/wiki/Terra' onChange={handleUrl} required/>
+                <TextInput label="URL da Página da Matéria" description="URL é o link da página da matéria. Fica no topo do seu navegador, começando com https://www e terminando com .com.br" type='text' placeholder='Ex: https://pt.wikipedia.org/wiki/Terra' onChange={handleUrl} required />
 
                 <hr />
 
@@ -945,7 +945,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Visualização da Matéria
                             <small>O mês que você encontrou a matéria.</small>
-                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthVisualization}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -959,7 +959,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -1045,7 +1045,7 @@ export const RefInputs = () => {
                     type: FormActions.setEtAlCheckbox,
                     payload: ''
                 })
-            }else {
+            } else {
                 dispatch({
                     type: FormActions.setEtAlCheckbox,
                     payload: 'et al.'
@@ -1060,12 +1060,12 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Título do Livro" description="Titulo do Livro. Geralmente é o nome com grande destaque na capa." type='text' placeholder='Exemplo: A Origem das Espécies' onChange={handleTitle} required/>
+                <TextInput label="Título do Livro" description="Titulo do Livro. Geralmente é o nome com grande destaque na capa." type='text' placeholder='Exemplo: A Origem das Espécies' onChange={handleTitle} required />
 
                 <hr />
 
                 <TextInput label="Edição do Livro" description="Edição do livro da referência. Se encontra na capa ou na contracapa do livro. Atenção: Use só números!" type='text' placeholder='Escreva apenas o Número. Ex: 3'
-                    onChange={handleEditionBook} required/>
+                    onChange={handleEditionBook} required />
 
                 <hr />
 
@@ -1073,11 +1073,11 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Editora do Livro" description="Escreva o nome da editora que publicou o livro." type='text' placeholder='Ex: Bloomsbury Publishing' onChange={handlePublishingComp} required/>
+                <TextInput label="Editora do Livro" description="Escreva o nome da editora que publicou o livro." type='text' placeholder='Ex: Bloomsbury Publishing' onChange={handlePublishingComp} required />
 
                 <hr />
 
-                <TextInput label="Paginação" description="Qual as páginas que você está referenciando. Atenção: Use só números!" type='text' placeholder='Escreva somente Números. Ex: 67 - 71' onChange={handlePaginationBook} required/>
+                <TextInput label="Paginação" description="Qual as páginas que você está referenciando. Atenção: Use só números!" type='text' placeholder='Escreva somente Números. Ex: 67 - 71' onChange={handlePaginationBook} required />
 
                 <hr />
 
@@ -1104,7 +1104,7 @@ export const RefInputs = () => {
         );
 
         //Handles
-        
+
         const handleTitle = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setTitle,
@@ -1178,7 +1178,7 @@ export const RefInputs = () => {
         inputHtml = (
             <C.Container>
 
-                <TextInput label="Título do Livro" description="Titulo do Livro. Geralmente é o nome com grande destaque na capa." type='text' placeholder='Exemplo: A Origem das Espécies' onChange={handleTitle} required/>
+                <TextInput label="Título do Livro" description="Titulo do Livro. Geralmente é o nome com grande destaque na capa." type='text' placeholder='Exemplo: A Origem das Espécies' onChange={handleTitle} required />
 
                 <hr />
 
@@ -1191,7 +1191,7 @@ export const RefInputs = () => {
                 <hr />
 
                 <TextInput label="Edição do Livro" description="Edição do livro da referência. Se encontra na capa ou na contracapa do livro. Atenção: Use só números!" type='text' placeholder='Escreva apenas o Número. Ex: 3'
-                    onChange={handleEditionBook} required/>
+                    onChange={handleEditionBook} required />
 
                 <hr />
 
@@ -1199,7 +1199,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Editora do Livro" description="Escreva o nome da editora que publicou o livro." type='text' placeholder='Ex: Bloomsbury Publishing' onChange={handlePublishingComp} required/>
+                <TextInput label="Editora do Livro" description="Escreva o nome da editora que publicou o livro." type='text' placeholder='Ex: Bloomsbury Publishing' onChange={handlePublishingComp} required />
 
                 <hr />
 
@@ -1207,11 +1207,11 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="URL do Local do Ebook" description="URL é o link da página da matéria. Fica no topo do seu navegador. Caso não tenha ou não saiba, deixe em branco." type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} required/>
+                <TextInput label="URL do Local do Ebook" description="URL é o link da página da matéria. Fica no topo do seu navegador. Caso não tenha ou não saiba, deixe em branco." type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} required />
 
                 <hr />
 
-                <TextInput label="Paginação" description="Qual as páginas que você está referenciando? Atenção: Use só números!" type='text' placeholder='Escreva somente Números. Ex: 67 - 71' onChange={handlePaginationBook} required/>
+                <TextInput label="Paginação" description="Qual as páginas que você está referenciando? Atenção: Use só números!" type='text' placeholder='Escreva somente Números. Ex: 67 - 71' onChange={handlePaginationBook} required />
 
                 <hr />
 
@@ -1311,16 +1311,16 @@ export const RefInputs = () => {
         inputHtml = (
             <C.Container>
 
-                <TextInput label="Nome do Canal ou Site de onde o Vídeo Vem" description="O nome de destaque do site ou nome do canal do YouTube" type='text' placeholder='Ex: Manual do Mundo' onChange={handleNameAuthor1} required/>
+                <TextInput label="Nome do Canal ou Site de onde o Vídeo Vem" description="O nome de destaque do site ou nome do canal do YouTube" type='text' placeholder='Ex: Manual do Mundo' onChange={handleNameAuthor1} required />
 
                 <hr />
 
-                <TextInput label="Título do Vídeo" description="Título que dá nome ao vídeo." type='text' placeholder='Ex: COMO O VIDRO É FEITO? Manual do Mundo' onChange={handleTitle} required/>
+                <TextInput label="Título do Vídeo" description="Título que dá nome ao vídeo." type='text' placeholder='Ex: COMO O VIDRO É FEITO? Manual do Mundo' onChange={handleTitle} required />
 
                 <hr />
 
                 <TextInput label="Duração do Vídeo" description="Quantos minutos de duração tem o vídeo. Atenção: Escreva Apenas Números!" type='text' placeholder='Apenas Números. Ex: 11'
-                    onChange={handleDurationVideo} required/>
+                    onChange={handleDurationVideo} required />
 
                 <hr />
 
@@ -1329,7 +1329,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="URL da Página do Vídeo" description="URL é o link da página do vídeo. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://www.youtube.com/watch?v=CCuR_KWjgUk' onChange={handleUrl} required/>
+                <TextInput label="URL da Página do Vídeo" description="URL é o link da página do vídeo. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://www.youtube.com/watch?v=CCuR_KWjgUk' onChange={handleUrl} required />
 
                 <hr />
 
@@ -1342,7 +1342,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Visualização
                             <small>O mês que você encontrou o material.</small>
-                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthVisualization}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -1356,7 +1356,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -1499,7 +1499,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Visualização
                             <small>O mês que você encontrou o material.</small>
-                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthVisualization}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -1513,7 +1513,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -1530,7 +1530,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Publicação
                             <small>O mês que foi feita, redigita, editada ou criada.</small>
-                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthPublic}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -1544,7 +1544,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -1681,7 +1681,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Visualização
                             <small>O mês que você encontrou o material.</small>
-                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthVisualization}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -1695,7 +1695,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -1712,7 +1712,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Publicação
                             <small>O mês que foi feita, redigita, editada ou criada.</small>
-                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthPubli}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -1726,7 +1726,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -1810,25 +1810,25 @@ export const RefInputs = () => {
         inputHtml = (
             <C.Container>
 
-                <TextInput label="Nome do(a) autor(a) da reportagem" description="O primeiro nome do(a) autor(a) da reportagem vai nessa seção" type='text' placeholder='Ex: Clara' onChange={handleNameAuthor1} required/>
+                <TextInput label="Nome do(a) autor(a) da reportagem" description="O primeiro nome do(a) autor(a) da reportagem vai nessa seção" type='text' placeholder='Ex: Clara' onChange={handleNameAuthor1} required />
 
                 <hr />
 
-                <TextInput label="Sobrenome do(a) autor(a) da reportagem" description="O sobrenome do(a) autor(a) da reportagem vai nessa seção" type='text' placeholder='Ex: Paiva' onChange={handleSurAuthor1} required/>
+                <TextInput label="Sobrenome do(a) autor(a) da reportagem" description="O sobrenome do(a) autor(a) da reportagem vai nessa seção" type='text' placeholder='Ex: Paiva' onChange={handleSurAuthor1} required />
 
                 <hr />
 
                 <TextInput label="Título da Reportagem" description="Titulo da Reportagem. Geralmente o nome que aborda o assunto da reportagem." type='text' placeholder='Ex: Sem cura e com tratamento caro, autismo é desafio para pais e instituições sociais'
-                    onChange={handleTitle} required/>
+                    onChange={handleTitle} required />
 
                 <hr />
 
                 <TextInput label="Nome do Veiculo onde passou a Reportagem" description="Nome da Empresa ou Canal onde a reportagem foi publicada." type='text' placeholder='Ex: Globo, GloboPlay, SBT, etc.'
-                    onChange={handleMagazine} required/>
+                    onChange={handleMagazine} required />
 
                 <hr />
 
-                <TextInput label="Cidade onde a Entrevista foi feita" description="Escreva a cidade onde a entrevista foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não souber, deixe em branco.)' rightSection={LocalInfoCircle} onChange={handleLocal} required/>
+                <TextInput label="Cidade onde a Entrevista foi feita" description="Escreva a cidade onde a entrevista foi publicada. Caso não souber, deixe o espaço em branco." type='text' placeholder='Ex: São Paulo. (Se não souber, deixe em branco.)' rightSection={LocalInfoCircle} onChange={handleLocal} required />
 
                 <hr />
 
@@ -1840,7 +1840,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Publicação da Reportagem
                             <small>O mês que a reportagem foi feita, editada ou criada.</small>
-                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthPubli}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -1854,7 +1854,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -1956,29 +1956,29 @@ export const RefInputs = () => {
         inputHtml = (
             <C.Container>
 
-                <TextInput label="Primeiro nome de quem foi Entrevistado(a)" description="O primeiro nome do Entrevistado(a) vai nessa seção" type='text' placeholder='Ex: Clara' onChange={handleNameAuthor1} required/>
+                <TextInput label="Primeiro nome de quem foi Entrevistado(a)" description="O primeiro nome do Entrevistado(a) vai nessa seção" type='text' placeholder='Ex: Clara' onChange={handleNameAuthor1} required />
 
                 <hr />
 
-                <TextInput label="Sobrenome de quem foi Entrevistado(a)" description="O sobrenome do Entrevistado(a) vai nessa seção" type='text' placeholder='Ex: Paiva' onChange={handleSurAuthor1} required/>
+                <TextInput label="Sobrenome de quem foi Entrevistado(a)" description="O sobrenome do Entrevistado(a) vai nessa seção" type='text' placeholder='Ex: Paiva' onChange={handleSurAuthor1} required />
 
                 <hr />
 
                 <TextInput label="Título da Entrevista" description="Titulo da Entrevista. Geralmente o nome que aborda o assunto da entrevista." type='text' placeholder='Exemplo do Título: Vida e Obra da Clarice Lispector'
-                    onChange={handleTitle} required/>
+                    onChange={handleTitle} required />
 
                 <hr />
 
-                <TextInput label="Primeiro nome do Entrevistador(a)" description="O primeiro nome do Entrevistado(a) vai nessa seção" type='text' placeholder='Ex: João' onChange={handleNameAuthor2} required/>
+                <TextInput label="Primeiro nome do Entrevistador(a)" description="O primeiro nome do Entrevistado(a) vai nessa seção" type='text' placeholder='Ex: João' onChange={handleNameAuthor2} required />
 
                 <hr />
 
-                <TextInput label="Sobrenome do Entrevistador(a)" description="O sobrenome do Entrevistado(a) vai nessa seção" type='text' placeholder='Ex: Ferraz Silveira' onChange={handleSurAuthor2} required/>
+                <TextInput label="Sobrenome do Entrevistador(a)" description="O sobrenome do Entrevistado(a) vai nessa seção" type='text' placeholder='Ex: Ferraz Silveira' onChange={handleSurAuthor2} required />
 
                 <hr />
 
                 <TextInput label="Nome da Revista ou Jornal" description="Nome da Revista/Jornal onde a entrevista foi publicada." type='text' placeholder='Ex: Veja, O Estado de São Paulo'
-                    onChange={handleMagazine} required/>
+                    onChange={handleMagazine} required />
 
                 <hr />
 
@@ -1990,7 +1990,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Intervalo entre Páginas da Entrevista" description="Escreva de qual página começa e qual termina a entrevista. Atenção: Apenas Números." type='text' placeholder='Atenção: Apenas Números! Ex: 31 - 34' onChange={handlePaginationBook} required/>
+                <TextInput label="Intervalo entre Páginas da Entrevista" description="Escreva de qual página começa e qual termina a entrevista. Atenção: Apenas Números." type='text' placeholder='Atenção: Apenas Números! Ex: 31 - 34' onChange={handlePaginationBook} required />
 
                 <hr />
 
@@ -2002,7 +2002,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Publicação
                             <small>O mês que foi feita, redigita, editada ou criada.</small>
-                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthPubli}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -2016,7 +2016,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -2059,7 +2059,7 @@ export const RefInputs = () => {
                 payload: e.target.value
             });
         }
-        
+
         const handleDayPubli = (e: ChangeEvent<HTMLInputElement>) => {
             dispatch({
                 type: FormActions.setDayPublic,
@@ -2106,20 +2106,20 @@ export const RefInputs = () => {
         inputHtml = (
             <C.Container>
 
-                <TextInput label="Nome de quem fez o Artigo" description="O primeiro nome de quem fez o artigo vai nessa seção" type='text' placeholder='Ex: Clara' onChange={handleNameAuthor1} required/>
+                <TextInput label="Nome de quem fez o Artigo" description="O primeiro nome de quem fez o artigo vai nessa seção" type='text' placeholder='Ex: Clara' onChange={handleNameAuthor1} required />
 
                 <hr />
 
-                <TextInput label="Sobrenome de quem fez o Artigo" description="O sobrenome de quem fez o artigo vai nessa seção" type='text' placeholder='Ex: Paiva' onChange={handleSurAuthor1} required/>
+                <TextInput label="Sobrenome de quem fez o Artigo" description="O sobrenome de quem fez o artigo vai nessa seção" type='text' placeholder='Ex: Paiva' onChange={handleSurAuthor1} required />
 
                 <hr />
 
-                <TextInput label="Título do Artigo" description="Titulo do Artigo. Geralmente o nome que aborda o assunto do artigo." type='text' placeholder='Ex: A reinvenção de Hollywood: cinema americano e produção de subjetividade nas sociedades de controle' onChange={handleTitle} required/>
+                <TextInput label="Título do Artigo" description="Titulo do Artigo. Geralmente o nome que aborda o assunto do artigo." type='text' placeholder='Ex: A reinvenção de Hollywood: cinema americano e produção de subjetividade nas sociedades de controle' onChange={handleTitle} required />
 
                 <hr />
 
                 <TextInput label="Nome do Meio Veiculador" description="Nome de onde o artigo foi publicada." type='text' placeholder='Ex: Veja, Estadão, etc.'
-                    onChange={handleMagazine} required/>
+                    onChange={handleMagazine} required />
 
                 <hr />
 
@@ -2127,11 +2127,11 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Número do Exemplar da Revista/jornal" description="Número do Exemplar da Revista ou Jornal onde o artigo foi publicado. Atenção: Apenas Números." type='text' placeholder='Atenção: Apenas Números! Ex: 1721' onChange={handleNumberMagaz} required/>
+                <TextInput label="Número do Exemplar da Revista/jornal" description="Número do Exemplar da Revista ou Jornal onde o artigo foi publicado. Atenção: Apenas Números." type='text' placeholder='Atenção: Apenas Números! Ex: 1721' onChange={handleNumberMagaz} required />
 
                 <hr />
 
-                <TextInput label="Intervalo entre Páginas do Artigo" description="Escreva de qual página começa e qual termina o artigo. Atenção: Apenas Números." type='text' placeholder='Atenção: Apenas Números! Ex: 31 - 34' onChange={handlePaginationBook} required/>
+                <TextInput label="Intervalo entre Páginas do Artigo" description="Escreva de qual página começa e qual termina o artigo. Atenção: Apenas Números." type='text' placeholder='Atenção: Apenas Números! Ex: 31 - 34' onChange={handlePaginationBook} required />
 
                 <hr />
 
@@ -2143,7 +2143,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Publicação
                             <small>O mês que foi feita, redigita, editada ou criada.</small>
-                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthPubli}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -2157,7 +2157,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -2259,20 +2259,20 @@ export const RefInputs = () => {
         inputHtml = (
             <C.Container>
 
-                <TextInput label="Nome de quem fez o Artigo" description="O primeiro nome de quem fez o artigo vai nessa seção" type='text' placeholder='Ex: Clara' onChange={handleNameAuthor1} required/>
+                <TextInput label="Nome de quem fez o Artigo" description="O primeiro nome de quem fez o artigo vai nessa seção" type='text' placeholder='Ex: Clara' onChange={handleNameAuthor1} required />
 
                 <hr />
 
-                <TextInput label="Sobrenome de quem fez o Artigo" description="O sobrenome de quem fez o artigo vai nessa seção" type='text' placeholder='Ex: Paiva' onChange={handleSurAuthor1} required/>
+                <TextInput label="Sobrenome de quem fez o Artigo" description="O sobrenome de quem fez o artigo vai nessa seção" type='text' placeholder='Ex: Paiva' onChange={handleSurAuthor1} required />
 
                 <hr />
 
-                <TextInput label="Título do Artigo" description="Titulo do Artigo. Geralmente o nome que aborda o assunto do artigo." type='text' placeholder='Ex: A reinvenção de Hollywood: cinema americano e produção de subjetividade nas sociedades de controle' onChange={handleTitle} required/>
+                <TextInput label="Título do Artigo" description="Titulo do Artigo. Geralmente o nome que aborda o assunto do artigo." type='text' placeholder='Ex: A reinvenção de Hollywood: cinema americano e produção de subjetividade nas sociedades de controle' onChange={handleTitle} required />
 
                 <hr />
 
                 <TextInput label="Nome do Meio Veiculador" description="Nome do site onde o artigo foi publicada." type='text' placeholder='Ex: G1, R7, etc.'
-                    onChange={handleMagazine} required/>
+                    onChange={handleMagazine} required />
 
                 <hr />
 
@@ -2280,7 +2280,7 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="URL do Site do Artigo" description="URL é o link da página da tese. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='http://www.contemporanea.uerj.br/pdf/ed_03/contemporanea_n03_02_butcher.pdf' onChange={handleUrl} required/>
+                <TextInput label="URL do Site do Artigo" description="URL é o link da página da tese. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='http://www.contemporanea.uerj.br/pdf/ed_03/contemporanea_n03_02_butcher.pdf' onChange={handleUrl} required />
 
                 <hr />
 
@@ -2293,7 +2293,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Visualização
                             <small>O mês que você encontrou o material.</small>
-                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthVisualization}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -2307,7 +2307,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -2324,7 +2324,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Publicação
                             <small>O mês que foi feita, redigita, editada ou criada.</small>
-                            <select placeholder='Mês' onChange={handleMonthPubli}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthPubli}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -2338,7 +2338,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 
@@ -2409,19 +2409,19 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Título da Tese" description="Titulo da Tese. O assunto principal da tese." type='text' placeholder='Ex: Possibilidades de Automação com IoT' onChange={handleTitle} required/>
+                <TextInput label="Título da Tese" description="Titulo da Tese. O assunto principal da tese." type='text' placeholder='Ex: Possibilidades de Automação com IoT' onChange={handleTitle} required />
 
                 <hr />
 
-                <TextInput label="Total de Páginas da Tese" description="Número do total de páginas da tese. Atenção: Apenas Números!" type='text' placeholder='Atenção: Apenas Números. Ex: 83' onChange={handlePaginationBook} required/>
+                <TextInput label="Total de Páginas da Tese" description="Número do total de páginas da tese. Atenção: Apenas Números!" type='text' placeholder='Atenção: Apenas Números. Ex: 83' onChange={handlePaginationBook} required />
 
                 <hr />
 
-                <TextInput label="Grau de quem fez a Tese" description="Grau em que a pessoa que fez a tese estavá." type='text' placeholder='Ex: Mestrado em Engenharia de Análise de Dados' onChange={handleUniDegreed} required/>
+                <TextInput label="Grau de quem fez a Tese" description="Grau em que a pessoa que fez a tese estavá." type='text' placeholder='Ex: Mestrado em Engenharia de Análise de Dados' onChange={handleUniDegreed} required />
 
                 <hr />
 
-                <TextInput label="Instituição a que a Tese foi Apresentada" description="Nome da instituição que recebeu a tese." type='text' placeholder='Ex: Universidade de São Paulo' onChange={handleUniversity} required/>
+                <TextInput label="Instituição a que a Tese foi Apresentada" description="Nome da instituição que recebeu a tese." type='text' placeholder='Ex: Universidade de São Paulo' onChange={handleUniversity} required />
 
                 <hr />
 
@@ -2509,19 +2509,19 @@ export const RefInputs = () => {
                 <hr />
 
                 <TextInput label="Título da Tese" description="Titulo da Tese. O assunto principal da tese." type='text' placeholder='Ex: Possibilidades de Automação com IoT'
-                    onChange={handleTitle} required/>
+                    onChange={handleTitle} required />
 
                 <hr />
 
-                <TextInput label="Total de Páginas da Tese" description="Número do total de páginas da tese. Atenção: Apenas Números!" type='text' placeholder='Atenção: Apenas Números. Ex: 83' onChange={handlePaginationBook} required/>
+                <TextInput label="Total de Páginas da Tese" description="Número do total de páginas da tese. Atenção: Apenas Números!" type='text' placeholder='Atenção: Apenas Números. Ex: 83' onChange={handlePaginationBook} required />
 
                 <hr />
 
-                <TextInput label="Grau e curso de quem fez a Tese" description="Grau em que a pessoa que fez a tese estavá." type='text' placeholder='Ex: Mestrado em Engenharia de Análise de Dados' onChange={handleUniDegreed} required/>
+                <TextInput label="Grau e curso de quem fez a Tese" description="Grau em que a pessoa que fez a tese estavá." type='text' placeholder='Ex: Mestrado em Engenharia de Análise de Dados' onChange={handleUniDegreed} required />
 
                 <hr />
 
-                <TextInput label="Instituição a que a Tese foi Apresentada" description="Nome da instituição que recebeu a tese." type='text' placeholder='Ex: Universidade de São Paulo' onChange={handleUniversity} required/>
+                <TextInput label="Instituição a que a Tese foi Apresentada" description="Nome da instituição que recebeu a tese." type='text' placeholder='Ex: Universidade de São Paulo' onChange={handleUniversity} required />
 
                 <hr />
 
@@ -2618,23 +2618,23 @@ export const RefInputs = () => {
 
                 <hr />
 
-                <TextInput label="Título da Tese" description="Titulo da Tese. O assunto principal da tese." type='text' placeholder='Ex: Possibilidades de Automação com IoT'onChange={handleTitle} required/>
+                <TextInput label="Título da Tese" description="Titulo da Tese. O assunto principal da tese." type='text' placeholder='Ex: Possibilidades de Automação com IoT' onChange={handleTitle} required />
 
                 <hr />
 
-                <TextInput label="Total de Páginas da Tese" description="Número do total de páginas da tese. Atenção: Apenas Números!" type='text' placeholder='Atenção: Apenas Números. Ex: 83' onChange={handlePaginationBook} required/>
+                <TextInput label="Total de Páginas da Tese" description="Número do total de páginas da tese. Atenção: Apenas Números!" type='text' placeholder='Atenção: Apenas Números. Ex: 83' onChange={handlePaginationBook} required />
 
                 <hr />
 
-                <TextInput label="Grau e curso de quem fez a Tese" description="Grau em que a pessoa que fez a tese estavá." type='text' placeholder='Ex: Mestrado em Engenharia de Análise de Dados' onChange={handleUniDegreed} required/>
+                <TextInput label="Grau e curso de quem fez a Tese" description="Grau em que a pessoa que fez a tese estavá." type='text' placeholder='Ex: Mestrado em Engenharia de Análise de Dados' onChange={handleUniDegreed} required />
 
                 <hr />
 
-                <TextInput label="Instituição a que a Tese foi Apresentada" description="Nome da instituição que recebeu a tese." type='text' placeholder='Ex: Universidade de São Paulo' onChange={handleUniversity} required/>
+                <TextInput label="Instituição a que a Tese foi Apresentada" description="Nome da instituição que recebeu a tese." type='text' placeholder='Ex: Universidade de São Paulo' onChange={handleUniversity} required />
 
                 <hr />
 
-                <TextInput label="URL do Site da Tese" description="URL é o link da página da tese. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} required/>
+                <TextInput label="URL do Site da Tese" description="URL é o link da página da tese. Fica no topo do seu navegador, começando com www e terminando com .com.br" type='text' placeholder='Ex: https://guiadoestudante.abril.com.br/estudo/decifre-clarice-lispector-vida-obras/' onChange={handleUrl} required />
 
                 <hr />
 
@@ -2647,7 +2647,7 @@ export const RefInputs = () => {
                     <Grid.Col span={4} className="mainDivSelect">
                         <label className="divSelect">Mês da Visualização da Tese
                             <small>O mês que você encontrou a tese.</small>
-                            <select placeholder='Mês' onChange={handleMonthVisualization}>
+                            <Input component="select" rightSection={<ChevronDownIcon />} onChange={handleMonthVisualization}>
                                 <option value="" disabled selected>Mês</option>
                                 <option value="jan">Janeiro</option>
                                 <option value="fev">Fevereiro</option>
@@ -2661,7 +2661,7 @@ export const RefInputs = () => {
                                 <option value="out">Outubro</option>
                                 <option value="nov">Novembro</option>
                                 <option value="dez">Dezembro</option>
-                            </select>
+                            </Input>
                         </label>
                     </Grid.Col>
 

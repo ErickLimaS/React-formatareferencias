@@ -55,7 +55,6 @@ export const Step1 = () => {
                 <div className='selectStep1'>
                     <label>
                         De onde vem sua Referência?
-
                         <select
                             autoFocus
                             onChange={handleOptionChange}

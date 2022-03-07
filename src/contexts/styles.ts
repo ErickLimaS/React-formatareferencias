@@ -140,7 +140,6 @@ export const Container = styled.div`
     }
     .divSelect select {
 
-        border: 1px solid #ced4da;
         background-color: #fff;
         -webkit-transition: border-color 100ms ease;
         transition: border-color 100ms ease;

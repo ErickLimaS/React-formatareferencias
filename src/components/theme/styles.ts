@@ -192,6 +192,7 @@ export const Container = styled.div<{ bgColor: string }>`
 
             .imgLogoxl {
                 width: 420px;
+                height: 420px;
                 filter: blur(0px);
                 margin: 0 20px;
                 background-position: center;
@@ -256,6 +257,7 @@ export const Container = styled.div<{ bgColor: string }>`
 
             .imgLogoxl {
                 width: 500px;
+                height: 500px;
             }
         }
 

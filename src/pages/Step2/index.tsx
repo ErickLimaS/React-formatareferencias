@@ -5,6 +5,7 @@ import { Theme } from '../../components/theme1variant';
 import { useEffect, useState } from 'react';
 import { RefInputs } from '../../contexts/FormInputs' //test
 import { Button } from '@mantine/core';
+import swal from 'sweetalert';
 
 export const Step2 = () => {
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ export const Step2 = () => {
         document.title = title;
         setTitle('Passo 2 | Referência em ABNT');
         window.scrollTo(0, 0);
-        if (state.refType1 === '') {
+        if (state.refType1 === '' || state.refType2 === '') {
             navigate('/');
         }
         dispatch({
@@ -25,11 +26,11 @@ export const Step2 = () => {
     }, [title])
 
     const handleNextStep = () => {
-        if (state.refType2) {
+        if (state.yearPublic !== 0 || state.nameAuthor2 !== '' || state.surAuthor1 !== '') {
             navigate('/step3')
         }
         else {
-            alert("preencha os dados")
+            swal("Cade as Informações?", "Você precisa preencher as informações da referência!", "warning");
         }
     };
 
