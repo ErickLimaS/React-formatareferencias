@@ -4,7 +4,7 @@ import * as C from './styles'
 
 
 export const TermsConditions = () => {
-    const [title, setTitle] = useState("Carregando...");
+    const [title, setTitle] = useState("Termos e Condições | Referência em ABNT");
 
     useEffect(() => {
         document.title = title;

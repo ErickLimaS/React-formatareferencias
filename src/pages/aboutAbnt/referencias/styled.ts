@@ -6,7 +6,7 @@ export const Container = styled.div`
     width: auto;
     img{
 
-        width: 250px;
+        width: 270px;
     }
     
     ${media.greaterThan('xs')`
@@ -16,11 +16,16 @@ export const Container = styled.div`
             width: 400px;
         }
     `}
+    ${media.greaterThan('sm')`
+    width: auto;
+        img{
+            width: 450px;
+        }
+    `}
     ${media.greaterThan('md')`
     width: auto;
         img{
-
-            width: 500px;
+            width: 600px;
         }
     `}
 `

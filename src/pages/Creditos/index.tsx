@@ -3,7 +3,7 @@ import { Theme } from '../../components/theme2'
 import * as C from './styles'
 
 export const Creditos = () => {
-    const [title, setTitle] = useState("Carregando...");
+    const [title, setTitle] = useState("Créditos | Referência em ABNT");
 
     useEffect(() => {
         document.title = title;

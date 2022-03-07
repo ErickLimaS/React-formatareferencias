@@ -4,12 +4,12 @@ import * as C from './styles'
 
 
 export const Sobre = () => {
-    const [title, setTitle] = useState("Carregando...");
+    const [title, setTitle] = useState("Sobre Nós | Referência em ABNT");
 
     useEffect(() => {
         document.title = title;
         window.scrollTo(0, 0);
-        setTitle('Sobre Nós | Referência em ABNT')
+        setTitle('Sobre | Referência em ABNT')
     }, [title])
 
     return (

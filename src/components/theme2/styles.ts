@@ -192,7 +192,6 @@ export const Page = styled.div`
     }
     img{
         border: 1px solid #0000004a;
-        width: 500px;
     }
     .underline {
         text-decoration: underline;

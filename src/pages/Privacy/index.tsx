@@ -4,7 +4,7 @@ import * as C from './styles'
 
 
 export const Privacidade = () => {
-    const [title, setTitle] = useState("Carregando...");
+    const [title, setTitle] = useState("Política de Privacidade | Referência em ABNT");
 
     useEffect(() => {
         document.title = title;

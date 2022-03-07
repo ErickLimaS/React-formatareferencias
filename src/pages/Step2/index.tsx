@@ -10,7 +10,7 @@ import swal from 'sweetalert';
 export const Step2 = () => {
     const navigate = useNavigate();
     const { state, dispatch } = useForm();
-    const [title, setTitle] = useState("Carregando...");
+    const [title, setTitle] = useState("Passo 2 | Referência em ABNT");
 
     useEffect(() => {
         document.title = title;

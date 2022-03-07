@@ -8,13 +8,19 @@ import { FormActions, useForm } from '../../contexts/FormContext';
 export const Header = () => {
     const Logo = require('./logo.png')
     const [opened, setOpened] = useState(false);
-    const {dispatch} = useForm();
+    const { dispatch } = useForm();
     const navigate = useNavigate();
 
     //*<li><a href='/abnt/como-fazer-referencias-bibliograficas-em-abnt' target="_blank">... as Margens</a></li>
     //<li><a href='/abnt/como-fazer-referencias-bibliograficas-em-abnt' target="_blank">Qual Fonte e Tamanho usar para ABNT?</a></li>
     //<li><a href='/abnt/como-fazer-referencias-bibliograficas-em-abnt' target="_blank">Como Fazer a Conclusão?</a></li>
     //<li><a href='/abnt/como-fazer-referencias-bibliograficas-em-abnt' target="_blank">Modelo Pronto de Trabalho ABNT!</a></li>
+
+    //<Menu.Item component='a' href='/abnt/como-fazer-referencias-bibliograficas-em-abnt' target="_blank">... as Margens</Menu.Item>
+    //<Menu.Item component='a' href='/abnt/como-fazer-referencias-bibliograficas-em-abnt' target="_blank">Qual Fonte e Tamanho usa Para ABNT?</Menu.Item>
+    //<Menu.Item component='a' href='/abnt/como-fazer-referencias-bibliograficas-em-abnt' target="_blank">Como Fazer a Conclusão?</Menu.Item>
+    //<Menu.Item component='a' href='/abnt/como-fazer-referencias-bibliograficas-em-abnt' target="_blank">Como Fazer a Introdução?</Menu.Item>
+    //<Menu.Item component='a' href='/abnt/como-fazer-referencias-bibliograficas-em-abnt' target="_blank">Modelo Pronto de Trabalho ABNT!</Menu.Item>
 
     const refreshToStep1 = () => {
         dispatch({
@@ -230,7 +236,7 @@ export const Header = () => {
             <div className='divHeaderName'>
                 <div>
                     <a href="/" className='headerName' onClick={refreshToStep1}>
-                        <img src={Logo} alt="Logo do Site Referência em ABNT" className='imgLogo' width={40} height={40}/>
+                        <img src={Logo} alt="Logo do Site Referência em ABNT" className='imgLogo' width={40} height={40} />
                     </a>
                 </div>
                 <div>
@@ -276,11 +282,7 @@ export const Header = () => {
             <Menu className='menuDesktop' control={<Button>Como Fazer em ABNT ...</Button>} placement="center" gutter={8} withArrow size="lg">
                 <Menu.Label>Como Fazer...</Menu.Label>
                 <Menu.Item component='a' href='/abnt/como-fazer-referencias-bibliograficas-em-abnt' target="_blank">... as Referências Bibliográficas</Menu.Item>
-                <Menu.Item component='a' href='/abnt/como-fazer-referencias-bibliograficas-em-abnt' target="_blank">... as Margens</Menu.Item>
-                <Menu.Item component='a' href='/abnt/como-fazer-referencias-bibliograficas-em-abnt' target="_blank">Qual Fonte e Tamanho usa Para ABNT?</Menu.Item>
-                <Menu.Item component='a' href='/abnt/como-fazer-referencias-bibliograficas-em-abnt' target="_blank">Como Fazer a Conclusão?</Menu.Item>
-                <Menu.Item component='a' href='/abnt/como-fazer-referencias-bibliograficas-em-abnt' target="_blank">Como Fazer a Introdução?</Menu.Item>
-                <Menu.Item component='a' href='/abnt/como-fazer-referencias-bibliograficas-em-abnt' target="_blank">Modelo Pronto de Trabalho ABNT!</Menu.Item>
+
             </Menu>
 
         </C.Container>

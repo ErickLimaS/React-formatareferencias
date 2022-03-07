@@ -3,7 +3,7 @@ import { Theme } from '../../../components/theme2'
 import { useEffect, useState } from 'react';
 
 export const Referencias = () => {
-    const [title, setTitle] = useState("Carregando...");
+    const [title, setTitle] = useState("Como Fazer as Referências Bibliográficas em ABNT | Referência em ABNT");
 
 
     const img1 = require('../../../img/referenciasPage/1-1.JPG');

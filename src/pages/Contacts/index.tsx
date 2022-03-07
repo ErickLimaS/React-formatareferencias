@@ -4,7 +4,7 @@ import * as C from './styles'
 
 
 export const Contatos = () => {
-    const [title, setTitle] = useState("Carregando...");
+    const [title, setTitle] = useState("Contatos | Referência em ABNT");
 
     useEffect(() => {
         document.title = title;

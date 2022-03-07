@@ -9,7 +9,7 @@ import { Alert } from '@mantine/core';
 export const Step3 = () => {
     const navigate = useNavigate();
     const { state, dispatch } = useForm();
-    const [title, setTitle] = useState("Carregando...");
+    const [title, setTitle] = useState("Concluído! | Referência em ABNT");
 
     useEffect(() => {
         document.title = title;
